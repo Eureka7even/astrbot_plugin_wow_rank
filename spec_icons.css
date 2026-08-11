@@ -1,0 +1,370 @@
+/* Auto-generated from specs.scss */
+
+.spec-death-knight-blood {
+  width: 32px;
+  height: 32px;
+  background-image: url("file:///d:/code/private/Astrbot/astrbot_plugin_wow_rank/specs_sprite.png");
+  background-position: 0px 0px;
+  background-size: 448px 384px;
+  background-repeat: no-repeat;
+}
+
+.spec-death-knight-frost {
+  width: 32px;
+  height: 32px;
+  background-image: url("file:///d:/code/private/Astrbot/astrbot_plugin_wow_rank/specs_sprite.png");
+  background-position: -64px 0px;
+  background-size: 448px 384px;
+  background-repeat: no-repeat;
+}
+
+.spec-death-knight-unholy {
+  width: 32px;
+  height: 32px;
+  background-image: url("file:///d:/code/private/Astrbot/astrbot_plugin_wow_rank/specs_sprite.png");
+  background-position: 0px -64px;
+  background-size: 448px 384px;
+  background-repeat: no-repeat;
+}
+
+.spec-demon-hunter-devourer {
+  width: 32px;
+  height: 32px;
+  background-image: url("file:///d:/code/private/Astrbot/astrbot_plugin_wow_rank/specs_sprite.png");
+  background-position: -64px -64px;
+  background-size: 448px 384px;
+  background-repeat: no-repeat;
+}
+
+.spec-demon-hunter-havoc {
+  width: 32px;
+  height: 32px;
+  background-image: url("file:///d:/code/private/Astrbot/astrbot_plugin_wow_rank/specs_sprite.png");
+  background-position: -128px 0px;
+  background-size: 448px 384px;
+  background-repeat: no-repeat;
+}
+
+.spec-demon-hunter-vengeance {
+  width: 32px;
+  height: 32px;
+  background-image: url("file:///d:/code/private/Astrbot/astrbot_plugin_wow_rank/specs_sprite.png");
+  background-position: -128px -64px;
+  background-size: 448px 384px;
+  background-repeat: no-repeat;
+}
+
+.spec-druid-balance {
+  width: 32px;
+  height: 32px;
+  background-image: url("file:///d:/code/private/Astrbot/astrbot_plugin_wow_rank/specs_sprite.png");
+  background-position: 0px -128px;
+  background-size: 448px 384px;
+  background-repeat: no-repeat;
+}
+
+.spec-druid-feral {
+  width: 32px;
+  height: 32px;
+  background-image: url("file:///d:/code/private/Astrbot/astrbot_plugin_wow_rank/specs_sprite.png");
+  background-position: -64px -128px;
+  background-size: 448px 384px;
+  background-repeat: no-repeat;
+}
+
+.spec-druid-guardian {
+  width: 32px;
+  height: 32px;
+  background-image: url("file:///d:/code/private/Astrbot/astrbot_plugin_wow_rank/specs_sprite.png");
+  background-position: -128px -128px;
+  background-size: 448px 384px;
+  background-repeat: no-repeat;
+}
+
+.spec-druid-restoration {
+  width: 32px;
+  height: 32px;
+  background-image: url("file:///d:/code/private/Astrbot/astrbot_plugin_wow_rank/specs_sprite.png");
+  background-position: -192px 0px;
+  background-size: 448px 384px;
+  background-repeat: no-repeat;
+}
+
+.spec-evoker-augmentation {
+  width: 32px;
+  height: 32px;
+  background-image: url("file:///d:/code/private/Astrbot/astrbot_plugin_wow_rank/specs_sprite.png");
+  background-position: -192px -64px;
+  background-size: 448px 384px;
+  background-repeat: no-repeat;
+}
+
+.spec-evoker-devastation {
+  width: 32px;
+  height: 32px;
+  background-image: url("file:///d:/code/private/Astrbot/astrbot_plugin_wow_rank/specs_sprite.png");
+  background-position: -192px -128px;
+  background-size: 448px 384px;
+  background-repeat: no-repeat;
+}
+
+.spec-evoker-preservation {
+  width: 32px;
+  height: 32px;
+  background-image: url("file:///d:/code/private/Astrbot/astrbot_plugin_wow_rank/specs_sprite.png");
+  background-position: 0px -192px;
+  background-size: 448px 384px;
+  background-repeat: no-repeat;
+}
+
+.spec-hunter-beast-mastery {
+  width: 32px;
+  height: 32px;
+  background-image: url("file:///d:/code/private/Astrbot/astrbot_plugin_wow_rank/specs_sprite.png");
+  background-position: -64px -192px;
+  background-size: 448px 384px;
+  background-repeat: no-repeat;
+}
+
+.spec-hunter-marksmanship {
+  width: 32px;
+  height: 32px;
+  background-image: url("file:///d:/code/private/Astrbot/astrbot_plugin_wow_rank/specs_sprite.png");
+  background-position: -128px -192px;
+  background-size: 448px 384px;
+  background-repeat: no-repeat;
+}
+
+.spec-hunter-survival {
+  width: 32px;
+  height: 32px;
+  background-image: url("file:///d:/code/private/Astrbot/astrbot_plugin_wow_rank/specs_sprite.png");
+  background-position: -192px -192px;
+  background-size: 448px 384px;
+  background-repeat: no-repeat;
+}
+
+.spec-mage-arcane {
+  width: 32px;
+  height: 32px;
+  background-image: url("file:///d:/code/private/Astrbot/astrbot_plugin_wow_rank/specs_sprite.png");
+  background-position: -256px 0px;
+  background-size: 448px 384px;
+  background-repeat: no-repeat;
+}
+
+.spec-mage-fire {
+  width: 32px;
+  height: 32px;
+  background-image: url("file:///d:/code/private/Astrbot/astrbot_plugin_wow_rank/specs_sprite.png");
+  background-position: -256px -64px;
+  background-size: 448px 384px;
+  background-repeat: no-repeat;
+}
+
+.spec-mage-frost {
+  width: 32px;
+  height: 32px;
+  background-image: url("file:///d:/code/private/Astrbot/astrbot_plugin_wow_rank/specs_sprite.png");
+  background-position: -256px -128px;
+  background-size: 448px 384px;
+  background-repeat: no-repeat;
+}
+
+.spec-monk-brewmaster {
+  width: 32px;
+  height: 32px;
+  background-image: url("file:///d:/code/private/Astrbot/astrbot_plugin_wow_rank/specs_sprite.png");
+  background-position: -256px -192px;
+  background-size: 448px 384px;
+  background-repeat: no-repeat;
+}
+
+.spec-monk-mistweaver {
+  width: 32px;
+  height: 32px;
+  background-image: url("file:///d:/code/private/Astrbot/astrbot_plugin_wow_rank/specs_sprite.png");
+  background-position: 0px -256px;
+  background-size: 448px 384px;
+  background-repeat: no-repeat;
+}
+
+.spec-monk-windwalker {
+  width: 32px;
+  height: 32px;
+  background-image: url("file:///d:/code/private/Astrbot/astrbot_plugin_wow_rank/specs_sprite.png");
+  background-position: -64px -256px;
+  background-size: 448px 384px;
+  background-repeat: no-repeat;
+}
+
+.spec-paladin-holy {
+  width: 32px;
+  height: 32px;
+  background-image: url("file:///d:/code/private/Astrbot/astrbot_plugin_wow_rank/specs_sprite.png");
+  background-position: -128px -256px;
+  background-size: 448px 384px;
+  background-repeat: no-repeat;
+}
+
+.spec-paladin-protection {
+  width: 32px;
+  height: 32px;
+  background-image: url("file:///d:/code/private/Astrbot/astrbot_plugin_wow_rank/specs_sprite.png");
+  background-position: -192px -256px;
+  background-size: 448px 384px;
+  background-repeat: no-repeat;
+}
+
+.spec-paladin-retribution {
+  width: 32px;
+  height: 32px;
+  background-image: url("file:///d:/code/private/Astrbot/astrbot_plugin_wow_rank/specs_sprite.png");
+  background-position: -256px -256px;
+  background-size: 448px 384px;
+  background-repeat: no-repeat;
+}
+
+.spec-priest-discipline {
+  width: 32px;
+  height: 32px;
+  background-image: url("file:///d:/code/private/Astrbot/astrbot_plugin_wow_rank/specs_sprite.png");
+  background-position: -320px 0px;
+  background-size: 448px 384px;
+  background-repeat: no-repeat;
+}
+
+.spec-priest-holy {
+  width: 32px;
+  height: 32px;
+  background-image: url("file:///d:/code/private/Astrbot/astrbot_plugin_wow_rank/specs_sprite.png");
+  background-position: -320px -64px;
+  background-size: 448px 384px;
+  background-repeat: no-repeat;
+}
+
+.spec-priest-shadow {
+  width: 32px;
+  height: 32px;
+  background-image: url("file:///d:/code/private/Astrbot/astrbot_plugin_wow_rank/specs_sprite.png");
+  background-position: -320px -128px;
+  background-size: 448px 384px;
+  background-repeat: no-repeat;
+}
+
+.spec-rogue-assassination {
+  width: 32px;
+  height: 32px;
+  background-image: url("file:///d:/code/private/Astrbot/astrbot_plugin_wow_rank/specs_sprite.png");
+  background-position: -320px -192px;
+  background-size: 448px 384px;
+  background-repeat: no-repeat;
+}
+
+.spec-rogue-combat {
+  width: 32px;
+  height: 32px;
+  background-image: url("file:///d:/code/private/Astrbot/astrbot_plugin_wow_rank/specs_sprite.png");
+  background-position: -320px -256px;
+  background-size: 448px 384px;
+  background-repeat: no-repeat;
+}
+
+.spec-rogue-outlaw {
+  width: 32px;
+  height: 32px;
+  background-image: url("file:///d:/code/private/Astrbot/astrbot_plugin_wow_rank/specs_sprite.png");
+  background-position: 0px -320px;
+  background-size: 448px 384px;
+  background-repeat: no-repeat;
+}
+
+.spec-rogue-subtlety {
+  width: 32px;
+  height: 32px;
+  background-image: url("file:///d:/code/private/Astrbot/astrbot_plugin_wow_rank/specs_sprite.png");
+  background-position: -64px -320px;
+  background-size: 448px 384px;
+  background-repeat: no-repeat;
+}
+
+.spec-shaman-elemental {
+  width: 32px;
+  height: 32px;
+  background-image: url("file:///d:/code/private/Astrbot/astrbot_plugin_wow_rank/specs_sprite.png");
+  background-position: -128px -320px;
+  background-size: 448px 384px;
+  background-repeat: no-repeat;
+}
+
+.spec-shaman-enhancement {
+  width: 32px;
+  height: 32px;
+  background-image: url("file:///d:/code/private/Astrbot/astrbot_plugin_wow_rank/specs_sprite.png");
+  background-position: -192px -320px;
+  background-size: 448px 384px;
+  background-repeat: no-repeat;
+}
+
+.spec-shaman-restoration {
+  width: 32px;
+  height: 32px;
+  background-image: url("file:///d:/code/private/Astrbot/astrbot_plugin_wow_rank/specs_sprite.png");
+  background-position: -256px -320px;
+  background-size: 448px 384px;
+  background-repeat: no-repeat;
+}
+
+.spec-warlock-affliction {
+  width: 32px;
+  height: 32px;
+  background-image: url("file:///d:/code/private/Astrbot/astrbot_plugin_wow_rank/specs_sprite.png");
+  background-position: -320px -320px;
+  background-size: 448px 384px;
+  background-repeat: no-repeat;
+}
+
+.spec-warlock-demonology {
+  width: 32px;
+  height: 32px;
+  background-image: url("file:///d:/code/private/Astrbot/astrbot_plugin_wow_rank/specs_sprite.png");
+  background-position: -384px 0px;
+  background-size: 448px 384px;
+  background-repeat: no-repeat;
+}
+
+.spec-warlock-destruction {
+  width: 32px;
+  height: 32px;
+  background-image: url("file:///d:/code/private/Astrbot/astrbot_plugin_wow_rank/specs_sprite.png");
+  background-position: -384px -64px;
+  background-size: 448px 384px;
+  background-repeat: no-repeat;
+}
+
+.spec-warrior-arms {
+  width: 32px;
+  height: 32px;
+  background-image: url("file:///d:/code/private/Astrbot/astrbot_plugin_wow_rank/specs_sprite.png");
+  background-position: -384px -128px;
+  background-size: 448px 384px;
+  background-repeat: no-repeat;
+}
+
+.spec-warrior-fury {
+  width: 32px;
+  height: 32px;
+  background-image: url("file:///d:/code/private/Astrbot/astrbot_plugin_wow_rank/specs_sprite.png");
+  background-position: -384px -192px;
+  background-size: 448px 384px;
+  background-repeat: no-repeat;
+}
+
+.spec-warrior-protection {
+  width: 32px;
+  height: 32px;
+  background-image: url("file:///d:/code/private/Astrbot/astrbot_plugin_wow_rank/specs_sprite.png");
+  background-position: -384px -256px;
+  background-size: 448px 384px;
+  background-repeat: no-repeat;
+}

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    text-rendering:optimizeLegibility;
+  }
+  /* html 与 body 共用同一背景，避免全页截图时出现空白区域 */
+  html{
+    width:800px;
+    background:linear-gradient(160deg,#0d1117 0%,#161b2e 60%,#0d1117 100%);
+  }
+  body{
+    width:800px;        /* 固定宣布宽度，与 viewport 一致 */
+    height:fit-content; /* 高度随内容自适应，消除底部空白 */
+    background:linear-gradient(160deg,#0d1117 0%,#161b2e 60%,#0d1117 100%);
+    color:#c8c8d8;
+    font-family:"Microsoft YaHei UI","Microsoft YaHei","PingFang SC","Hiragino Sans GB","WenQuanYi Micro Hei",sans-serif;
+    font-size:26px;
+  }
+
+  /* ── Header ── */
+  .header{
+    display:flex;align-items:center;gap:20px;
+    padding:24px 28px 20px;
+    background:linear-gradient(90deg,rgba(10,10,25,0.95) 0%,rgba(22,27,46,0.85) 100%);
+    border-bottom:1px solid #2a304a;
+  }
+  .avatar{
+    width:96px;height:96px;border-radius:50%;flex-shrink:0;
+    border:4px solid {{ class_color }};object-fit:cover;
+    background:#1a1a2e;
+  }
+  .avatar-fallback{
+    width:96px;height:96px;border-radius:50%;flex-shrink:0;
+    border:4px solid {{ class_color }};
+    background:{{ class_color }}33;
+    display:flex;align-items:center;justify-content:center;
+    font-size:36px;font-weight:bold;color:{{ class_color }};
+  }
+  .char-info{flex:1;min-width:0;}
+  .char-name{
+    font-size:34px;font-weight:700;
+    color:{{ class_color }};
+    white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+  }
+  .char-meta{
+    margin-top:6px;font-size:22px;color:#8892aa;
+    display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+  }
+  .sep{color:#3a4060;}
+  .class-tag{color:{{ class_color }};}
+  .char-detail{margin-top:6px;font-size:22px;color:#606880;}
+  .ilvl-val{color:#f8b700;font-weight:600;}
+  .faction-val{color:{{ faction_color }};}
+
+  /* ── Section ── */
+  .section{
+    padding:16px 20px;
+    border-bottom:1px solid #1c2238;
+  }
+  .sec-title{
+    font-size:20px;color:#404860;text-transform:uppercase;letter-spacing:1.4px;
+    margin-bottom:18px;
+  }
+
+  /* ── M+ Scores ── */
+  .scores-row{display:flex;gap:10px;}
+  .score-box{
+    flex:1;text-align:center;
+    background:rgba(255,255,255,0.04);border:1px solid #252a40;border-radius:14px;
+    padding:14px 8px;
+  }
+  .score-val{font-size:36px;font-weight:700;line-height:1.1;}
+  .score-lbl{font-size:20px;color:#5a6280;margin-top:4px;}
+
+  /* ── Dungeon Table ── */
+  .dungeon-table{width:100%;}
+  .dt-header{
+    display:flex;align-items:center;
+    padding:8px 16px 12px;
+    border-bottom:1px solid #252a40;
+    font-size:20px;color:#404860;letter-spacing:0.16px;
+  }
+  .dt-row{
+    display:flex;align-items:center;
+    padding:8px 16px;
+    border-bottom:1px solid #181e30;
+  }
+  .dt-row:last-child{border-bottom:none;}
+  .dt-col-dungeon{flex:1;display:flex;align-items:center;gap:14px;min-width:0;}
+  .dungeon-icon{
+    width:48px;height:48px;border-radius:6px;flex-shrink:0;
+    object-fit:cover;background:#1a1a2e;
+  }
+  .dungeon-name{
+    font-size:24px;color:#c0c0d4;
+    white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+  }
+  .dt-col-level{
+    width:72px;text-align:center;
+    font-size:26px;font-weight:700;flex-shrink:0;
+  }
+  .dt-col-score{
+    width:90px;text-align:right;
+    font-size:22px;color:#8890a8;flex-shrink:0;
+  }
+  .dt-col-time{
+    width:80px;text-align:right;
+    font-size:22px;color:#606080;flex-shrink:0;
+  }
+
+  /* ── Raid ── */
+  .raid-row{display:flex;gap:10px;}
+  .raid-box{
+    flex:1;text-align:center;
+    background:rgba(255,255,255,0.04);border:1px solid #252a40;border-radius:14px;
+    padding:14px 8px;
+  }
+  .raid-diff-lbl{font-size:20px;color:#5a6280;margin-bottom:6px;}
+  .raid-prog{font-size:32px;font-weight:700;line-height:1.1;}
+  .c-normal{color:#4ade80;}.c-heroic{color:#60a5fa;}.c-mythic{color:#e879f9;}
+  .badge{
+    display:inline-block;font-size:18px;font-weight:700;
+    padding:2px 10px;border-radius:8px;margin-top:6px;
+  }
+  .badge-aotc{background:#60a5fa;color:#000;}
+  .badge-ce{background:#e879f9;color:#000;}
+
+  /* ── Ranks ── */
+  .rank-grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:10px;
+  }
+  .rank-item{
+    background:rgba(255,255,255,0.04);border:1px solid #252a40;border-radius:12px;
+    padding:12px 16px;
+  }
+  .rank-label{font-size:20px;color:#7a82a0;margin-bottom:6px;}
+  .rank-vals{display:flex;gap:14px;font-size:22px;}
+  .rank-vals span{color:#c0c8e0;}
+  .rank-vals .rv-tag{font-size:18px;color:#505878;margin-right:2px;}
+
+  /* ── Keystone Stats ── */
+  .ks-row{display:flex;gap:10px;}
+  .ks-box{
+    flex:1;text-align:center;
+    background:rgba(255,255,255,0.04);border:1px solid #252a40;border-radius:14px;
+    padding:14px 8px;
+  }
+  .ks-count{font-size:36px;font-weight:700;color:#e0c060;line-height:1.1;}
+  .ks-level{font-size:20px;color:#8892aa;margin-top:4px;}
+  .ks-sublbl{font-size:18px;color:#505878;margin-top:2px;}
+
+  /* ── Footer ── */
+  .footer{
+    padding:12px 40px;
+    display:flex;justify-content:space-between;
+    font-size:20px;color:#2e344a;
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ HEADER ══ -->
+<div class="header">
+  {% if thumbnail_url %}
+    <img class="avatar" src="{{ thumbnail_url }}"
+         onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+    <div class="avatar-fallback" style="display:none;">{{ name[0] if name else '?' }}</div>
+  {% else %}
+    <div class="avatar-fallback">{{ name[0] if name else '?' }}</div>
+  {% endif %}
+
+  <div class="char-info">
+    <div class="char-name">{{ name }}</div>
+    <div class="char-meta">
+      <span class="class-tag">{{ spec_name_cn }} {{ class_name_cn }}</span>
+    </div>
+    <div class="char-detail">
+      {% if guild %}<span style="color:#d4b896;">{{ guild }}</span> <span class="sep">·</span> {% endif %}
+      {{ realm }}
+      {% if faction %} <span class="sep">·</span> <span class="faction-val">{{ faction }}</span>{% endif %}
+      <span class="sep">·</span> 装等 <span class="ilvl-val">{{ ilvl }}</span>
+      {% if race_cn %} <span class="sep">·</span> {{ race_cn }}{% endif %}
+    </div>
+  </div>
+</div>
+
+<!-- ══ MODE A：综合战绩 ══ -->
+
+<!-- M+ 评分 -->
+<div class="section">
+  <div class="sec-title">M+ 评分（当前赛季）</div>
+  <div class="scores-row">
+    <div class="score-box">
+      <div class="score-val" style="color:{{ score_all_color }};">{{ mplus_all }}</div>
+      <div class="score-lbl">综合</div>
+    </div>
+    <div class="score-box">
+      <div class="score-val" style="color:{{ score_tank_color }};">{{ mplus_tank }}</div>
+      <div class="score-lbl">坦克</div>
+    </div>
+    <div class="score-box">
+      <div class="score-val" style="color:{{ score_dps_color }};">{{ mplus_dps }}</div>
+      <div class="score-lbl">输出</div>
+    </div>
+    <div class="score-box">
+      <div class="score-val" style="color:{{ score_healer_color }};">{{ mplus_healer }}</div>
+      <div class="score-lbl">治疗</div>
+    </div>
+  </div>
+
+  <!-- 8 本副本记录 -->
+  {% if dungeons %}
+  <div style="margin-top:20px;">
+    <div class="sec-title" style="margin-bottom:8px;">地下城记录 &middot; 综合评分 <span style="color:#d4a843;">{{ mplus_all }}</span></div>
+    <div class="dungeon-table">
+      <div class="dt-header">
+        <span class="dt-col-dungeon">地下城</span>
+        <span class="dt-col-level">等级</span>
+        <span class="dt-col-score">分数</span>
+        <span class="dt-col-time">时间</span>
+      </div>
+      {% for d in dungeons %}
+      <div class="dt-row">
+        <span class="dt-col-dungeon">
+          {% if d.icon_url %}<img class="dungeon-icon" src="{{ d.icon_url }}" onerror="this.style.display='none'">{% endif %}
+          <span class="dungeon-name">{{ d.name }}</span>
+        </span>
+        <span class="dt-col-level" style="color:{{ d.color }};">+{{ d.level }}</span>
+        <span class="dt-col-score">{{ d.score | round(1) }}</span>
+        <span class="dt-col-time">{{ d.time }}</span>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+</div>
+
+<!-- 限时通关次数 -->
+{% if keystone_stats %}
+<div class="section">
+  <div class="sec-title">限时通关次数</div>
+  <div class="ks-row">
+    {% for ks in keystone_stats %}
+    <div class="ks-box">
+      <div class="ks-count">{{ ks.count }}</div>
+      <div class="ks-level">{{ ks.level }}+ 层数</div>
+      <div class="ks-sublbl">限时次数</div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endif %}
+
+<!-- 团本进度 -->
+{% if raid_name %}
+<div class="section" style="border-bottom:none;">
+  <div class="sec-title">团本进度 · {{ raid_name }}</div>
+  <div class="raid-row">
+    <div class="raid-box">
+      <div class="raid-diff-lbl">普通</div>
+      <div class="raid-prog c-normal">{{ normal_prog }}/{{ total_bosses }}</div>
+      {% if normal_prog >= total_bosses and total_bosses > 0 %}
+        <div style="font-size:20px;color:#4ade80;margin-top:4px;">✓ 全通</div>
+      {% endif %}
+    </div>
+    <div class="raid-box">
+      <div class="raid-diff-lbl">英雄</div>
+      <div class="raid-prog c-heroic">{{ heroic_prog }}/{{ total_bosses }}</div>
+      {% if has_aotc %}<div><span class="badge badge-aotc">AOTC</span></div>{% endif %}
+    </div>
+    <div class="raid-box">
+      <div class="raid-diff-lbl">史诗</div>
+      <div class="raid-prog c-mythic">{{ mythic_prog }}/{{ total_bosses }}</div>
+      {% if has_cutting_edge %}<div><span class="badge badge-ce">CE</span></div>{% endif %}
+    </div>
+  </div>
+</div>
+{% endif %}
+
+<!-- M+ 排名 -->
+{% if ranks %}
+<div class="section" style="border-bottom:none;">
+  <div class="sec-title">M+ 排名</div>
+  <div class="rank-grid">
+    {% for r in ranks %}
+    <div class="rank-item">
+      <div class="rank-label">{{ r.label }}</div>
+      <div class="rank-vals">
+        {% if r.world %}<span><span class="rv-tag">世界</span>{{ r.world }}</span>{% endif %}
+        {% if r.region %}<span><span class="rv-tag">地区</span>{{ r.region }}</span>{% endif %}
+        {% if r.realm %}<span><span class="rv-tag">服务器</span>{{ r.realm }}</span>{% endif %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endif %}
+
+<div class="footer">
+  <span>Data: Raider.io</span>
+  {% if achievement_points %}<span>成就点: {{ achievement_points }}</span>{% endif %}
+</div>
+
+</body>
+</html>

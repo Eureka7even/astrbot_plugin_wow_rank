@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    text-rendering:optimizeLegibility;
+  }
+  html{
+    width:800px;
+    background:linear-gradient(160deg,#0d1117 0%,#161b2e 60%,#0d1117 100%);
+  }
+  body{
+    width:800px;
+    height:fit-content;
+    background:linear-gradient(160deg,#0d1117 0%,#161b2e 60%,#0d1117 100%);
+    color:#c8c8d8;
+    font-family:"Microsoft YaHei UI","Microsoft YaHei","PingFang SC","Hiragino Sans GB","WenQuanYi Micro Hei",sans-serif;
+    font-size:26px;
+  }
+
+  .header{
+    padding:24px 28px 20px;
+    background:linear-gradient(90deg,rgba(10,10,25,0.95) 0%,rgba(22,27,46,0.85) 100%);
+    border-bottom:1px solid #2a304a;
+  }
+  .title{
+    font-size:34px;font-weight:700;
+    color:#f0c040;
+    white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+  }
+  .subtitle{
+    margin-top:6px;font-size:22px;color:#8892aa;
+  }
+
+  .section{
+    padding:16px 20px;
+    border-bottom:1px solid #1c2238;
+  }
+
+  /* ── 趋势图 ── */
+  .chart-wrap{
+    padding:16px 20px 8px;
+    background:rgba(255,255,255,0.02);
+  }
+  .chart-wrap svg{
+    display:block;
+    height:220px;
+  }
+  .legend{
+    display:flex;
+    justify-content:center;
+    gap:16px;
+    margin-top:8px;
+    flex-wrap:wrap;
+  }
+  .legend-item{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    font-size:18px;
+    color:#8892aa;
+  }
+  .legend-dot{
+    width:10px;height:10px;border-radius:50%;
+    display:inline-block;
+  }
+
+  .cutoff-table{width:100%;}
+  .ct-header{
+    display:flex;align-items:center;
+    padding:8px 16px 12px;
+    border-bottom:1px solid #252a40;
+    font-size:20px;color:#404860;letter-spacing:0.16px;
+  }
+  .ct-row{
+    display:flex;align-items:center;
+    padding:10px 16px;
+    border-bottom:1px solid #181e30;
+  }
+  .ct-row:last-child{border-bottom:none;}
+  .ct-col-tier{
+    flex:1;display:flex;flex-direction:column;gap:2px;
+    min-width:0;
+  }
+  .tier-label{
+    font-size:26px;font-weight:700;color:#e0e0e8;
+  }
+  .tier-sublabel{
+    font-size:18px;color:#606880;
+  }
+  .ct-col-all,.ct-col-horde,.ct-col-alliance{
+    width:130px;text-align:center;
+    font-size:26px;font-weight:700;flex-shrink:0;
+  }
+  .ct-col-all{color:#f0c040;}
+  .ct-col-horde{color:#eb6273;}
+  .ct-col-alliance{color:#4488ff;}
+
+  .footer{
+    padding:12px 20px;
+    display:flex;justify-content:space-between;
+    font-size:18px;color:#3a4060;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="title">{{ region }} M+ 赛季分数线</div>
+  <div class="subtitle">赛季: {{ season }} &middot; 更新: {{ updated }}</div>
+</div>
+
+<!-- 趋势图 -->
+<div class="chart-wrap">
+  <svg viewBox="0 0 {{ chart_width }} {{ chart_height }}" width="100%" preserveAspectRatio="none">
+    <!-- 背景网格线 -->
+    <line x1="60" y1="20" x2="60" y2="260" stroke="#252a40" stroke-width="1"/>
+    <line x1="60" y1="260" x2="740" y2="260" stroke="#252a40" stroke-width="1"/>
+    <line x1="60" y1="140" x2="740" y2="140" stroke="#1c2238" stroke-width="1" stroke-dasharray="4,4"/>
+
+    <!-- Y轴标签 -->
+    <text x="55" y="25" text-anchor="end" fill="#606880" font-size="14">{{ y_max }}</text>
+    <text x="55" y="265" text-anchor="end" fill="#606880" font-size="14">{{ y_min }}</text>
+
+    <!-- 折线 -->
+    {% for s in svg_series %}
+    <polyline points="{{ s.path }}" fill="none" stroke="{{ s.color }}" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    {% endfor %}
+
+    <!-- X轴日期标签 -->
+    {% for xl in x_labels %}
+    <text x="{{ xl.x }}" y="275" text-anchor="middle" fill="#606880" font-size="14">{{ xl.text }}</text>
+    {% endfor %}
+  </svg>
+
+  <!-- 图例 -->
+  <div class="legend">
+    {% for s in svg_series %}
+    <span class="legend-item"><span class="legend-dot" style="background:{{ s.color }};"></span>{{ s.label }}</span>
+    {% endfor %}
+  </div>
+</div>
+
+<div class="section">
+  <div class="cutoff-table">
+    <div class="ct-header">
+      <span class="ct-col-tier">大秘境分数百分位</span>
+      <span class="ct-col-all">所有阵营</span>
+      <span class="ct-col-horde">仅部落</span>
+      <span class="ct-col-alliance">仅联盟</span>
+    </div>
+    {% for row in rows %}
+    <div class="ct-row">
+      <span class="ct-col-tier">
+        <span class="tier-label">{{ row.label }}</span>
+        {% if row.sublabel %}<span class="tier-sublabel">{{ row.sublabel }}</span>{% endif %}
+      </span>
+      <span class="ct-col-all">{{ row.all }}</span>
+      <span class="ct-col-horde">{{ row.horde }}</span>
+      <span class="ct-col-alliance">{{ row.alliance }}</span>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+<div class="footer">
+  <span>Data: Raider.io</span>
+  <span>国服 {{ region }}</span>
+</div>
+
+</body>
+</html>

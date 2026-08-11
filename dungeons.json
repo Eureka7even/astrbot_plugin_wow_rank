@@ -1,0 +1,3417 @@
+{
+    "aberrus-the-shadowed-crucible": {
+        "name": "亚贝鲁斯，焰影熔炉",
+        "acronym": "亚贝鲁斯",
+        "short-name": "亚贝鲁斯",
+        "bosses": {
+            "kazzara-the-hellforged": {
+                "name": "狱铸者卡扎拉",
+                "short-name": "卡扎拉"
+            },
+            "the-amalgamation-chamber": {
+                "name": "融合体密室",
+                "short-name": "融合体密室"
+            },
+            "the-forgotten-experiments": {
+                "name": "被遗忘的实验体",
+                "short-name": "被遗忘的实验体"
+            },
+            "assault-of-the-zaqali": {
+                "name": "扎卡利突袭",
+                "short-name": "扎卡利突袭"
+            },
+            "rashok-the-elder": {
+                "name": "长老莱修克",
+                "short-name": "莱修克"
+            },
+            "the-vigilant-steward-zskarn": {
+                "name": "警戒管事兹斯卡恩",
+                "short-name": "兹斯卡恩"
+            },
+            "magmorax": {
+                "name": "玛格莫莱克斯",
+                "short-name": "玛格莫莱克斯"
+            },
+            "echo-of-neltharion": {
+                "name": "奈萨里奥的回响",
+                "short-name": "奈萨里奥的回响"
+            },
+            "scalecommander-sarkareth": {
+                "name": "鳞长萨卡雷斯",
+                "short-name": "萨卡雷斯"
+            }
+        }
+    },
+    "algethar-academy": {
+        "name": "艾杰斯亚学院",
+        "acronym": "学院",
+        "short-name": "艾杰斯亚学院",
+        "bosses": {
+            "vexamus": {
+                "name": "维克萨姆斯",
+                "short-name": "维克萨姆斯"
+            },
+            "overgrown-ancient": {
+                "name": "茂林古树",
+                "short-name": "茂林古树"
+            },
+            "crawth": {
+                "name": "克罗兹",
+                "short-name": "克罗兹"
+            },
+            "echo-of-doragosa": {
+                "name": "多拉苟萨的回响",
+                "short-name": "多拉苟萨的回响"
+            }
+        }
+    },
+    "amirdrassil-the-dreams-hope": {
+        "name": "阿梅达希尔，梦境之愿",
+        "acronym": "ATDH",
+        "short-name": "阿梅达希尔",
+        "bosses": {
+            "gnarlroot": {
+                "name": "瘤根",
+                "short-name": "瘤根"
+            },
+            "igira-the-cruel": {
+                "name": "残虐者艾姬拉",
+                "short-name": "艾姬拉"
+            },
+            "volcoross": {
+                "name": "沃尔科罗斯",
+                "short-name": "沃尔科罗斯"
+            },
+            "council-of-dreams": {
+                "name": "梦境议会",
+                "short-name": "梦境议会"
+            },
+            "larodar-keeper-of-the-flame": {
+                "name": "拉罗达尔，烈焰守护者",
+                "short-name": "拉罗达尔"
+            },
+            "nymue-weaver-of-the-cycle": {
+                "name": "尼穆威，轮回编织者",
+                "short-name": "尼穆威"
+            },
+            "smolderon": {
+                "name": "斯莫德隆",
+                "short-name": "斯莫德隆"
+            },
+            "fyrakk-the-blazing": {
+                "name": "火光之龙菲莱克",
+                "short-name": "菲莱克"
+            },
+            "tindral-sageswift-seer-of-the-flame": {
+                "name": "丁达尔·迅贤，烈焰预言者",
+                "short-name": "丁达尔"
+            }
+        }
+    },
+    "antorus-the-burning-throne": {
+        "name": "安托鲁斯，燃烧王座",
+        "acronym": "ATBT",
+        "short-name": "安托鲁斯",
+        "bosses": {
+            "garothi-worldbreaker": {
+                "name": "加洛西灭世者",
+                "short-name": "加洛西灭世者"
+            },
+            "felhounds-of-sargeras": {
+                "name": "萨格拉斯的恶犬",
+                "short-name": "萨格拉斯的恶犬"
+            },
+            "portal-keeper-hasabel": {
+                "name": "传送门守护者哈萨贝尔",
+                "short-name": "传送门守护者哈萨贝尔"
+            },
+            "antoran-high-command": {
+                "name": "安托兰统帅议会",
+                "short-name": "安托兰统帅议会"
+            },
+            "eonar-the-life-binder": {
+                "name": "生命的缚誓者艾欧娜尔",
+                "short-name": "生命的缚誓者艾欧娜尔"
+            },
+            "imonar-the-soulhunter": {
+                "name": "猎魂者伊墨纳尔",
+                "short-name": "猎魂者伊墨纳尔"
+            },
+            "kingaroth": {
+                "name": "金加洛斯",
+                "short-name": "金加洛斯"
+            },
+            "varimathras": {
+                "name": "瓦里玛萨斯",
+                "short-name": "瓦里玛萨斯"
+            },
+            "the-coven-of-shivarra": {
+                "name": "破坏魔女巫会",
+                "short-name": "破坏魔女巫会"
+            },
+            "aggramar": {
+                "name": "阿格拉玛",
+                "short-name": "阿格拉玛"
+            },
+            "argus-the-unmaker": {
+                "name": "寂灭者阿古斯",
+                "short-name": "寂灭者阿古斯"
+            }
+        }
+    },
+    "ataldazar": {
+        "name": "阿塔达萨",
+        "acronym": "阿塔达萨",
+        "short-name": "阿塔达萨",
+        "bosses": {
+            "priestess-alunza": {
+                "name": "女祭司阿伦扎",
+                "short-name": "女祭司阿伦扎"
+            },
+            "volkaal": {
+                "name": "沃卡尔",
+                "short-name": "沃卡尔"
+            },
+            "rezan": {
+                "name": "莱赞",
+                "short-name": "莱赞"
+            },
+            "yazma": {
+                "name": "亚兹玛",
+                "short-name": "亚兹玛"
+            }
+        }
+    },
+    "battle-of-dazaralor": {
+        "name": "达萨罗之战",
+        "acronym": "BOD",
+        "short-name": "达萨罗之战",
+        "bosses": {
+            "champion-of-the-light": {
+                "name": "圣光勇士",
+                "short-name": "圣光勇士"
+            },
+            "grong": {
+                "name": "格洛恩",
+                "short-name": "格洛恩"
+            },
+            "jadefire-masters": {
+                "name": "玉火大师",
+                "short-name": "玉火大师"
+            },
+            "opulence": {
+                "name": "丰灵",
+                "short-name": "丰灵"
+            },
+            "conclave-of-the-chosen": {
+                "name": "神选者教团",
+                "short-name": "神选者教团"
+            },
+            "king-rastakhan": {
+                "name": "拉斯塔哈大王",
+                "short-name": "拉斯塔哈大王"
+            },
+            "high-tinker-mekkatorque": {
+                "name": "大工匠梅卡托克",
+                "short-name": "大工匠梅卡托克"
+            },
+            "stormwall-blockade": {
+                "name": "风暴之墙阻击战",
+                "short-name": "风暴之墙阻击战"
+            },
+            "lady-jaina-proudmoore": {
+                "name": "吉安娜·普罗德摩尔",
+                "short-name": "吉安娜·普罗德摩尔"
+            }
+        }
+    },
+    "black-rook-hold": {
+        "name": "黑鸦堡垒",
+        "acronym": "黑鸦",
+        "short-name": "黑鸦堡垒",
+        "bosses": {
+            "amalgam-of-souls": {
+                "name": "融合之魂",
+                "short-name": "融合之魂"
+            },
+            "ilysanna-ravencrest": {
+                "name": "伊莉萨娜·拉文凯斯",
+                "short-name": "伊莉萨娜·拉文凯斯"
+            },
+            "smashspite-the-hateful": {
+                "name": "可恨的斯麦斯帕",
+                "short-name": "可恨的斯麦斯帕"
+            },
+            "lord-kurtalos-ravencrest": {
+                "name": "库塔洛斯·拉文凯斯",
+                "short-name": "库塔洛斯·拉文凯斯"
+            }
+        }
+    },
+    "brackenhide-hollow": {
+        "name": "蕨皮山谷",
+        "acronym": "蕨皮山谷",
+        "short-name": "蕨皮山谷",
+        "bosses": {
+            "hackclaws-warband": {
+                "name": "劈爪的战团",
+                "short-name": "劈爪的战团"
+            },
+            "treemouth": {
+                "name": "树口",
+                "short-name": "树口"
+            },
+            "gutshot": {
+                "name": "肠击",
+                "short-name": "肠击"
+            },
+            "decatriarch-wratheye": {
+                "name": "腐朽主母怒眼",
+                "short-name": "腐朽主母怒眼"
+            }
+        }
+    },
+    "castle-nathria": {
+        "name": "纳斯利亚堡",
+        "acronym": "CN",
+        "short-name": "纳斯利亚堡",
+        "bosses": {
+            "shriekwing": {
+                "name": "啸翼",
+                "short-name": "啸翼"
+            },
+            "huntsman-altimor": {
+                "name": "猎手阿尔迪莫",
+                "short-name": "猎手阿尔迪莫"
+            },
+            "sun-kings-salvation": {
+                "name": "太阳之王的救赎",
+                "short-name": "太阳之王的救赎"
+            },
+            "hungering-destroyer": {
+                "name": "饥饿的毁灭者",
+                "short-name": "饥饿的毁灭者"
+            },
+            "artificer-xymox": {
+                "name": "圣物匠赛·墨克斯",
+                "short-name": "圣物匠赛·墨克斯"
+            },
+            "lady-inerva-darkvein": {
+                "name": "伊涅瓦·暗脉女勋爵",
+                "short-name": "伊涅瓦·暗脉女勋爵"
+            },
+            "the-council-of-blood": {
+                "name": "猩红议会",
+                "short-name": "猩红议会"
+            },
+            "sludgefist": {
+                "name": "泥拳",
+                "short-name": "泥拳"
+            },
+            "stone-legion-generals": {
+                "name": "顽石军团干将",
+                "short-name": "顽石军团干将"
+            },
+            "sire-denathrius": {
+                "name": "德纳修斯大帝",
+                "short-name": "德纳修斯大帝"
+            }
+        }
+    },
+    "cathedral-of-eternal-night": {
+        "name": "永夜大教堂",
+        "acronym": "大教堂",
+        "short-name": "永夜大教堂",
+        "bosses": {
+            "agronox": {
+                "name": "阿格洛诺克斯",
+                "short-name": "阿格洛诺克斯"
+            },
+            "thrashbite-the-scornful": {
+                "name": "轻蔑的萨什比特",
+                "short-name": "轻蔑的萨什比特"
+            },
+            "mephistroth": {
+                "name": "孟菲斯托斯",
+                "short-name": "孟菲斯托斯"
+            },
+            "domatrax": {
+                "name": "多玛塔克斯",
+                "short-name": "多玛塔克斯"
+            }
+        }
+    },
+    "court-of-stars": {
+        "name": "群星庭院",
+        "acronym": "群星",
+        "short-name": "群星庭院",
+        "bosses": {
+            "patrol-captain-gerdo": {
+                "name": "巡逻队长加多",
+                "short-name": "巡逻队长加多"
+            },
+            "talixae-flamewreath": {
+                "name": "塔里克萨·火冠",
+                "short-name": "塔里克萨·火冠"
+            },
+            "advisor-melandrus": {
+                "name": "顾问麦兰杜斯",
+                "short-name": "顾问麦兰杜斯"
+            }
+        }
+    },
+    "crucible-of-storms": {
+        "name": "风暴熔炉",
+        "acronym": "COS",
+        "short-name": "风暴熔炉",
+        "bosses": {
+            "the-restless-cabal": {
+                "name": "无眠密党",
+                "short-name": "无眠密党"
+            },
+            "uunat-harbinger-of-the-void": {
+                "name": "乌纳特，虚空先驱",
+                "short-name": "乌纳特，虚空先驱"
+            }
+        }
+    },
+    "doti-galakronds-fall": {
+        "name": "永恒黎明：迦拉克隆的陨落",
+        "acronym": "陨落",
+        "short-name": "永恒黎明：迦拉克隆的陨落",
+        "bosses": {
+            "chronikar": {
+                "name": "克罗妮卡",
+                "short-name": "克罗妮卡"
+            },
+            "manifested-timeways": {
+                "name": "时间流具象",
+                "short-name": "时间流具象"
+            },
+            "blight-of-galakrond": {
+                "name": "迦拉克隆之荒",
+                "short-name": "迦拉克隆之荒"
+            },
+            "iridikron": {
+                "name": "伊律迪孔",
+                "short-name": "伊律迪孔"
+            }
+        }
+    },
+    "doti-murozonds-rise": {
+        "name": "永恒黎明：姆诺兹多的崛起",
+        "acronym": "崛起",
+        "short-name": "永恒黎明：姆诺兹多的崛起",
+        "bosses": {
+            "tyr-the-infinite-keeper": {
+                "name": "永恒守护者提尔",
+                "short-name": "永恒守护者提尔"
+            },
+            "morchie": {
+                "name": "米罗克",
+                "short-name": "米罗克"
+            },
+            "timelost-battlefield": {
+                "name": "迷时战场",
+                "short-name": "迷时战场"
+            },
+            "chronolord-deios": {
+                "name": "时空领主戴欧斯",
+                "short-name": "时空领主戴欧斯"
+            }
+        }
+    },
+    "darkheart-thicket": {
+        "name": "黑心林地",
+        "acronym": "林地",
+        "short-name": "黑心林地",
+        "bosses": {
+            "archdruid-glaidalis": {
+                "name": "大德鲁伊伊格兰达里斯",
+                "short-name": "大德鲁伊伊格兰达里斯"
+            },
+            "oakheart": {
+                "name": "橡树之心",
+                "short-name": "橡树之心"
+            },
+            "dresaron": {
+                "name": "德萨隆",
+                "short-name": "德萨隆"
+            },
+            "shade-of-xavius": {
+                "name": "萨维斯之影",
+                "short-name": "萨维斯之影"
+            }
+        }
+    },
+    "de-other-side": {
+        "name": "彼界",
+        "acronym": "彼界",
+        "short-name": "彼界",
+        "bosses": {
+            "hakkar-the-soulflayer": {
+                "name": "夺灵者哈卡",
+                "short-name": "夺灵者哈卡"
+            },
+            "the-manastorms": {
+                "name": "法力风暴夫妇",
+                "short-name": "法力风暴夫妇"
+            },
+            "dealer-xyexa": {
+                "name": "商人赛·艾柯莎",
+                "short-name": "商人赛·艾柯莎"
+            },
+            "muehzala": {
+                "name": "穆厄扎拉",
+                "short-name": "穆厄扎拉"
+            }
+        }
+    },
+    "everbloom": {
+        "name": "永茂林地",
+        "acronym": "永茂林地",
+        "short-name": "永茂林地",
+        "bosses": {
+            "witherbark": {
+                "name": "枯木",
+                "short-name": "枯木"
+            },
+            "ancient-protectors": {
+                "name": "远古的保卫者",
+                "short-name": "远古的保卫者"
+            },
+            "archmage-sol": {
+                "name": "大法师索尔",
+                "short-name": "大法师索尔"
+            },
+            "xeritac": "艾里塔克",
+            "yalnu": {
+                "name": "雅努",
+                "short-name": "雅努"
+            }
+        }
+    },
+    "eye-of-azshara": {
+        "name": "艾萨拉之眼",
+        "acronym": "艾萨拉之眼",
+        "short-name": "艾萨拉之眼",
+        "bosses": {
+            "warlord-parjesh": {
+                "name": "督军帕杰什",
+                "short-name": "督军帕杰什"
+            },
+            "lady-hatecoil": {
+                "name": "积怨夫人",
+                "short-name": "积怨夫人"
+            },
+            "king-deepbeard": {
+                "name": "深须国王",
+                "short-name": "深须国王"
+            },
+            "serpentrix": {
+                "name": "瑟芬崔斯克",
+                "short-name": "瑟芬崔斯克"
+            },
+            "wrath-of-azshara": {
+                "name": "艾萨拉之怒",
+                "short-name": "艾萨拉之怒"
+            }
+        }
+    },
+    "fated-castle-nathria": {
+        "name": "宿命 纳斯利亚堡",
+        "acronym": "FCN",
+        "short-name": "宿命纳斯利亚堡",
+        "bosses": {
+            "fated-shriekwing": {
+                "name": "宿命 啸翼",
+                "short-name": "宿命 啸翼"
+            },
+            "fated-huntsman-altimor": {
+                "name": "宿命 猎手阿尔迪莫",
+                "short-name": "宿命 猎手阿尔迪莫"
+            },
+            "fated-sun-kings-salvation": {
+                "name": "宿命 太阳之王的救赎",
+                "short-name": "宿命 太阳之王的救赎"
+            },
+            "fated-hungering-destroyer": {
+                "name": "宿命 饥饿的毁灭者",
+                "short-name": "宿命 饥饿的毁灭者"
+            },
+            "fated-artificer-xymox": {
+                "name": "宿命 圣物匠赛·墨克斯",
+                "short-name": "宿命 圣物匠赛·墨克斯"
+            },
+            "fated-lady-inerva-darkvein": {
+                "name": "宿命 伊涅瓦·暗脉女勋爵",
+                "short-name": "宿命 伊涅瓦·暗脉女勋爵"
+            },
+            "fated-the-council-of-blood": {
+                "name": "宿命 猩红议会",
+                "short-name": "宿命 猩红议会"
+            },
+            "fated-sludgefist": {
+                "name": "宿命 泥拳",
+                "short-name": "宿命 泥拳"
+            },
+            "fated-stone-legion-generals": {
+                "name": "宿命 顽石军团干将",
+                "short-name": "宿命 顽石军团干将"
+            },
+            "fated-sire-denathrius": {
+                "name": "宿命 德纳修斯大帝",
+                "short-name": "宿命 德纳修斯大帝"
+            }
+        }
+    },
+    "fated-sanctum-of-domination": {
+        "name": "宿命 统御圣所",
+        "acronym": "FSOD",
+        "short-name": "宿命圣所",
+        "bosses": {
+            "fated-the-tarragrue": {
+                "name": "宿命 塔拉格鲁",
+                "short-name": "宿命 塔拉格鲁"
+            },
+            "fated-the-eye-of-the-jailer": {
+                "name": "宿命 典狱长之眼",
+                "short-name": "宿命 典狱长之眼"
+            },
+            "fated-the-nine": {
+                "name": "宿命 九武神",
+                "short-name": "宿命 九武神"
+            },
+            "fated-soulrender-dormazain": {
+                "name": "宿命 裂魂者多尔玛赞",
+                "short-name": "宿命 裂魂者多尔玛赞"
+            },
+            "fated-remnant-of-nerzhul": {
+                "name": "宿命 耐奥祖的残迹",
+                "short-name": "宿命 耐奥祖的残迹"
+            },
+            "fated-painsmith-raznal": {
+                "name": "宿命 痛楚工匠莱兹纳尔",
+                "short-name": "宿命 痛楚工匠莱兹纳尔"
+            },
+            "fated-guardian-of-the-first-ones": {
+                "name": "宿命 初诞者的卫士",
+                "short-name": "宿命 初诞者的卫士"
+            },
+            "fated-fatescribe-rohkalo": {
+                "name": "宿命 命运撰写师罗·卡洛",
+                "short-name": "宿命 命运撰写师罗·卡洛"
+            },
+            "fated-kelthuzad": {
+                "name": "宿命 克尔苏加德",
+                "short-name": "宿命 克尔苏加德"
+            },
+            "fated-sylvanas-windrunner": {
+                "name": "宿命 希尔瓦娜斯·风行者",
+                "short-name": "宿命 希尔瓦娜斯·风行者"
+            }
+        }
+    },
+    "fated-sepulcher-of-the-first-ones": {
+        "name": "宿命 初诞者的圣墓",
+        "acronym": "FSFO",
+        "short-name": "宿命圣墓",
+        "bosses": {
+            "fated-vigilant-guardian": {
+                "name": "宿命 警戒卫士",
+                "short-name": "宿命 警戒卫士"
+            },
+            "fated-dausegne": {
+                "name": "宿命 道茜歌妮",
+                "short-name": "宿命 道茜歌妮"
+            },
+            "fated-artificer-xymox": {
+                "name": "宿命 圣物匠赛·墨克斯",
+                "short-name": "宿命 圣物匠赛·墨克斯"
+            },
+            "fated-prototype-pantheon": {
+                "name": "宿命 死亡万神殿原形体",
+                "short-name": "宿命 死亡万神殿原形体"
+            },
+            "fated-skolex": {
+                "name": "宿命 司垢莱克斯",
+                "short-name": "宿命 司垢莱克斯"
+            },
+            "fated-halondrus": {
+                "name": "宿命 黑伦度斯",
+                "short-name": "宿命 黑伦度斯"
+            },
+            "fated-lihuvim": {
+                "name": "宿命 利许威姆",
+                "short-name": "宿命 利许威姆"
+            },
+            "fated-anduin-wrynn": {
+                "name": "宿命 安度因·乌瑞恩",
+                "short-name": "宿命 安度因·乌瑞恩"
+            },
+            "fated-lords-of-dread": {
+                "name": "宿命 恐惧双王",
+                "short-name": "宿命 恐惧双王"
+            },
+            "fated-rygelon": {
+                "name": "宿命 莱葛隆",
+                "short-name": "宿命 莱葛隆"
+            },
+            "fated-the-jailer": {
+                "name": "宿命 典狱长",
+                "short-name": "宿命 典狱长"
+            }
+        }
+    },
+    "freehold": {
+        "name": "自由镇",
+        "acronym": "自由镇",
+        "short-name": "自由镇",
+        "bosses": {
+            "skycapn-kragg": {
+                "name": "天空上尉库拉格",
+                "short-name": "天空上尉库拉格"
+            },
+            "council-o-captains": {
+                "name": "海盗议会",
+                "short-name": "海盗议会"
+            },
+            "ring-of-booty": {
+                "name": "藏宝竞技场",
+                "short-name": "藏宝竞技场"
+            },
+            "lord-harlan-sweete": {
+                "name": "哈兰·斯威提",
+                "short-name": "哈兰·斯威提"
+            }
+        }
+    },
+    "grimrail-depot": {
+        "name": "恐轨车站",
+        "acronym": "GD",
+        "short-name": "恐轨车站",
+        "bosses": {
+            "rocketspark-and-borka": {
+                "name": "箭火和波尔卡",
+                "short-name": "箭火和波尔卡"
+            },
+            "nitrogg-thundertower": {
+                "name": "尼托格·雷塔",
+                "short-name": "尼托格·雷塔"
+            },
+            "skylord-tovra": {
+                "name": "啸天者托瓦拉",
+                "short-name": "啸天者托瓦拉"
+            }
+        }
+    },
+    "halls-of-atonement": {
+        "name": "赎罪大厅",
+        "acronym": "赎罪",
+        "short-name": "赎罪大厅",
+        "bosses": {
+            "halkias-the-sinstained-goliath": {
+                "name": "哈尔吉亚斯，罪污巨像",
+                "short-name": "哈尔吉亚斯，罪污巨像"
+            },
+            "echelon": {
+                "name": "艾谢朗",
+                "short-name": "艾谢朗"
+            },
+            "high-adjudicator-aleez": {
+                "name": "高阶裁决官阿丽兹",
+                "short-name": "高阶裁决官阿丽兹"
+            },
+            "lord-chamberlain": {
+                "name": "宫务大臣",
+                "short-name": "宫务大臣"
+            }
+        }
+    },
+    "halls-of-infusion": {
+        "name": "注能大厅",
+        "acronym": "注能大厅",
+        "short-name": "注能大厅",
+        "bosses": {
+            "watcher-irideus": {
+                "name": "看护者伊里度斯",
+                "short-name": "看护者伊里度斯"
+            },
+            "gulping-goliath": {
+                "name": "吞喉巨蛙",
+                "short-name": "吞喉巨蛙"
+            },
+            "khajin-the-unyielding": {
+                "name": "不屈者卡金",
+                "short-name": "不屈者卡金"
+            },
+            "primal-tsunami": {
+                "name": "原始海啸",
+                "short-name": "原始海啸"
+            }
+        }
+    },
+    "halls-of-valor": {
+        "name": "英灵殿",
+        "acronym": "英灵殿",
+        "short-name": "英灵殿",
+        "bosses": {
+            "hymdall": {
+                "name": "海姆达尔",
+                "short-name": "海姆达尔"
+            },
+            "hyrja": {
+                "name": "赫娅",
+                "short-name": "赫娅"
+            },
+            "fenryr": {
+                "name": "芬雷尔",
+                "short-name": "芬雷尔"
+            },
+            "godking-skovald": {
+                "name": "神王斯科瓦尔德",
+                "short-name": "神王斯科瓦尔德"
+            },
+            "odyn": {
+                "name": "奥丁",
+                "short-name": "奥丁"
+            }
+        }
+    },
+    "iron-docks": {
+        "name": "钢铁码头",
+        "acronym": "码头",
+        "short-name": "钢铁码头",
+        "bosses": {
+            "fleshrender-nokgar": {
+                "name": "血肉撕裂者诺格加尔",
+                "short-name": "血肉撕裂者诺格加尔"
+            },
+            "ahriok-dugru": {
+                "name": "恐轨押运员",
+                "short-name": "恐轨押运员"
+            },
+            "oshir": {
+                "name": "奥舍尔",
+                "short-name": "奥舍尔"
+            },
+            "skulloc": {
+                "name": "斯古洛克",
+                "short-name": "斯古洛克"
+            }
+        }
+    },
+    "kings-rest": {
+        "name": "诸王之眠",
+        "acronym": "诸王",
+        "short-name": "诸王之眠",
+        "bosses": {
+            "the-golden-serpent": {
+                "name": "黄金风蛇",
+                "short-name": "黄金风蛇"
+            },
+            "mchimba-the-embalmer": {
+                "name": "殓尸者姆沁巴",
+                "short-name": "殓尸者姆沁巴"
+            },
+            "the-council-of-tribes": {
+                "name": "部族议会",
+                "short-name": "部族议会"
+            },
+            "king-dazar": {
+                "name": "始皇达萨",
+                "short-name": "始皇达萨"
+            }
+        }
+    },
+    "maw-of-souls": {
+        "name": "噬魂之喉",
+        "acronym": "MOS",
+        "short-name": "噬魂之喉",
+        "bosses": {
+            "ymiron-the-fallen-king": {
+                "name": "堕落君王伊米隆",
+                "short-name": "堕落君王伊米隆"
+            },
+            "harbaron": {
+                "name": "哈布隆",
+                "short-name": "哈布隆"
+            },
+            "helya": {
+                "name": "海拉",
+                "short-name": "海拉"
+            }
+        }
+    },
+    "operation-mechagon-junkyard": {
+        "name": "麦卡贡垃圾场",
+        "acronym": "垃圾场",
+        "short-name": "麦卡贡垃圾场",
+        "bosses": {
+            "king-gobbamak": {
+                "name": "戈巴马克国王",
+                "short-name": "戈巴马克国王"
+            },
+            "gunker": {
+                "name": "冈克",
+                "short-name": "冈克"
+            },
+            "trixie-naeno": {
+                "name": "崔克茜和耐诺",
+                "short-name": "崔克茜和耐诺"
+            },
+            "hk8-aerial-oppression-unit": {
+                "name": "HK-8型空中压制单位",
+                "short-name": "HK-8型空中压制单位"
+            }
+        }
+    },
+    "operation-mechagon-workshop": {
+        "name": "麦卡贡车间",
+        "acronym": "车间",
+        "short-name": "麦卡贡车间",
+        "bosses": {
+            "tussle-tonks": {
+                "name": "坦克大战",
+                "short-name": "坦克大战"
+            },
+            "kuj0": {
+                "name": "狂犬K.U.-J.0.",
+                "short-name": "狂犬K.U.-J.0."
+            },
+            "machinists-garden": {
+                "name": "机械师的花园",
+                "short-name": "机械师的花园"
+            },
+            "king-mechagon": {
+                "name": "麦卡贡国王",
+                "short-name": "麦卡贡国王"
+            }
+        }
+    },
+    "mists-of-tirna-scithe": {
+        "name": "塞兹仙林的迷雾",
+        "acronym": "仙林",
+        "short-name": "塞兹仙林的迷雾",
+        "bosses": {
+            "ingra-maloch": {
+                "name": "英格拉·马洛克",
+                "short-name": "英格拉·马洛克"
+            },
+            "mistcaller": {
+                "name": "唤雾者",
+                "short-name": "唤雾者"
+            },
+            "tredova": {
+                "name": "特雷德奥瓦",
+                "short-name": "特雷德奥瓦"
+            }
+        }
+    },
+    "neltharions-lair": {
+        "name": "奈萨里奥的巢穴",
+        "acronym": "巢穴",
+        "short-name": "奈萨里奥的巢穴",
+        "bosses": {
+            "rokmora": {
+                "name": "洛克莫拉",
+                "short-name": "洛克莫拉"
+            },
+            "ularogg-cragshaper": {
+                "name": "乌拉罗格·塑山",
+                "short-name": "乌拉罗格·塑山"
+            },
+            "naraxas": {
+                "name": "纳拉萨斯",
+                "short-name": "纳拉萨斯"
+            },
+            "dargrul-the-underking": {
+                "name": "地底之王达古尔",
+                "short-name": "地底之王达古尔"
+            }
+        }
+    },
+    "neltharus": {
+        "name": "奈萨鲁斯",
+        "acronym": "奈萨鲁斯",
+        "short-name": "奈萨鲁斯",
+        "bosses": {
+            "chargath-bane-of-scales": {
+                "name": "查尔加斯，龙鳞之灾",
+                "short-name": "查尔加斯，龙鳞之灾"
+            },
+            "forgemaster-gorek": {
+                "name": "熔炉主管戈雷克",
+                "short-name": "熔炉主管戈雷克"
+            },
+            "magmatusk": {
+                "name": "岩浆之牙",
+                "short-name": "岩浆之牙"
+            },
+            "warlord-sargha": {
+                "name": "督军莎尔佳",
+                "short-name": "督军莎尔佳"
+            }
+        }
+    },
+    "nyalotha-the-waking-city": {
+        "name": "尼奥罗萨，觉醒之城",
+        "acronym": "NYA",
+        "short-name": "尼奥罗萨",
+        "bosses": {
+            "wrathion-the-black-emperor": {
+                "name": "黑龙帝王拉希奥",
+                "short-name": "黑龙帝王拉希奥"
+            },
+            "the-prophet-skitra": {
+                "name": "先知斯基特拉",
+                "short-name": "先知斯基特拉"
+            },
+            "maut": {
+                "name": "玛乌特",
+                "short-name": "玛乌特"
+            },
+            "dark-inquisitor-xanesh": {
+                "name": "黑暗审判官夏奈什",
+                "short-name": "黑暗审判官夏奈什"
+            },
+            "vexiona": {
+                "name": "维克修娜",
+                "short-name": "维克修娜"
+            },
+            "the-hivemind": {
+                "name": "主脑",
+                "short-name": "主脑"
+            },
+            "ra-den-the-despoiled": {
+                "name": "虚无者莱登",
+                "short-name": "虚无者莱登"
+            },
+            "shadhar-the-insatiable": {
+                "name": "无厌者夏德哈",
+                "short-name": "无厌者夏德哈"
+            },
+            "drestagath": {
+                "name": "德雷阿佳丝",
+                "short-name": "德雷阿佳丝"
+            },
+            "ilgynoth-corruption-reborn": {
+                "name": "伊格诺斯，重生之蚀",
+                "short-name": "伊格诺斯，重生之蚀"
+            },
+            "carapace-of-nzoth": {
+                "name": "恩佐斯的外壳",
+                "short-name": "恩佐斯的外壳"
+            },
+            "nzoth-the-corruptor": {
+                "name": "腐蚀者恩佐斯",
+                "short-name": "腐蚀者恩佐斯"
+            }
+        }
+    },
+    "plaguefall": {
+        "name": "凋魂之殇",
+        "acronym": "凋魂",
+        "short-name": "凋魂之殇",
+        "bosses": {
+            "globgrog": {
+                "name": "酤团",
+                "short-name": "酤团"
+            },
+            "doctor-ickus": {
+                "name": "伊库斯博士",
+                "short-name": "伊库斯博士"
+            },
+            "domina-venomblade": {
+                "name": "多米娜·毒刃",
+                "short-name": "多米娜·毒刃"
+            },
+            "stradama-margrave": {
+                "name": "斯特拉达玛侯爵",
+                "short-name": "斯特拉达玛侯爵"
+            }
+        }
+    },
+    "return-to-karazhan-lower": {
+        "name": "重返卡拉赞：下层",
+        "acronym": "卡下",
+        "short-name": "重返卡拉赞：下层",
+        "bosses": {
+            "opera-hall": {
+                "name": "歌剧院",
+                "short-name": "歌剧院"
+            },
+            "maiden-of-virtue": {
+                "name": "贞洁圣女",
+                "short-name": "贞洁圣女"
+            },
+            "moroes": {
+                "name": "莫罗斯",
+                "short-name": "莫罗斯"
+            },
+            "attumen-the-huntsman": {
+                "name": "猎手阿图门",
+                "short-name": "猎手阿图门"
+            }
+        }
+    },
+    "return-to-karazhan-upper": {
+        "name": "重返卡拉赞：上层",
+        "acronym": "卡上",
+        "short-name": "重返卡拉赞：上层",
+        "bosses": {
+            "the-curator": {
+                "name": "馆长",
+                "short-name": "馆长"
+            },
+            "shade-of-medivh": {
+                "name": "麦迪文之影",
+                "short-name": "麦迪文之影"
+            },
+            "mana-devourer": {
+                "name": "魔力吞噬者",
+                "short-name": "魔力吞噬者"
+            },
+            "vizaduum-the-watcher": {
+                "name": "监视者维兹艾德姆",
+                "short-name": "监视者维兹艾德姆"
+            }
+        }
+    },
+    "ruby-life-pools": {
+        "name": "红玉新生法地",
+        "acronym": "红玉",
+        "short-name": "红玉新生法地",
+        "bosses": {
+            "melidrussa-chillworn": {
+                "name": "梅莉杜莎·寒妆",
+                "short-name": "梅莉杜莎·寒妆"
+            },
+            "kokia-blazehoof": {
+                "name": "柯姬雅·焰蹄",
+                "short-name": "柯姬雅·焰蹄"
+            },
+            "kyrakka-and-erkhart-stormvein": {
+                "name": "基拉卡与厄克哈特·风脉",
+                "short-name": "基拉卡与厄克哈特·风脉"
+            }
+        }
+    },
+    "sanctum-of-domination": {
+        "name": "统御圣所",
+        "acronym": "SOD",
+        "short-name": "圣所",
+        "bosses": {
+            "the-tarragrue": {
+                "name": "塔拉格鲁",
+                "short-name": "塔拉格鲁"
+            },
+            "the-eye-of-the-jailer": {
+                "name": "典狱长之眼",
+                "short-name": "典狱长之眼"
+            },
+            "the-nine": {
+                "name": "九武神",
+                "short-name": "九武神"
+            },
+            "soulrender-dormazain": {
+                "name": "裂魂者多尔玛赞",
+                "short-name": "裂魂者多尔玛赞"
+            },
+            "remnant-of-nerzhul": {
+                "name": "耐奥祖的残迹",
+                "short-name": "耐奥祖的残迹"
+            },
+            "painsmith-raznal": {
+                "name": "痛楚工匠莱兹纳尔",
+                "short-name": "痛楚工匠莱兹纳尔"
+            },
+            "guardian-of-the-first-ones": {
+                "name": "初诞者的卫士",
+                "short-name": "初诞者的卫士"
+            },
+            "fatescribe-rohkalo": {
+                "name": "命运撰写师罗·卡洛",
+                "short-name": "命运撰写师罗·卡洛"
+            },
+            "kelthuzad": {
+                "name": "克尔苏加德",
+                "short-name": "克尔苏加德"
+            },
+            "sylvanas-windrunner": {
+                "name": "希尔瓦娜斯·风行者",
+                "short-name": "希尔瓦娜斯·风行者"
+            }
+        }
+    },
+    "sanguine-depths": {
+        "name": "赤红深渊",
+        "acronym": "赤红",
+        "short-name": "赤红深渊",
+        "bosses": {
+            "kryxis-the-voracious": {
+                "name": "贪食的克里克西斯",
+                "short-name": "贪食的克里克西斯"
+            },
+            "executor-tarvold": {
+                "name": "执行者塔沃德",
+                "short-name": "执行者塔沃德"
+            },
+            "grand-proctor-beryllia": {
+                "name": "大学监贝律莉娅",
+                "short-name": "大学监贝律莉娅"
+            },
+            "general-kaal": {
+                "name": "卡尔将军",
+                "short-name": "卡尔将军"
+            }
+        }
+    },
+    "seat-of-the-triumvirate": {
+        "name": "执政团之座",
+        "acronym": "执政团",
+        "short-name": "执政团之座",
+        "bosses": {
+            "zuraal-the-ascended": {
+                "name": "晋升者祖拉尔",
+                "short-name": "晋升者祖拉尔"
+            },
+            "saprish": {
+                "name": "萨普瑞什",
+                "short-name": "萨普瑞什"
+            },
+            "viceroy-nezhar": {
+                "name": "总督奈扎尔",
+                "short-name": "总督奈扎尔"
+            },
+            "lura": {
+                "name": "鲁拉",
+                "short-name": "鲁拉"
+            }
+        }
+    },
+    "sepulcher-of-the-first-ones": {
+        "name": "初诞者的圣墓",
+        "acronym": "SFO",
+        "short-name": "初诞者",
+        "bosses": {
+            "vigilant-guardian": {
+                "name": "警戒卫士",
+                "short-name": "警戒卫士"
+            },
+            "dausegne": {
+                "name": "道茜歌妮",
+                "short-name": "道茜歌妮"
+            },
+            "artificer-xymox": {
+                "name": "圣物匠赛·墨克斯",
+                "short-name": "圣物匠赛·墨克斯"
+            },
+            "prototype-pantheon": {
+                "name": "死亡万神殿原形体",
+                "short-name": "死亡万神殿原形体"
+            },
+            "skolex": {
+                "name": "司垢莱克斯",
+                "short-name": "司垢莱克斯"
+            },
+            "halondrus": {
+                "name": "黑伦度斯",
+                "short-name": "黑伦度斯"
+            },
+            "lihuvim": {
+                "name": "利许威姆",
+                "short-name": "利许威姆"
+            },
+            "anduin-wrynn": {
+                "name": "安度因·乌瑞恩",
+                "short-name": "安度因·乌瑞恩"
+            },
+            "lords-of-dread": {
+                "name": "恐惧双王",
+                "short-name": "恐惧双王"
+            },
+            "rygelon": {
+                "name": "莱葛隆",
+                "short-name": "莱葛隆"
+            },
+            "the-jailer": {
+                "name": "典狱长",
+                "short-name": "典狱长"
+            }
+        }
+    },
+    "shadowmoon-burial-grounds": {
+        "name": "影月墓地",
+        "acronym": "影月",
+        "short-name": "影月墓地",
+        "bosses": {
+            "sadana-bloodfury": {
+                "name": "莎达娜·血怒",
+                "short-name": "莎达娜·血怒"
+            },
+            "nhallish": {
+                "name": "纳利什",
+                "short-name": "纳利什"
+            },
+            "bonemaw": {
+                "name": "骨喉",
+                "short-name": "骨喉"
+            },
+            "nerzhul": {
+                "name": "耐奥祖",
+                "short-name": "耐奥祖"
+            }
+        }
+    },
+    "shrine-of-the-storm": {
+        "name": "风暴神殿",
+        "acronym": "神殿",
+        "short-name": "风暴神殿",
+        "bosses": {
+            "aqusirr": {
+                "name": "阿库希尔",
+                "short-name": "阿库希尔"
+            },
+            "tidesage-council": {
+                "name": "海贤议会",
+                "short-name": "海贤议会"
+            },
+            "lord-stormsong": {
+                "name": "斯托颂勋爵",
+                "short-name": "斯托颂勋爵"
+            },
+            "volzith-the-whisperer": {
+                "name": "低语者沃尔兹斯",
+                "short-name": "低语者沃尔兹斯"
+            }
+        }
+    },
+    "siege-of-boralus": {
+        "name": "围攻伯拉勒斯",
+        "acronym": "围攻",
+        "short-name": "围攻伯拉勒斯",
+        "bosses": {
+            "sergeant-bainbridge": {
+                "name": "拜恩比吉中士",
+                "short-name": "拜恩比吉中士"
+            },
+            "chopper-redhook": {
+                "name": "“屠夫”血钩",
+                "short-name": "“屠夫”血钩"
+            },
+            "dread-captain-lockwood": {
+                "name": "恐怖船长洛克伍德",
+                "short-name": "恐怖船长洛克伍德"
+            },
+            "hadal-darkfathom": {
+                "name": "哈达尔·黑渊",
+                "short-name": "哈达尔·黑渊"
+            },
+            "viqgoth": {
+                "name": "维克戈斯",
+                "short-name": "维克戈斯"
+            }
+        }
+    },
+    "spires-of-ascension": {
+        "name": "晋升高塔",
+        "acronym": "高塔",
+        "short-name": "晋升高塔",
+        "bosses": {
+            "kintara": {
+                "name": "金-塔拉",
+                "short-name": "金-塔拉"
+            },
+            "ventunax": {
+                "name": "雯图纳柯丝",
+                "short-name": "雯图纳柯丝"
+            },
+            "oryphrion": {
+                "name": "奥莱芙莉安",
+                "short-name": "奥莱芙莉安"
+            },
+            "devos-paragon-of-loyalty": {
+                "name": "疑虑圣杰德沃丝",
+                "short-name": "疑虑圣杰德沃丝"
+            }
+        }
+    },
+    "tazavesh-soleahs-gambit": {
+        "name": "塔扎维什：索·莉亚的宏图",
+        "acronym": "宏图",
+        "short-name": "塔扎维什：索·莉亚的宏图",
+        "bosses": {
+            "hylbrande": {
+                "name": "希尔布兰德",
+                "short-name": "希尔布兰德"
+            },
+            "timecapn-hooktail": {
+                "name": "时空船长钩尾",
+                "short-name": "时空船长钩尾"
+            },
+            "soleah": {
+                "name": "索·莉亚",
+                "short-name": "索·莉亚"
+            }
+        }
+    },
+    "tazavesh-streets-of-wonder": {
+        "name": "塔扎维什：琳彩天街",
+        "acronym": "天街",
+        "short-name": "塔扎维什：琳彩天街",
+        "bosses": {
+            "zophex-the-sentinel": {
+                "name": "哨卫佐·菲克斯",
+                "short-name": "哨卫佐·菲克斯"
+            },
+            "the-grand-menagerie": {
+                "name": "卖品会",
+                "short-name": "卖品会"
+            },
+            "mailroom-mayhem": {
+                "name": "收发室乱战",
+                "short-name": "收发室乱战"
+            },
+            "myzas-oasis": {
+                "name": "麦扎的绿洲",
+                "short-name": "麦扎的绿洲"
+            },
+            "soazmi": {
+                "name": "索·阿兹密",
+                "short-name": "索·阿兹密"
+            }
+        }
+    },
+    "temple-of-sethraliss": {
+        "name": "塞塔里斯神庙",
+        "acronym": "TOS",
+        "short-name": "塞塔里斯神庙",
+        "bosses": {
+            "adderis-and-aspix": {
+                "name": "阿德里斯和阿斯匹克斯",
+                "short-name": "阿德里斯和阿斯匹克斯"
+            },
+            "merektha": {
+                "name": "米利克萨",
+                "short-name": "米利克萨"
+            },
+            "galvazzt": {
+                "name": "加瓦兹特",
+                "short-name": "加瓦兹特"
+            },
+            "avatar-of-sethraliss": {
+                "name": "塞塔里斯的化身",
+                "short-name": "塞塔里斯的化身"
+            }
+        }
+    },
+    "temple-of-the-jade-serpent": {
+        "name": "青龙寺",
+        "acronym": "青龙寺",
+        "short-name": "青龙寺",
+        "bosses": {
+            "wise-mari": {
+                "name": "贤者马里",
+                "short-name": "贤者马里"
+            },
+            "lorewalker-stonestep": {
+                "name": "游学者石步",
+                "short-name": "游学者石步"
+            },
+            "liu-flameheart": {
+                "name": "刘·焰心",
+                "short-name": "刘·焰心"
+            },
+            "sha-of-doubt": {
+                "name": "疑之煞",
+                "short-name": "疑之煞"
+            }
+        }
+    },
+    "the-arcway": {
+        "name": "魔法回廊",
+        "acronym": "回廊",
+        "short-name": "魔法回廊",
+        "bosses": {
+            "ivanyr": {
+                "name": "伊凡尔",
+                "short-name": "伊凡尔"
+            },
+            "corstilax": {
+                "name": "科蒂拉克斯",
+                "short-name": "科蒂拉克斯"
+            },
+            "general-xakal": {
+                "name": "萨卡尔将军",
+                "short-name": "萨卡尔将军"
+            },
+            "naltira": {
+                "name": "纳尔提拉",
+                "short-name": "纳尔提拉"
+            },
+            "advisor-vandros": {
+                "name": "顾问凡多斯",
+                "short-name": "顾问凡多斯"
+            }
+        }
+    },
+    "the-azure-vault": {
+        "name": "碧蓝魔馆",
+        "acronym": "魔馆",
+        "short-name": "碧蓝魔馆",
+        "bosses": {
+            "leymor": {
+                "name": "莱魔",
+                "short-name": "莱魔"
+            },
+            "azureblade": {
+                "name": "青刃",
+                "short-name": "青刃"
+            },
+            "umbrelskul": {
+                "name": "安布雷斯库",
+                "short-name": "安布雷斯库"
+            },
+            "telash-greywing": {
+                "name": "泰拉什·灰翼",
+                "short-name": "泰拉什·灰翼"
+            }
+        }
+    },
+    "the-emerald-nightmare": {
+        "name": "翡翠梦魇",
+        "acronym": "TEN",
+        "short-name": "翡翠梦魇",
+        "bosses": {
+            "nythendra": {
+                "name": "尼珊德拉",
+                "short-name": "尼珊德拉"
+            },
+            "ilgynoth-the-heart-of-corruption": {
+                "name": "伊格诺斯，腐蚀之心",
+                "short-name": "伊格诺斯，腐蚀之心"
+            },
+            "elerethe-renferal": {
+                "name": "艾乐瑞瑟·雷弗拉尔",
+                "short-name": "艾乐瑞瑟·雷弗拉尔"
+            },
+            "ursoc": {
+                "name": "乌索克",
+                "short-name": "乌索克"
+            },
+            "dragons-of-nightmare": {
+                "name": "梦魇之龙",
+                "short-name": "梦魇之龙"
+            },
+            "cenarius": {
+                "name": "塞纳留斯",
+                "short-name": "塞纳留斯"
+            },
+            "xavius": {
+                "name": "萨维斯",
+                "short-name": "萨维斯"
+            }
+        }
+    },
+    "the-eternal-palace": {
+        "name": "永恒王宫",
+        "acronym": "EP",
+        "short-name": "永恒王宫",
+        "bosses": {
+            "abyssal-commander-sivara": {
+                "name": "深渊指挥官西瓦拉",
+                "short-name": "深渊指挥官西瓦拉"
+            },
+            "radiance-of-azshara": {
+                "name": "艾萨拉之辉",
+                "short-name": "艾萨拉之辉"
+            },
+            "blackwater-behemoth": {
+                "name": "黑水巨鳗",
+                "short-name": "黑水巨鳗"
+            },
+            "lady-ashvane": {
+                "name": "艾什凡女勋爵",
+                "short-name": "艾什凡女勋爵"
+            },
+            "orgozoa": {
+                "name": "奥戈佐亚",
+                "short-name": "奥戈佐亚"
+            },
+            "the-queens-court": {
+                "name": "女王法庭",
+                "short-name": "女王法庭"
+            },
+            "zaqul": {
+                "name": "扎库尔",
+                "short-name": "扎库尔"
+            },
+            "queen-azshara": {
+                "name": "艾萨拉女王",
+                "short-name": "艾萨拉女王"
+            }
+        }
+    },
+    "the-motherlode": {
+        "name": "暴富矿区！！",
+        "acronym": "暴富",
+        "short-name": "暴富矿区！！",
+        "bosses": {
+            "coinoperated-crowd-pummeler": {
+                "name": "投币式群体打击者",
+                "short-name": "投币式群体打击者"
+            },
+            "azerokk": {
+                "name": "艾泽洛克",
+                "short-name": "艾泽洛克"
+            },
+            "rixxa-fluxfume": {
+                "name": "瑞克莎·流火",
+                "short-name": "瑞克莎·流火"
+            },
+            "mogul-razdunk": {
+                "name": "商业大亨拉兹敦克",
+                "short-name": "商业大亨拉兹敦克"
+            }
+        }
+    },
+    "the-necrotic-wake": {
+        "name": "通灵战潮",
+        "acronym": "战潮",
+        "short-name": "通灵战潮",
+        "bosses": {
+            "blightbone": {
+                "name": "凋骨",
+                "short-name": "凋骨"
+            },
+            "amarth-the-harvester": {
+                "name": "收割者阿玛厄斯",
+                "short-name": "收割者阿玛厄斯"
+            },
+            "surgeon-stitchflesh": {
+                "name": "外科医生缝肉",
+                "short-name": "外科医生缝肉"
+            },
+            "nalthor-the-rimebinder": {
+                "name": "缚霜者纳尔佐",
+                "short-name": "缚霜者纳尔佐"
+            }
+        }
+    },
+    "the-nighthold": {
+        "name": "暗夜要塞",
+        "acronym": "TN",
+        "short-name": "暗夜要塞",
+        "bosses": {
+            "skorpyron": {
+                "name": "斯考匹隆",
+                "short-name": "斯考匹隆"
+            },
+            "chronomatic-anomaly": {
+                "name": "时空畸体",
+                "short-name": "时空畸体"
+            },
+            "trilliax": {
+                "name": "崔利艾克斯",
+                "short-name": "崔利艾克斯"
+            },
+            "spellblade-aluriel": {
+                "name": "魔剑士奥鲁瑞尔",
+                "short-name": "魔剑士奥鲁瑞尔"
+            },
+            "tichondrius": {
+                "name": "提克迪奥斯",
+                "short-name": "提克迪奥斯"
+            },
+            "krosus": {
+                "name": "克洛苏斯",
+                "short-name": "克洛苏斯"
+            },
+            "high-botanist-telarn": {
+                "name": "高级植物学家特尔安",
+                "short-name": "高级植物学家特尔安"
+            },
+            "star-augur-etraeus": {
+                "name": "占星师艾塔乌斯",
+                "short-name": "占星师艾塔乌斯"
+            },
+            "grand-magistrix-elisande": {
+                "name": "大魔导师艾利桑德",
+                "short-name": "大魔导师艾利桑德"
+            },
+            "guldan": {
+                "name": "古尔丹",
+                "short-name": "古尔丹"
+            }
+        }
+    },
+    "the-nokhud-offensive": {
+        "name": "诺库德阻击战",
+        "acronym": "阻击战",
+        "short-name": "诺库德阻击战",
+        "bosses": {
+            "granyth": {
+                "name": "格拉尼斯",
+                "short-name": "格拉尼斯"
+            },
+            "the-raging-tempest": {
+                "name": "狂怒风暴",
+                "short-name": "狂怒风暴"
+            },
+            "teera-and-maruuk": {
+                "name": "提拉和马鲁克",
+                "short-name": "提拉和马鲁克"
+            },
+            "balakar-khan": {
+                "name": "巴拉卡可汗",
+                "short-name": "巴拉卡可汗"
+            }
+        }
+    },
+    "the-underrot": {
+        "name": "地渊孢林",
+        "acronym": "地渊孢林",
+        "short-name": "地渊孢林",
+        "bosses": {
+            "elder-leaxa": {
+                "name": "长者莉娅克萨",
+                "short-name": "长者莉娅克萨"
+            },
+            "cragmaw-the-infested": {
+                "name": "被感染的岩喉",
+                "short-name": "被感染的岩喉"
+            },
+            "sporecaller-zancha": {
+                "name": "孢子召唤师赞查",
+                "short-name": "孢子召唤师赞查"
+            },
+            "unbound-abomination": {
+                "name": "不羁畸变怪",
+                "short-name": "不羁畸变怪"
+            }
+        }
+    },
+    "the-vortex-pinnacle": {
+        "name": "旋云之巅",
+        "acronym": "旋云之巅",
+        "short-name": "旋云之巅",
+        "bosses": {
+            "grand-vizier-ertan": {
+                "name": "大宰相埃尔坦",
+                "short-name": "大宰相埃尔坦"
+            },
+            "altairus": {
+                "name": "阿尔泰鲁斯",
+                "short-name": "阿尔泰鲁斯"
+            },
+            "asaad": {
+                "name": "阿萨德",
+                "short-name": "阿萨德"
+            }
+        }
+    },
+    "theater-of-pain": {
+        "name": "伤逝剧场",
+        "acronym": "剧场",
+        "short-name": "伤逝剧场",
+        "bosses": {
+            "an-affront-of-challengers": {
+                "name": "狭路相逢",
+                "short-name": "狭路相逢"
+            },
+            "kultharok": {
+                "name": "库尔萨洛克",
+                "short-name": "库尔萨洛克"
+            },
+            "gorechop": {
+                "name": "斩血",
+                "short-name": "斩血"
+            },
+            "xav-the-unfallen": {
+                "name": "无堕者哈夫",
+                "short-name": "无堕者哈夫"
+            },
+            "mordretha": {
+                "name": "无尽女皇莫德蕾莎",
+                "short-name": "无尽女皇莫德蕾莎"
+            }
+        }
+    },
+    "throne-of-the-tides": {
+        "name": "潮汐王座",
+        "acronym": "潮汐王座",
+        "short-name": "潮汐王座",
+        "bosses": {
+            "lady-nazjar": {
+                "name": "纳兹夏尔女士",
+                "short-name": "纳兹夏尔女士"
+            },
+            "commander-ulthok": {
+                "name": "指挥官乌尔索克",
+                "short-name": "指挥官乌尔索克"
+            },
+            "mindbender-ghursha": {
+                "name": "蛊心魔古厄夏",
+                "short-name": "蛊心魔古厄夏"
+            },
+            "ozumat": {
+                "name": "厄祖玛特",
+                "short-name": "厄祖玛特"
+            }
+        }
+    },
+    "tol-dagor": {
+        "name": "托尔达戈",
+        "acronym": "监狱",
+        "short-name": "托尔达戈",
+        "bosses": {
+            "the-sand-queen": {
+                "name": "泥沙女王",
+                "short-name": "泥沙女王"
+            },
+            "jes-howlis": {
+                "name": "杰斯·豪里斯",
+                "short-name": "杰斯·豪里斯"
+            },
+            "knight-captain-valyri": {
+                "name": "骑士队长瓦莱莉",
+                "short-name": "骑士队长瓦莱莉"
+            },
+            "overseer-korgus": {
+                "name": "科古斯狱长",
+                "short-name": "科古斯狱长"
+            }
+        }
+    },
+    "tomb-of-sargeras": {
+        "name": "萨格拉斯之墓",
+        "acronym": "TOS",
+        "short-name": "萨格拉斯之墓",
+        "bosses": {
+            "goroth": {
+                "name": "格罗斯",
+                "short-name": "格罗斯"
+            },
+            "demonic-inquisition": {
+                "name": "恶魔审判庭",
+                "short-name": "恶魔审判庭"
+            },
+            "harjatan": {
+                "name": "哈亚坦",
+                "short-name": "哈亚坦"
+            },
+            "sisters-of-the-moon": {
+                "name": "月之姐妹",
+                "short-name": "月之姐妹"
+            },
+            "mistress-sasszine": {
+                "name": "主母萨丝琳",
+                "short-name": "主母萨丝琳"
+            },
+            "the-desolate-host": {
+                "name": "绝望的聚合体",
+                "short-name": "绝望的聚合体"
+            },
+            "maiden-of-vigilance": {
+                "name": "戒卫侍女",
+                "short-name": "戒卫侍女"
+            },
+            "fallen-avatar": {
+                "name": "堕落的化身",
+                "short-name": "堕落的化身"
+            },
+            "kiljaeden": {
+                "name": "基尔加丹",
+                "short-name": "基尔加丹"
+            }
+        }
+    },
+    "trial-of-valor": {
+        "name": "勇气试炼",
+        "acronym": "TOV",
+        "short-name": "勇气试炼",
+        "bosses": {
+            "odyn": {
+                "name": "奥丁",
+                "short-name": "奥丁"
+            },
+            "guarm": {
+                "name": "高姆",
+                "short-name": "高姆"
+            },
+            "helya": {
+                "name": "海拉",
+                "short-name": "海拉"
+            }
+        }
+    },
+    "uldaman-legacy-of-tyr": {
+        "name": "奥达曼：提尔的遗产",
+        "acronym": "奥达曼",
+        "short-name": "奥达曼：提尔的遗产",
+        "bosses": {
+            "the-lost-dwarves": {
+                "name": "失落的矮人",
+                "short-name": "失落的矮人"
+            },
+            "bromach": {
+                "name": "布罗马奇",
+                "short-name": "布罗马奇"
+            },
+            "sentinel-talondras": {
+                "name": "哨兵塔隆达丝",
+                "short-name": "哨兵塔隆达丝"
+            },
+            "emberon": {
+                "name": "艾博隆",
+                "short-name": "艾博隆"
+            },
+            "chronolord-deios": {
+                "name": "时空领主戴欧斯",
+                "short-name": "时空领主戴欧斯"
+            }
+        }
+    },
+    "uldir": {
+        "name": "奥迪尔",
+        "acronym": "ULD",
+        "short-name": "奥迪尔",
+        "bosses": {
+            "taloc": {
+                "name": "塔罗克",
+                "short-name": "塔罗克"
+            },
+            "mother": {
+                "name": "纯净圣母",
+                "short-name": "纯净圣母"
+            },
+            "zekvoz-herald-of-nzoth": {
+                "name": "泽克沃兹，恩佐斯的传令官",
+                "short-name": "泽克沃兹，恩佐斯的传令官"
+            },
+            "fetid-devourer": {
+                "name": "腐臭吞噬者",
+                "short-name": "腐臭吞噬者"
+            },
+            "vectis": {
+                "name": "维克提斯",
+                "short-name": "维克提斯"
+            },
+            "zul-reborn": {
+                "name": "重生者祖尔",
+                "short-name": "重生者祖尔"
+            },
+            "mythrax-the-unraveler": {
+                "name": "拆解者米斯拉克斯",
+                "short-name": "拆解者米斯拉克斯"
+            },
+            "ghuun": {
+                "name": "戈霍恩",
+                "short-name": "戈霍恩"
+            }
+        }
+    },
+    "vault-of-the-incarnates": {
+        "name": "化身巨龙牢窟",
+        "acronym": "牢窟",
+        "short-name": "牢窟",
+        "bosses": {
+            "eranog": {
+                "name": "艾拉诺格",
+                "short-name": "艾拉诺格"
+            },
+            "terros": {
+                "name": "泰洛斯",
+                "short-name": "泰洛斯"
+            },
+            "the-primal-council": {
+                "name": "原始议会",
+                "short-name": "原始议会"
+            },
+            "sennarth-the-cold-breath": {
+                "name": "瑟娜尔丝，冰冷之息",
+                "short-name": "瑟娜尔丝"
+            },
+            "dathea-ascended": {
+                "name": "晋升者达瑟雅",
+                "short-name": "达瑟雅"
+            },
+            "kurog-grimtotem": {
+                "name": "库洛格·恐怖图腾",
+                "short-name": "库洛格"
+            },
+            "broodkeeper-diurna": {
+                "name": "巢穴守护者迪乌尔娜",
+                "short-name": "巢穴守护者迪乌尔娜"
+            },
+            "raszageth-the-stormeater": {
+                "name": "莱萨杰丝, 噬雷之龙",
+                "short-name": "莱萨杰丝"
+            }
+        }
+    },
+    "vault-of-the-wardens": {
+        "name": "守望者地窟",
+        "acronym": "地窟",
+        "short-name": "守望者地窟",
+        "bosses": {
+            "tirathon-saltheril": {
+                "name": "提拉宋·萨瑟利尔",
+                "short-name": "提拉宋·萨瑟利尔"
+            },
+            "inquisitor-tormentorum": {
+                "name": "审判官托蒙托鲁姆",
+                "short-name": "审判官托蒙托鲁姆"
+            },
+            "ashgolm": {
+                "name": "阿什高姆",
+                "short-name": "阿什高姆"
+            },
+            "glazer": {
+                "name": "格雷泽",
+                "short-name": "格雷泽"
+            },
+            "cordana-felsong": {
+                "name": "科达娜·邪歌",
+                "short-name": "科达娜·邪歌"
+            }
+        }
+    },
+    "waycrest-manor": {
+        "name": "维克雷斯庄园",
+        "acronym": "庄园",
+        "short-name": "维克雷斯庄园",
+        "bosses": {
+            "heartsbane-triad": {
+                "name": "毒心三姝",
+                "short-name": "毒心三姝"
+            },
+            "soulbound-goliath": {
+                "name": "魂缚巨像",
+                "short-name": "魂缚巨像"
+            },
+            "raal-the-gluttonous": {
+                "name": "贪食的拉尔",
+                "short-name": "贪食的拉尔"
+            },
+            "lord-and-lady-waycrest": {
+                "name": "维克雷斯勋爵和夫人",
+                "short-name": "维克雷斯勋爵和夫人"
+            },
+            "gorak-tul": {
+                "name": "高莱克·图尔",
+                "short-name": "高莱克·图尔"
+            }
+        }
+    },
+    "icecrown-citadel": {
+        "name": "冰冠堡垒",
+        "acronym": "冰冠堡垒",
+        "short-name": "冰冠堡垒",
+        "bosses": {
+            "lord-marrowgar": {
+                "name": "玛洛加尔领主",
+                "short-name": "玛洛加尔领主"
+            },
+            "lady-deathwhisper": {
+                "name": "亡语者女士",
+                "short-name": "亡语者女士"
+            },
+            "icecrown-gunship-battle": {
+                "name": "冰冠冰川炮舰战",
+                "short-name": "冰冠冰川炮舰战"
+            },
+            "deathbringer-saurfang": {
+                "name": "死亡使者萨鲁法尔",
+                "short-name": "死亡使者萨鲁法尔"
+            },
+            "festergut": {
+                "name": "烂肠",
+                "short-name": "烂肠"
+            },
+            "rotface": {
+                "name": "腐面",
+                "short-name": "腐面"
+            },
+            "professor-putricide": {
+                "name": "普崔塞德教授",
+                "short-name": "普崔塞德教授"
+            },
+            "blood-council": {
+                "name": "鲜血王子议会",
+                "short-name": "鲜血王子议会"
+            },
+            "queen-lanathel": {
+                "name": "鲜血女王兰娜瑟尔",
+                "short-name": "鲜血女王兰娜瑟尔"
+            },
+            "valithria-dreamwalker": {
+                "name": "踏梦者瓦莉瑟瑞娅",
+                "short-name": "踏梦者瓦莉瑟瑞娅"
+            },
+            "sindragosa": {
+                "name": "辛达苟萨",
+                "short-name": "辛达苟萨"
+            },
+            "the-lich-king": {
+                "name": "巫妖王",
+                "short-name": "巫妖王"
+            }
+        }
+    },
+    "the-ruby-sanctum": {
+        "name": "红玉圣殿",
+        "acronym": "红玉",
+        "short-name": "红玉圣殿",
+        "bosses": {
+            "halion": {
+                "name": "海里昂",
+                "short-name": "海里昂"
+            }
+        }
+    },
+    "ashamanes-fall": {
+        "name": "阿莎曼之墓",
+        "acronym": "阿莎曼",
+        "short-name": "阿莎曼之墓",
+        "bosses": {}
+    },
+    "black-rook-hold-arena": {
+        "name": "黑鸦堡垒竞技场",
+        "acronym": "黑鸦堡垒竞技场",
+        "short-name": "黑鸦堡垒竞技场",
+        "bosses": {}
+    },
+    "blades-edge-arena": {
+        "name": "刀锋山竞技场",
+        "acronym": "刀锋山",
+        "short-name": "刀锋山竞技场",
+        "bosses": {}
+    },
+    "dalaran-arena": {
+        "name": "达拉然竞技场",
+        "acronym": "达拉然竞技场",
+        "short-name": "达拉然竞技场",
+        "bosses": {}
+    },
+    "empyrean-domain": {
+        "name": "苍穹斗域",
+        "acronym": "苍穹斗域",
+        "short-name": "苍穹斗域",
+        "bosses": {}
+    },
+    "enigma-arena": {
+        "name": "迷阵竞技场",
+        "acronym": "迷阵竞技场",
+        "short-name": "迷阵竞技场",
+        "bosses": {}
+    },
+    "enigma-crucible": {
+        "name": "迷阵竞技场",
+        "acronym": "迷阵竞技场",
+        "short-name": "迷阵竞技场",
+        "bosses": {}
+    },
+    "hook-point": {
+        "name": "锚角港",
+        "acronym": "锚角港",
+        "short-name": "锚角港",
+        "bosses": {}
+    },
+    "maldraxxus-coliseum": {
+        "name": "玛卓克萨斯角斗场",
+        "acronym": "玛卓角斗场",
+        "short-name": "玛卓克萨斯角斗场",
+        "bosses": {}
+    },
+    "mugambala": {
+        "name": "穆贾巴拉",
+        "acronym": "穆贾巴拉",
+        "short-name": "穆贾巴拉",
+        "bosses": {}
+    },
+    "nagrand-arena": {
+        "name": "纳格兰竞技场",
+        "acronym": "纳格兰",
+        "short-name": "纳格兰竞技场",
+        "bosses": {}
+    },
+    "nokhudon-proving-grounds": {
+        "name": "诺库顿试炼场",
+        "acronym": "诺库顿",
+        "short-name": "诺库顿试炼场",
+        "bosses": {}
+    },
+    "ruins-of-lordaeron": {
+        "name": "洛丹伦废墟",
+        "acronym": "洛丹伦",
+        "short-name": "洛丹伦废墟",
+        "bosses": {}
+    },
+    "shadopan-showdown": {
+        "name": "决战影踪派",
+        "acronym": "影踪派",
+        "short-name": "决战影踪派",
+        "bosses": {}
+    },
+    "the-ring-of-valor": {
+        "name": "勇气竞技场",
+        "acronym": "勇气竞技场",
+        "short-name": "勇气竞技场",
+        "bosses": {}
+    },
+    "the-robodrome": {
+        "name": "机械天穹",
+        "acronym": "机械天穹",
+        "short-name": "机械天穹",
+        "bosses": {}
+    },
+    "the-tigers-peak": {
+        "name": "虎踞峰",
+        "acronym": "虎踞峰",
+        "short-name": "虎踞峰",
+        "bosses": {}
+    },
+    "tolviron-arena": {
+        "name": "托维尔隆竞技场",
+        "acronym": "托维尔隆",
+        "short-name": "托维尔隆竞技场",
+        "bosses": {}
+    },
+    "awakened-aberrus-the-shadowed-crucible": {
+        "name": "觉醒 亚贝鲁斯，焰影熔炉",
+        "acronym": "觉醒亚贝鲁斯",
+        "short-name": "觉醒亚贝鲁斯",
+        "bosses": {
+            "awakened-kazzara-the-hellforged": {
+                "name": "觉醒 狱铸者卡扎拉",
+                "short-name": "卡扎拉"
+            },
+            "awakened-the-amalgamation-chamber": {
+                "name": "觉醒 融合体密室",
+                "short-name": "融合体密室"
+            },
+            "awakened-the-forgotten-experiments": {
+                "name": "觉醒 被遗忘的实验体",
+                "short-name": "被遗忘的实验"
+            },
+            "awakened-assault-of-the-zaqali": {
+                "name": "觉醒 扎卡利突袭",
+                "short-name": "觉醒 扎卡利突袭"
+            },
+            "awakened-rashok-the-elder": {
+                "name": "觉醒 长老莱修克",
+                "short-name": "莱修克"
+            },
+            "awakened-the-vigilant-steward-zskarn": {
+                "name": "觉醒 警戒管事兹斯卡恩",
+                "short-name": "兹斯卡恩"
+            },
+            "awakened-magmorax": {
+                "name": "觉醒 玛格莫莱克斯",
+                "short-name": "觉醒 玛格莫莱克斯"
+            },
+            "awakened-echo-of-neltharion": {
+                "name": "觉醒 奈萨里奥的回响",
+                "short-name": "觉醒 奈萨里奥的回响"
+            },
+            "awakened-scalecommander-sarkareth": {
+                "name": "觉醒 鳞长萨卡雷斯",
+                "short-name": "萨卡雷斯"
+            }
+        }
+    },
+    "awakened-amirdrassil-the-dreams-hope": {
+        "name": "觉醒 阿梅达希尔，梦境之愿",
+        "acronym": "觉醒阿梅达希尔",
+        "short-name": "觉醒阿梅达希尔",
+        "bosses": {
+            "awakened-gnarlroot": {
+                "name": "觉醒 瘤根",
+                "short-name": "觉醒 瘤根"
+            },
+            "awakened-igira-the-cruel": {
+                "name": "觉醒 残忍者艾姬拉",
+                "short-name": "艾姬拉"
+            },
+            "awakened-volcoross": {
+                "name": "觉醒 沃尔科罗斯",
+                "short-name": "觉醒 沃尔科罗斯"
+            },
+            "awakened-council-of-dreams": {
+                "name": "觉醒 梦境议会",
+                "short-name": "梦境议会"
+            },
+            "awakened-larodar-keeper-of-the-flame": {
+                "name": "觉醒 拉罗达尔，烈焰守护者",
+                "short-name": "拉罗达尔"
+            },
+            "awakened-nymue-weaver-of-the-cycle": {
+                "name": "觉醒 尼穆威，轮回编织者",
+                "short-name": "尼穆威"
+            },
+            "awakened-smolderon": {
+                "name": "觉醒 斯莫德隆",
+                "short-name": "觉醒 斯莫德隆"
+            },
+            "awakened-tindral-sageswift-seer-of-the-flame": {
+                "name": "觉醒 丁达尔·迅贤，烈焰预言者",
+                "short-name": "丁达尔"
+            },
+            "awakened-fyrakk-the-blazing": {
+                "name": "觉醒 火光之龙菲莱克",
+                "short-name": "菲莱克"
+            }
+        }
+    },
+    "awakened-vault-of-the-incarnates": {
+        "name": "觉醒 化身巨龙牢窟",
+        "acronym": "觉醒牢窟",
+        "short-name": "觉醒牢窟",
+        "bosses": {
+            "awakened-eranog": {
+                "name": "觉醒 艾拉诺格",
+                "short-name": "觉醒 艾拉诺格"
+            },
+            "awakened-terros": {
+                "name": "觉醒 泰洛斯",
+                "short-name": "觉醒 泰洛斯"
+            },
+            "awakened-the-primal-council": {
+                "name": "觉醒 原始议会",
+                "short-name": "原始议会"
+            },
+            "awakened-sennarth-the-cold-breath": {
+                "name": "觉醒 瑟娜尔丝，冰冷之息",
+                "short-name": "瑟娜尔丝"
+            },
+            "awakened-dathea-ascended": {
+                "name": "觉醒 晋升者达瑟雅",
+                "short-name": "达瑟雅"
+            },
+            "awakened-kurog-grimtotem": {
+                "name": "觉醒 库洛格，恐怖图腾",
+                "short-name": "库洛格"
+            },
+            "awakened-broodkeeper-diurna": {
+                "name": "觉醒 巢穴守护者迪乌尔娜",
+                "short-name": "觉醒 巢穴守护者迪乌尔娜"
+            },
+            "awakened-raszageth-the-stormeater": {
+                "name": "觉醒 莱萨杰丝, 噬雷之龙",
+                "short-name": "莱萨杰丝"
+            }
+        }
+    },
+    "throne-of-the-four-winds": {
+        "name": "风神王座",
+        "acronym": "风神王座",
+        "short-name": "风神王座",
+        "bosses": {
+            "conclave-of-wind": {
+                "name": "风之议会",
+                "short-name": "风之议会"
+            },
+            "alakir": {
+                "name": "奥拉基尔",
+                "short-name": "奥拉基尔"
+            }
+        }
+    },
+    "blackwing-descent": {
+        "name": "黑翼血环",
+        "acronym": "黑翼血环",
+        "short-name": "黑翼血环",
+        "bosses": {
+            "omnotron-defense-system": {
+                "name": "全能金刚防御系统",
+                "short-name": "全能金刚防御系统"
+            },
+            "magmaw": {
+                "name": "熔喉",
+                "short-name": "熔喉"
+            },
+            "atramedes": {
+                "name": "艾卓曼德斯",
+                "short-name": "艾卓曼德斯"
+            },
+            "chimaeron": {
+                "name": "奇美隆",
+                "short-name": "奇美隆"
+            },
+            "maloriak": {
+                "name": "马洛拉克",
+                "short-name": "马洛拉克"
+            },
+            "nefarians-end": {
+                "name": "奈法利安的末日",
+                "short-name": "奈法利安的末日"
+            }
+        }
+    },
+    "the-bastion-of-twilight": {
+        "name": "暮光堡垒",
+        "acronym": "暮光堡垒",
+        "short-name": "暮光堡垒",
+        "bosses": {
+            "halfus-wyrmbreaker": {
+                "name": "哈尔弗斯·碎龙者",
+                "short-name": "哈尔弗斯·碎龙者"
+            },
+            "theralion-and-valiona": {
+                "name": "瑟纳利昂和瓦里昂娜",
+                "short-name": "瑟纳利昂和瓦里昂娜"
+            },
+            "ascendant-council": {
+                "name": "升腾者议会",
+                "short-name": "升腾者议会"
+            },
+            "chogall": {
+                "name": "古加尔",
+                "short-name": "古加尔"
+            },
+            "sinestra": {
+                "name": "希奈丝特拉",
+                "short-name": "希奈丝特拉"
+            }
+        }
+    },
+    "arakara-city-of-echoes": {
+        "name": "艾拉-卡拉，回响之城",
+        "acronym": "回响之城",
+        "short-name": "艾拉-卡拉，回响之城",
+        "bosses": {
+            "avanoxx": {
+                "name": "阿瓦诺克斯",
+                "short-name": "阿瓦诺克斯"
+            },
+            "anubzekt": {
+                "name": "阿努布泽克特",
+                "short-name": "阿努布泽克特"
+            },
+            "kikatal-the-harvester": {
+                "name": "收割者吉卡塔尔",
+                "short-name": "收割者吉卡塔尔"
+            }
+        }
+    },
+    "cinderbrew-meadery": {
+        "name": "燧酿酒庄",
+        "acronym": "燧酿酒庄",
+        "short-name": "燧酿酒庄",
+        "bosses": {
+            "brewmaster-aldryr": {
+                "name": "酿酒大师阿德里尔",
+                "short-name": "酿酒大师阿德里尔"
+            },
+            "ipa": {
+                "name": "艾帕",
+                "short-name": "艾帕"
+            },
+            "benk-buzzbee": {
+                "name": "本克·鸣蜂",
+                "short-name": "本克·鸣蜂"
+            },
+            "goldie-baronbottom": {
+                "name": "戈尔迪·底爵",
+                "short-name": "戈尔迪·底爵"
+            }
+        }
+    },
+    "city-of-threads": {
+        "name": "千丝之城",
+        "acronym": "千丝之城",
+        "short-name": "千丝之城",
+        "bosses": {
+            "orator-krixvizk": {
+                "name": "演说者基克斯威兹克",
+                "short-name": "演说者基克斯威兹克"
+            },
+            "fangs-of-the-queen": {
+                "name": "女王之牙",
+                "short-name": "女王之牙"
+            },
+            "the-coaglamation": {
+                "name": "凝结聚合体",
+                "short-name": "凝结聚合体"
+            },
+            "izo-the-grand-splicer": {
+                "name": "大捻接师艾佐",
+                "short-name": "大捻接师艾佐"
+            }
+        }
+    },
+    "darkflame-cleft": {
+        "name": "暗焰裂口",
+        "acronym": "暗焰裂口",
+        "short-name": "暗焰裂口",
+        "bosses": {
+            "ol-waxbeard": {
+                "name": "老蜡须",
+                "short-name": "老蜡须"
+            },
+            "blazikon": {
+                "name": "布雷炙孔",
+                "short-name": "布雷炙孔"
+            },
+            "the-candle-king": {
+                "name": "蜡烛之王",
+                "short-name": "蜡烛之王"
+            },
+            "the-darkness": {
+                "name": "黑暗之主",
+                "short-name": "黑暗之主"
+            }
+        }
+    },
+    "grim-batol": {
+        "name": "格瑞姆巴托",
+        "acronym": "格瑞姆巴托",
+        "short-name": "格瑞姆巴托",
+        "bosses": {
+            "general-umbriss": {
+                "name": "乌比斯将军",
+                "short-name": "乌比斯将军"
+            },
+            "forgemaster-throngus": {
+                "name": "铸炉之王索朗格斯",
+                "short-name": "铸炉之王索朗格斯"
+            },
+            "drahga-shadowburner": {
+                "name": "达加·燃影者",
+                "short-name": "达加·燃影者"
+            },
+            "erudax": {
+                "name": "埃鲁达克，地狱公爵",
+                "short-name": "埃鲁达克，地狱公爵"
+            }
+        }
+    },
+    "the-dawnbreaker": {
+        "name": "破晨号",
+        "acronym": "破晨号",
+        "short-name": "破晨号",
+        "bosses": {
+            "speaker-shadowcrown": {
+                "name": "代言人夏克多朗",
+                "short-name": "代言人夏克多朗"
+            },
+            "anubikkaj": {
+                "name": "阿努布伊卡基",
+                "short-name": "阿努布伊卡基"
+            },
+            "rashanan": {
+                "name": "拉夏南",
+                "short-name": "拉夏南"
+            }
+        }
+    },
+    "the-rookery": {
+        "name": "驭雷栖巢",
+        "acronym": "驭雷栖巢",
+        "short-name": "驭雷栖巢",
+        "bosses": {
+            "kyrioss": {
+                "name": "凯里欧斯",
+                "short-name": "凯里欧斯"
+            },
+            "stormguard-gorren": {
+                "name": "雷卫戈伦",
+                "short-name": "雷卫戈伦"
+            },
+            "skardyn-monstrosity": {
+                "name": "虚空石畸体",
+                "short-name": "虚空石畸体"
+            },
+            "voidstone-monstrosity": {
+                "name": "虚空石畸体",
+                "short-name": "虚空石畸体"
+            }
+        }
+    },
+    "the-stonevault": {
+        "name": "矶石宝库",
+        "acronym": "矶石宝库",
+        "short-name": "矶石宝库",
+        "bosses": {
+            "edna": {
+                "name": "E.D.N.A.",
+                "short-name": "E.D.N.A."
+            },
+            "skarmorak": {
+                "name": "斯卡莫拉克",
+                "short-name": "斯卡莫拉克"
+            },
+            "forge-speakers": {
+                "name": "机械大师",
+                "short-name": "机械大师"
+            },
+            "high-speaker-eirich": {
+                "name": "虚空代言人艾里克",
+                "short-name": "虚空代言人艾里克"
+            },
+            "master-machinists": {
+                "name": "机械大师",
+                "short-name": "机械大师"
+            },
+            "void-speaker-eirich": {
+                "name": "虚空代言人艾里克",
+                "short-name": "虚空代言人艾里克"
+            }
+        }
+    },
+    "nerubar-palace": {
+        "name": "尼鲁巴尔王宫",
+        "acronym": "尼鲁巴尔王宫",
+        "short-name": "尼鲁巴尔王宫",
+        "bosses": {
+            "ulgrax-the-devourer": {
+                "name": "噬灭者乌格拉克斯",
+                "short-name": "乌格拉克斯"
+            },
+            "the-bloodbound-horror": {
+                "name": "血缚恐魔",
+                "short-name": "血缚恐魔"
+            },
+            "rashanan": {
+                "name": "拉夏南",
+                "short-name": "拉夏南"
+            },
+            "broodtwister-ovinax": {
+                "name": "虫巢扭曲者欧维纳克斯",
+                "short-name": "欧维纳克斯"
+            },
+            "the-silken-court": {
+                "name": "流丝之庭",
+                "short-name": "流丝之庭"
+            },
+            "queen-ansurek": {
+                "name": "安苏雷克女王",
+                "short-name": "安苏雷克"
+            },
+            "sikran": {
+                "name": "席克兰",
+                "short-name": "席克兰"
+            },
+            "nexus-princess-kyveza": {
+                "name": "节点女亲王凯威扎",
+                "short-name": "凯威扎"
+            }
+        }
+    },
+    "priory-of-the-sacred-flame": {
+        "name": "圣焰隐修院",
+        "acronym": "圣焰隐修院",
+        "short-name": "圣焰隐修院",
+        "bosses": {
+            "captain-dailcry": {
+                "name": "戴尔克莱上尉",
+                "short-name": "戴尔克莱上尉"
+            },
+            "baron-braunpyke": {
+                "name": "布朗派克男爵",
+                "short-name": "布朗派克男爵"
+            },
+            "prioress-murrpray": {
+                "name": "隐修院长穆普雷",
+                "short-name": "隐修院长穆普雷"
+            }
+        }
+    },
+    "ulduar": {
+        "name": "奥杜尔",
+        "acronym": "奥杜尔",
+        "short-name": "奥杜尔",
+        "bosses": {
+            "flame-leviathan": {
+                "name": "烈焰巨兽",
+                "short-name": "烈焰巨兽"
+            },
+            "ignis-the-furnace-master": {
+                "name": "掌炉者伊格尼斯",
+                "short-name": "掌炉者伊格尼斯"
+            },
+            "razorscale": {
+                "name": "锋鳞",
+                "short-name": "锋鳞"
+            },
+            "xt002-deconstructor": {
+                "name": "XT-002 拆解者",
+                "short-name": "XT-002 拆解者"
+            },
+            "the-assembly-of-iron": {
+                "name": "钢铁议会",
+                "short-name": "钢铁议会"
+            },
+            "kologarn": {
+                "name": "科隆加恩",
+                "short-name": "科隆加恩"
+            },
+            "auriaya": {
+                "name": "欧尔莉亚",
+                "short-name": "欧尔莉亚"
+            },
+            "hodir": {
+                "name": "霍迪尔",
+                "short-name": "霍迪尔"
+            },
+            "thorim": {
+                "name": "托里姆",
+                "short-name": "托里姆"
+            },
+            "freya": {
+                "name": "芙蕾雅",
+                "short-name": "芙蕾雅"
+            },
+            "mimiron": {
+                "name": "米米尔隆",
+                "short-name": "米米尔隆"
+            },
+            "general-vezax": {
+                "name": "维扎克斯将军",
+                "short-name": "维扎克斯将军"
+            },
+            "yoggsaron": {
+                "name": "尤格萨隆",
+                "short-name": "尤格萨隆"
+            },
+            "algalon-the-observer": {
+                "name": "观察者阿尔加隆",
+                "short-name": "观察者奥尔加隆"
+            }
+        }
+    },
+    "blackrock-depths": {
+        "name": "黑石深渊",
+        "acronym": "黑石深渊",
+        "short-name": "黑石深渊",
+        "bosses": {
+            "lord-roccor": {
+                "name": "洛考尔",
+                "short-name": "洛考尔"
+            },
+            "baelgar": {
+                "name": "贝尔加",
+                "short-name": "贝尔加"
+            },
+            "lord-incendius": {
+                "name": "伊森迪奥斯",
+                "short-name": "伊森迪奥斯"
+            },
+            "golem-lord-argelmach": {
+                "name": "傀儡统帅阿格曼奇",
+                "short-name": "傀儡统帅阿格曼奇"
+            },
+            "the-seven": {
+                "name": "七贤",
+                "short-name": "七贤"
+            },
+            "general-angerforge": {
+                "name": "怒炉将军",
+                "short-name": "怒炉将军"
+            },
+            "ambassador-flamelash": {
+                "name": "弗莱拉斯大使",
+                "short-name": "弗莱拉斯大使"
+            },
+            "emperor-dagran-thaurissan": {
+                "name": "达格兰·索瑞森大帝",
+                "short-name": "达格兰·索瑞森大帝"
+            }
+        }
+    },
+    "firelands": {
+        "name": "火焰之地",
+        "acronym": "火焰之地",
+        "short-name": "火焰之地",
+        "bosses": {
+            "bethtilac": {
+                "name": "贝丝缇拉克",
+                "short-name": "贝丝缇拉克"
+            },
+            "lord-rhyolith": {
+                "name": "雷奥利斯领主",
+                "short-name": "雷奥利斯领主"
+            },
+            "shannox": {
+                "name": "沙恩诺克斯",
+                "short-name": "沙恩诺克斯"
+            },
+            "alysrazor": {
+                "name": "奥利瑟拉佐尔",
+                "short-name": "奥利瑟拉佐尔"
+            },
+            "baleroc": {
+                "name": "护门人贝尔洛克",
+                "short-name": "护门人贝尔洛克"
+            },
+            "majordomo-staghelm": {
+                "name": "管理者鹿盔",
+                "short-name": "管理者鹿盔"
+            },
+            "ragnaros": {
+                "name": "拉格纳罗斯",
+                "short-name": "拉格纳罗斯"
+            }
+        }
+    },
+    "liberation-of-undermine": {
+        "name": "解放安德麦",
+        "acronym": "LOU",
+        "short-name": "解放安德麦",
+        "bosses": {
+            "vexie-and-the-geargrinders": {
+                "name": "维克茜和磨轮帮",
+                "short-name": "维克茜和磨轮帮"
+            },
+            "cauldron-of-carnage": {
+                "name": "血腥大熔炉",
+                "short-name": "血腥大熔炉"
+            },
+            "rik-reverb": {
+                "name": "里克·混响",
+                "short-name": "里克·混响"
+            },
+            "stix-bunkjunker": {
+                "name": "斯提克斯·堆渣",
+                "short-name": "斯提克斯·堆渣"
+            },
+            "sprocketmonger-lockenstock": {
+                "name": "链齿狂人洛肯斯多",
+                "short-name": "链齿狂人洛肯斯多"
+            },
+            "onearmed-bandit": {
+                "name": "独臂盗匪",
+                "short-name": "独臂盗匪"
+            },
+            "mugzee-heads-of-security": {
+                "name": "穆格·兹伊，安保头子",
+                "short-name": "穆格·兹伊，安保头子"
+            },
+            "chrome-king-gallywix": {
+                "name": "铬武大王加里维克斯",
+                "short-name": "铬武大王加里维克斯"
+            }
+        }
+    },
+    "operation-floodgate": {
+        "name": "水闸行动",
+        "acronym": "水闸行动",
+        "short-name": "水闸行动",
+        "bosses": {
+            "big-momma": {
+                "name": "老大娘",
+                "short-name": "老大娘"
+            },
+            "demolition-duo": {
+                "name": "破拆双人组",
+                "short-name": "破拆双人组"
+            },
+            "swampface": {
+                "name": "沼面",
+                "short-name": "沼面"
+            },
+            "geezle-gigazap": {
+                "name": "吉泽尔·超震",
+                "short-name": "吉泽尔·超震"
+            }
+        }
+    },
+    "dragon-soul": {
+        "name": "巨龙之魂",
+        "acronym": "DS",
+        "short-name": "巨龙之魂",
+        "bosses": {
+            "morchok": {
+                "name": "莫卓克",
+                "short-name": "莫卓克"
+            },
+            "warlord-zonozz": {
+                "name": "督军佐诺兹",
+                "short-name": "督军佐诺兹"
+            },
+            "yorsahj-the-unsleeping": {
+                "name": "不眠的约萨希",
+                "short-name": "不眠的约萨希"
+            },
+            "hagara": {
+                "name": "哈格拉",
+                "short-name": "哈格拉"
+            },
+            "ultraxion": {
+                "name": "奥卓克希昂",
+                "short-name": "奥卓克希昂"
+            },
+            "warmaster-blackhorn": {
+                "name": "战争大师黑角",
+                "short-name": "战争大师黑角"
+            },
+            "spine-of-deathwing": {
+                "name": "死亡之翼的脊背",
+                "short-name": "死亡之翼的脊背"
+            },
+            "madness-of-deathwing": {
+                "name": "疯狂的死亡之翼",
+                "short-name": "疯狂的死亡之翼"
+            }
+        }
+    },
+    "cage-of-carnage": {
+        "name": "赤红围场",
+        "acronym": "赤红围场",
+        "short-name": "赤红围场",
+        "bosses": {}
+    },
+    "ecodome-aldani": {
+        "name": "奥尔达尼生态圆顶",
+        "acronym": "生态圆顶",
+        "short-name": "奥尔达尼生态圆顶",
+        "bosses": {
+            "azhiccar": {
+                "name": "阿兹希卡",
+                "short-name": "阿兹希卡"
+            },
+            "taahbat-and-awazj": {
+                "name": "塔尔·巴特和阿瓦兹吉",
+                "short-name": "塔尔·巴特和阿瓦兹吉"
+            },
+            "soulscribe": {
+                "name": "撰魂师",
+                "short-name": "撰魂师"
+            }
+        }
+    },
+    "manaforge-omega": {
+        "name": "法力熔炉：欧米伽",
+        "acronym": "MFO",
+        "short-name": "法力熔炉：欧米伽",
+        "bosses": {
+            "plexus-sentinel": {
+                "name": "集能哨兵",
+                "short-name": "集能哨兵"
+            },
+            "loomithar": {
+                "name": "卢米萨尔",
+                "short-name": "卢米萨尔"
+            },
+            "soulbinder-naazindhri": {
+                "name": "缚魂者娜欣达利",
+                "short-name": "缚魂者娜欣达利"
+            },
+            "forgeweaver-araz": {
+                "name": "熔炉编织者阿拉兹",
+                "short-name": "熔炉编织者阿拉兹"
+            },
+            "the-soul-hunters": {
+                "name": "狩魂猎手",
+                "short-name": "狩魂猎手"
+            },
+            "fractillus": {
+                "name": "弗兰克提鲁斯",
+                "short-name": "弗兰克提鲁斯"
+            },
+            "nexus-king-salhadaar": {
+                "name": "节点之王萨哈达尔",
+                "short-name": "节点之王萨哈达尔"
+            },
+            "dimensius": {
+                "name": "迪门修斯",
+                "short-name": "迪门修斯"
+            }
+        }
+    },
+    "heart-of-fear": {
+        "name": "恐惧之心",
+        "acronym": "恐惧之心",
+        "short-name": "恐惧之心",
+        "bosses": {
+            "imperial-vizier-zorlok": {
+                "name": "皇家宰相佐尔洛克",
+                "short-name": "皇家宰相佐尔洛克"
+            },
+            "blade-lord-tayak": {
+                "name": "刀锋领主塔亚克",
+                "short-name": "刀锋领主塔亚克"
+            },
+            "garalon": {
+                "name": "加拉隆",
+                "short-name": "加拉隆"
+            },
+            "wind-lord-meljarak": {
+                "name": "风领主梅尔加拉克",
+                "short-name": "风领主梅尔加拉克"
+            },
+            "ambershaper-unsok": {
+                "name": "琥珀塑形者昂舒克",
+                "short-name": "琥珀塑形者昂舒克"
+            },
+            "grand-empress-shekzeer": {
+                "name": "大女皇夏柯希尔",
+                "short-name": "大女皇夏柯希尔"
+            }
+        }
+    },
+    "mogushan-vaults": {
+        "name": "魔古山宝库",
+        "acronym": "魔古山",
+        "short-name": "魔古山宝库",
+        "bosses": {
+            "the-stone-guard": {
+                "name": "石头守卫",
+                "short-name": "石头守卫"
+            },
+            "feng-the-accursed": {
+                "name": "受诅者魔封",
+                "short-name": "受诅者魔封"
+            },
+            "garajal-the-spiritbinder": {
+                "name": "缚灵者戈拉亚",
+                "short-name": "缚灵者戈拉亚"
+            },
+            "the-spirit-kings": {
+                "name": "先王之魂",
+                "short-name": "先王之魂"
+            },
+            "elegon": {
+                "name": "伊拉贡",
+                "short-name": "伊拉贡"
+            },
+            "will-of-the-emperor": {
+                "name": "皇帝的意志",
+                "short-name": "皇帝的意志"
+            }
+        }
+    },
+    "terrace-of-endless-spring": {
+        "name": "永春台",
+        "acronym": "永春台",
+        "short-name": "永春台",
+        "bosses": {
+            "protectors-of-the-endless": {
+                "name": "无尽守护者",
+                "short-name": "无尽守护者"
+            },
+            "tsulong": {
+                "name": "烛龙",
+                "short-name": "烛龙"
+            },
+            "lei-shi": {
+                "name": "雷施",
+                "short-name": "雷施"
+            },
+            "sha-of-fear": {
+                "name": "惧之煞",
+                "short-name": "惧之煞"
+            }
+        }
+    },
+    "magisters-terrace": {
+        "name": "魔导师平台",
+        "acronym": "魔导师平台",
+        "short-name": "魔导师平台",
+        "bosses": {
+            "arcane-crowd-dispersing-construct": {
+                "name": "奥能金刚库斯托斯",
+                "short-name": "奥能金刚库斯托斯"
+            },
+            "selanar-sunlash": {
+                "name": "瑟拉奈尔·日鞭",
+                "short-name": "瑟拉奈尔·日鞭"
+            },
+            "gemellus": {
+                "name": "吉美尔鲁斯",
+                "short-name": "吉美尔鲁斯"
+            },
+            "degentrius": {
+                "name": "迪詹崔乌斯",
+                "short-name": "迪詹崔乌斯"
+            },
+            "arcanotron-custos": {
+                "name": "奥能金刚库斯托斯",
+                "short-name": "奥能金刚库斯托斯"
+            },
+            "seranel-sunlash": {
+                "name": "瑟拉奈尔·日鞭",
+                "short-name": "瑟拉奈尔·日鞭"
+            }
+        }
+    },
+    "maisara-caverns": {
+        "name": "迈萨拉洞窟",
+        "acronym": "迈萨拉洞窟",
+        "short-name": "迈萨拉洞窟",
+        "bosses": {
+            "murojin-and-nekraxx": {
+                "name": "姆罗金和内克拉克斯",
+                "short-name": "姆罗金和内克拉克斯"
+            },
+            "vordaza": {
+                "name": "沃达扎",
+                "short-name": "沃达扎"
+            },
+            "raktul-vessel-of-souls": {
+                "name": "拉克图尔，聚魂之器",
+                "short-name": "拉克图尔，聚魂之器"
+            }
+        }
+    },
+    "nexuspoint-xenas": {
+        "name": "节点希纳斯",
+        "acronym": "节点希纳斯",
+        "short-name": "节点希纳斯",
+        "bosses": {
+            "chief-corewright-kasreth": {
+                "name": "核技工程长卡斯雷瑟",
+                "short-name": "核技工程长卡斯雷瑟"
+            },
+            "corewarden-nysarra": {
+                "name": "核心守卫奈萨拉",
+                "short-name": "核心守卫奈萨拉"
+            },
+            "lothraxion": {
+                "name": "洛萨克森",
+                "short-name": "洛萨克森"
+            }
+        }
+    },
+    "pit-of-saron": {
+        "name": "萨隆矿坑",
+        "acronym": "萨隆矿坑",
+        "short-name": "萨隆矿坑",
+        "bosses": {
+            "forgemaster-garfrost": {
+                "name": "熔炉之主加弗斯特",
+                "short-name": "熔炉之主加弗斯特"
+            },
+            "ick-and-krick": {
+                "name": "伊克和科瑞克",
+                "short-name": "伊克和科瑞克"
+            },
+            "scourgelord-tyrannus": {
+                "name": "天灾领主泰兰努斯",
+                "short-name": "天灾领主泰兰努斯"
+            }
+        }
+    },
+    "skyreach": {
+        "name": "通天峰",
+        "acronym": "通天峰",
+        "short-name": "通天峰",
+        "bosses": {
+            "ranjit": {
+                "name": "兰吉特",
+                "short-name": "兰吉特"
+            },
+            "araknath": {
+                "name": "阿拉卡纳斯",
+                "short-name": "阿拉卡纳斯"
+            },
+            "rukhran": {
+                "name": "鲁克兰",
+                "short-name": "鲁克兰"
+            },
+            "high-sage-viryx": {
+                "name": "高阶贤者维里克斯",
+                "short-name": "高阶贤者维里克斯"
+            }
+        }
+    },
+    "windrunner-spire": {
+        "name": "风行者之塔",
+        "acronym": "风行者之塔",
+        "short-name": "风行者之塔",
+        "bosses": {
+            "emberdawn": {
+                "name": "烬晓",
+                "short-name": "烬晓"
+            },
+            "derelict-duo": {
+                "name": "被遗弃的二人组",
+                "short-name": "被遗弃的二人组"
+            },
+            "commander-kroluk": {
+                "name": "指挥官克罗鲁科",
+                "short-name": "指挥官克罗鲁科"
+            },
+            "restless-heart": {
+                "name": "无眠之心",
+                "short-name": "无眠之心"
+            }
+        }
+    },
+    "gate-of-the-setting-sun": {
+        "name": "残阳关",
+        "acronym": "残阳关",
+        "short-name": "残阳关",
+        "bosses": {
+            "saboteur-kiptilak": {
+                "name": "破坏者吉普提拉克",
+                "short-name": "破坏者吉普提拉克"
+            },
+            "striker-gadok": {
+                "name": "突袭者加杜卡",
+                "short-name": "突袭者加杜卡"
+            },
+            "commander-rimok": {
+                "name": "指挥官瑞魔克",
+                "short-name": "指挥官瑞魔克"
+            },
+            "raigonn": {
+                "name": "莱公",
+                "short-name": "莱公"
+            }
+        }
+    },
+    "mogushan-palace": {
+        "name": "魔古山宫殿",
+        "acronym": "魔古山宫殿",
+        "short-name": "魔古山宫殿",
+        "bosses": {
+            "trial-of-the-king": {
+                "name": "君王的试炼",
+                "short-name": "君王的试炼"
+            },
+            "gekkan": {
+                "name": "杰翰",
+                "short-name": "杰翰"
+            },
+            "xin-the-weaponmaster": {
+                "name": "武器大师席恩",
+                "short-name": "武器大师席恩"
+            }
+        }
+    },
+    "scarlet-halls": {
+        "name": "血色大厅",
+        "acronym": "血色大厅",
+        "short-name": "血色大厅",
+        "bosses": {
+            "houndmaster-braun": {
+                "name": "驯犬者布兰恩",
+                "short-name": "驯犬者布兰恩"
+            },
+            "armsmaster-harlan": {
+                "name": "武器大师哈兰",
+                "short-name": "武器大师哈兰"
+            },
+            "flameweaver-koegler": {
+                "name": "织焰者孔格勒",
+                "short-name": "织焰者孔格勒"
+            }
+        }
+    },
+    "scarlet-monastery": {
+        "name": "血色修道院",
+        "acronym": "血色修道院",
+        "short-name": "血色修道院",
+        "bosses": {
+            "thalnos-the-soulrender": {
+                "name": "裂魂者萨尔诺斯",
+                "short-name": "裂魂者萨尔诺斯"
+            },
+            "brother-korloff": {
+                "name": "科洛夫修士",
+                "short-name": "科洛夫修士"
+            },
+            "high-inquisitor-whitemane": {
+                "name": "大检察官怀特迈恩",
+                "short-name": "大检察官怀特迈恩"
+            }
+        }
+    },
+    "scholomance": {
+        "name": "通灵学院",
+        "acronym": "通灵学院",
+        "short-name": "通灵学院",
+        "bosses": {
+            "instructor-chillheart": {
+                "name": "指导者寒心",
+                "short-name": "指导者寒心"
+            },
+            "jandice-barov": {
+                "name": "詹迪斯·巴罗夫",
+                "short-name": "詹迪斯·巴罗夫"
+            },
+            "rattlegore": {
+                "name": "血骨傀儡",
+                "short-name": "血骨傀儡"
+            },
+            "lilian-voss": {
+                "name": "莉莉安·沃斯",
+                "short-name": "莉莉安·沃斯"
+            },
+            "darkmaster-gandling": {
+                "name": "黑暗院长加丁",
+                "short-name": "黑暗院长加丁"
+            }
+        }
+    },
+    "shadopan-monastery": {
+        "name": "影踪禅院",
+        "acronym": "影踪禅院",
+        "short-name": "影踪禅院",
+        "bosses": {
+            "gu-cloudstrike": {
+                "name": "古·穿云",
+                "short-name": "古·穿云"
+            },
+            "master-snowdrift": {
+                "name": "雪流大师",
+                "short-name": "雪流大师"
+            },
+            "sha-of-violence": {
+                "name": "狂之煞",
+                "short-name": "狂之煞"
+            },
+            "taran-zhu": {
+                "name": "祝踏岚",
+                "short-name": "祝踏岚"
+            }
+        }
+    },
+    "siege-of-niuzao-temple": {
+        "name": "围攻砮皂寺",
+        "acronym": "砮皂寺",
+        "short-name": "围攻砮皂寺",
+        "bosses": {
+            "vizier-jinbak": {
+                "name": "宰相金巴卡",
+                "short-name": "宰相金巴卡"
+            },
+            "commander-vojak": {
+                "name": "指挥官沃加克",
+                "short-name": "指挥官沃加克"
+            },
+            "general-pavalak": {
+                "name": "将军帕瓦拉克",
+                "short-name": "将军帕瓦拉克"
+            },
+            "wing-leader-neronok": {
+                "name": "翼虫首领尼诺洛克",
+                "short-name": "翼虫首领尼诺洛克"
+            }
+        }
+    },
+    "stormstout-brewery": {
+        "name": "风暴烈酒酿造厂",
+        "acronym": "酿造厂",
+        "short-name": "风暴烈酒酿造厂",
+        "bosses": {
+            "ookook": {
+                "name": "乌克乌克",
+                "short-name": "乌克乌克"
+            },
+            "hoptallus": {
+                "name": "霍波提尔",
+                "short-name": "霍波提尔"
+            },
+            "yanzhu-the-uncasked": {
+                "name": "破桶而出的炎诛",
+                "short-name": "破桶而出的炎诛"
+            }
+        }
+    },
+    "throne-of-thunder": {
+        "name": "雷电王座",
+        "acronym": "雷电王座",
+        "short-name": "雷电王座",
+        "bosses": {
+            "jinrokh-the-breaker": {
+                "name": "击碎者金罗克",
+                "short-name": "击碎者金罗克"
+            },
+            "horridon": {
+                "name": "赫利东",
+                "short-name": "赫利东"
+            },
+            "council-of-elders": {
+                "name": "长老议会",
+                "short-name": "长老议会"
+            },
+            "tortos": {
+                "name": "托多斯",
+                "short-name": "托多斯"
+            },
+            "megaera": {
+                "name": "墨格瑞拉",
+                "short-name": "墨格瑞拉"
+            },
+            "jikun": {
+                "name": "季鹍",
+                "short-name": "季鹍"
+            },
+            "durumu-the-forgotten": {
+                "name": "遗忘者杜鲁姆",
+                "short-name": "遗忘者杜鲁姆"
+            },
+            "primordius": {
+                "name": "普利莫修斯",
+                "short-name": "普利莫修斯"
+            },
+            "dark-animus": {
+                "name": "黑暗意志",
+                "short-name": "黑暗意志"
+            },
+            "iron-qon": {
+                "name": "铁穹",
+                "short-name": "铁穹"
+            },
+            "twin-empyreans": {
+                "name": "神女双天",
+                "short-name": "神女双天"
+            },
+            "lei-shen": {
+                "name": "雷神",
+                "short-name": "雷神"
+            },
+            "raden": {
+                "name": "莱登",
+                "short-name": "莱登"
+            }
+        }
+    },
+    "tier-mn-1": {
+        "name": "至暗之夜S1（尖塔/ 裂隙 / 奎尔丹纳斯）",
+        "acronym": "尖塔/ 裂隙 / 奎尔丹纳斯",
+        "short-name": "MN T1",
+        "bosses": {
+            "imperator-averzian": {
+                "name": "元首阿福扎恩",
+                "short-name": "元首阿福扎恩"
+            },
+            "vorasius": {
+                "name": "弗拉希乌斯",
+                "short-name": "弗拉希乌斯"
+            },
+            "fallenking-salhadaar": {
+                "name": "陨落之王萨哈达尔",
+                "short-name": "陨落之王萨哈达尔"
+            },
+            "vaelgor-ezzorak": {
+                "name": "威厄高尔和艾佐拉克",
+                "short-name": "威厄高尔和艾佐拉克"
+            },
+            "lightblinded-vanguard": {
+                "name": "光盲先锋军",
+                "short-name": "光盲先锋军"
+            },
+            "crown-of-the-cosmos": {
+                "name": "宇宙之冕",
+                "short-name": "宇宙之冕"
+            },
+            "chimaerus-the-undreamt-god": {
+                "name": "奇美鲁斯，未梦之神",
+                "short-name": "奇美鲁斯"
+            },
+            "beloren-child-of-alar": {
+                "name": "贝洛朗，奥的子嗣",
+                "short-name": "贝洛伦"
+            },
+            "midnight-falls": {
+                "name": "至暗之夜降临",
+                "short-name": "至暗之夜降临"
+            }
+        }
+    }
+}

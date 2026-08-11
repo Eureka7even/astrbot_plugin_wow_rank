@@ -1,0 +1,332 @@
+{
+    "classes": {
+        "warrior": {
+            "name": "战士",
+            "name_other": "战士"
+        },
+        "paladin": {
+            "name": "圣骑士",
+            "name_other": "圣骑士"
+        },
+        "hunter": {
+            "name": "猎人",
+            "name_other": "猎人"
+        },
+        "rogue": {
+            "name": "潜行者",
+            "name_other": "潜行者"
+        },
+        "priest": {
+            "name": "牧师",
+            "name_other": "牧师"
+        },
+        "death-knight": {
+            "name": "死亡骑士",
+            "name_other": "死亡骑士"
+        },
+        "shaman": {
+            "name": "萨满祭司",
+            "name_other": "萨满祭司"
+        },
+        "mage": {
+            "name": "法师",
+            "name_other": "法师"
+        },
+        "warlock": {
+            "name": "术士",
+            "name_other": "术士"
+        },
+        "monk": {
+            "name": "武僧",
+            "name_other": "武僧"
+        },
+        "druid": {
+            "name": "德鲁伊",
+            "name_other": "德鲁伊"
+        },
+        "demon-hunter": {
+            "name": "恶魔猎手",
+            "name_other": "恶魔猎手"
+        },
+        "evoker": {
+            "name": "唤魔师",
+            "name_other": "唤魔师"
+        }
+    },
+    "races": {
+        "human": {
+            "name": "人类"
+        },
+        "orc": {
+            "name": "兽人"
+        },
+        "dwarf": {
+            "name": "矮人"
+        },
+        "night-elf": {
+            "name": "暗夜精灵"
+        },
+        "undead": {
+            "name": "亡灵"
+        },
+        "tauren": {
+            "name": "牛头人"
+        },
+        "gnome": {
+            "name": "侏儒"
+        },
+        "troll": {
+            "name": "巨魔"
+        },
+        "goblin": {
+            "name": "地精"
+        },
+        "blood-elf": {
+            "name": "血精灵"
+        },
+        "draenei": {
+            "name": "德莱尼"
+        },
+        "worgen": {
+            "name": "狼人"
+        },
+        "pandaren": {
+            "name": "熊猫人"
+        },
+        "nightborne": {
+            "name": "夜之子"
+        },
+        "highmountain-tauren": {
+            "name": "至高岭牛头人"
+        },
+        "void-elf": {
+            "name": "虚空精灵"
+        },
+        "lightforged-draenei": {
+            "name": "光铸德莱尼"
+        },
+        "zandalari-troll": {
+            "name": "赞达拉巨魔"
+        },
+        "kul-tiran": {
+            "name": "库尔提拉斯人类"
+        },
+        "dark-iron-dwarf": {
+            "name": "黑铁矮人"
+        },
+        "vulpera": {
+            "name": "狐人"
+        },
+        "maghar-orc": {
+            "name": "玛格汉兽人"
+        },
+        "mechagnome": {
+            "name": "机械侏儒"
+        },
+        "dracthyr": {
+            "name": "龙希尔"
+        },
+        "earthen": {
+            "name": "土灵"
+        },
+        "haranir": {
+            "name": "哈籁尼尔"
+        }
+    },
+    "specs": {
+        "warrior": {
+            "arms": {
+                "name": "武器",
+                "short-name": "武器"
+            },
+            "fury": {
+                "name": "狂怒",
+                "short-name": "狂怒"
+            },
+            "protection": {
+                "name": "防护",
+                "short-name": "防护"
+            }
+        },
+        "paladin": {
+            "holy": {
+                "name": "神圣",
+                "short-name": "神圣"
+            },
+            "protection": {
+                "name": "防护",
+                "short-name": "防护"
+            },
+            "retribution": {
+                "name": "惩戒",
+                "short-name": "惩戒"
+            }
+        },
+        "hunter": {
+            "beast-mastery": {
+                "name": "野兽控制",
+                "short-name": "兽王"
+            },
+            "marksmanship": {
+                "name": "射击",
+                "short-name": "射击"
+            },
+            "survival": {
+                "name": "生存",
+                "short-name": "生存"
+            }
+        },
+        "rogue": {
+            "combat": {
+                "name": "战斗",
+                "short-name": "战斗"
+            },
+            "assassination": {
+                "name": "奇袭",
+                "short-name": "奇袭"
+            },
+            "outlaw": {
+                "name": "狂徒",
+                "short-name": "狂徒"
+            },
+            "subtlety": {
+                "name": "敏锐",
+                "short-name": "敏锐"
+            }
+        },
+        "priest": {
+            "discipline": {
+                "name": "戒律",
+                "short-name": "戒律"
+            },
+            "holy": {
+                "name": "神圣",
+                "short-name": "神圣"
+            },
+            "shadow": {
+                "name": "暗影",
+                "short-name": "暗影"
+            }
+        },
+        "death-knight": {
+            "blood": {
+                "name": "鲜血",
+                "short-name": "鲜血"
+            },
+            "frost": {
+                "name": "冰霜",
+                "short-name": "冰霜"
+            },
+            "unholy": {
+                "name": "邪恶",
+                "short-name": "邪恶"
+            }
+        },
+        "shaman": {
+            "elemental": {
+                "name": "元素",
+                "short-name": "元素"
+            },
+            "enhancement": {
+                "name": "增强",
+                "short-name": "增强"
+            },
+            "restoration": {
+                "name": "恢复",
+                "short-name": "恢复"
+            }
+        },
+        "mage": {
+            "arcane": {
+                "name": "奥术",
+                "short-name": "奥术"
+            },
+            "fire": {
+                "name": "火焰",
+                "short-name": "火焰"
+            },
+            "frost": {
+                "name": "冰霜",
+                "short-name": "冰霜"
+            }
+        },
+        "warlock": {
+            "affliction": {
+                "name": "痛苦",
+                "short-name": "痛苦"
+            },
+            "demonology": {
+                "name": "恶魔学识",
+                "short-name": "恶魔"
+            },
+            "destruction": {
+                "name": "毁灭",
+                "short-name": "毁灭"
+            }
+        },
+        "monk": {
+            "brewmaster": {
+                "name": "酒仙",
+                "short-name": "酒仙"
+            },
+            "mistweaver": {
+                "name": "织雾",
+                "short-name": "织雾"
+            },
+            "windwalker": {
+                "name": "踏风",
+                "short-name": "踏风"
+            }
+        },
+        "druid": {
+            "feral-combat": {
+                "name": "野性",
+                "short-name": "野性"
+            },
+            "balance": {
+                "name": "平衡",
+                "short-name": "平衡"
+            },
+            "feral": {
+                "name": "野性",
+                "short-name": "野性"
+            },
+            "guardian": {
+                "name": "守护",
+                "short-name": "守护"
+            },
+            "restoration": {
+                "name": "恢复",
+                "short-name": "恢复"
+            }
+        },
+        "demon-hunter": {
+            "devourer": {
+                "name": "噬灭",
+                "short-name": "噬灭"
+            },
+            "havoc": {
+                "name": "浩劫",
+                "short-name": "浩劫"
+            },
+            "vengeance": {
+                "name": "复仇",
+                "short-name": "复仇"
+            }
+        },
+        "evoker": {
+            "devastation": {
+                "name": "湮灭",
+                "short-name": "湮灭"
+            },
+            "preservation": {
+                "name": "恩护",
+                "short-name": "恩护"
+            },
+            "augmentation": {
+                "name": "增辉",
+                "short-name": "增辉"
+            }
+        }
+    }
+}

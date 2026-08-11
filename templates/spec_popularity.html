@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    text-rendering:optimizeLegibility;
+  }
+  html{
+    width:800px;
+    background:#0a0e1a;
+  }
+  body{
+    width:800px;
+    height:fit-content;
+    background:#0a0e1a;
+    color:#c8c8d8;
+    font-family:"Microsoft YaHei UI","Microsoft YaHei","PingFang SC","Hiragino Sans GB","WenQuanYi Micro Hei",sans-serif;
+    font-size:24px;
+  }
+
+  .header{
+    text-align:center;
+    padding:20px 0 10px;
+  }
+  .title{
+    font-size:32px;font-weight:700;
+    color:#f0c040;
+  }
+  .subtitle{
+    margin-top:6px;font-size:20px;color:#8892aa;
+  }
+
+  .chart{
+    padding:10px 20px 20px;
+    position:relative;
+  }
+
+  /* 竖向网格线 */
+  .grid-line{
+    position:absolute;top:10px;bottom:20px;
+    width:1px;background:rgba(255,255,255,0.05);
+  }
+
+  .pop-row{
+    display:flex;align-items:center;gap:10px;
+    height:40px;position:relative;
+  }
+
+  .pop-icon{
+    flex-shrink:0;
+    border-radius:4px;
+  }
+
+  .pop-name{
+    width:120px;text-align:right;
+    font-size:20px;color:#c0c0d8;
+    flex-shrink:0;white-space:nowrap;
+  }
+
+  .pop-bar-wrap{
+    flex:1;height:24px;position:relative;
+    background:rgba(255,255,255,0.03);
+    border-radius:4px;overflow:hidden;
+  }
+
+  .pop-bar{
+    height:100%;border-radius:4px;
+    transition:width 0.3s ease;
+  }
+
+  .pop-percent{
+    width:60px;text-align:right;
+    font-size:18px;color:#8892aa;
+    flex-shrink:0;
+  }
+
+  .footer{
+    padding:10px 20px;
+    display:flex;justify-content:space-between;
+    font-size:18px;color:#3a4060;
+  }
+</style>
+<style>
+@import url("{{ css_url }}");
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="title">{{ region }} M+ 专精热度</div>
+  <div class="subtitle">{{ scope_desc }} &middot; {{ level_desc }} &middot; 更新: {{ updated }}</div>
+</div>
+
+<div class="chart">
+  <!-- 竖向网格线 -->
+  {% for g in grid_lines %}
+  <div class="grid-line" style="left:{{ g }}px;"></div>
+  {% endfor %}
+
+  {% for s in specs %}
+  <div class="pop-row">
+    <div class="pop-icon {{ s.icon_class }}"></div>
+    <div class="pop-name">{{ s.spec_name }} {{ s.class_name }}</div>
+    <div class="pop-bar-wrap">
+      <div class="pop-bar" style="width:{{ s.bar_width }}%;background:{{ s.bar_color }};"></div>
+    </div>
+    <div class="pop-percent">{{ s.percent }}%</div>
+  </div>
+  {% endfor %}
+</div>
+
+<div class="footer">
+  <span>Data: Raider.io</span>
+  <span>{{ region }}</span>
+</div>
+
+</body>
+</html>

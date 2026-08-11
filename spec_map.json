@@ -1,0 +1,503 @@
+{
+    "meta": {
+        "version": 1,
+        "description": "WoW 专精 ID 与中文名映射表",
+        "total_specs": 40,
+        "total_classes": 13
+    },
+    "specs": {
+        "71": {
+            "rank": 14,
+            "spec_id": 71,
+            "class_id": 1,
+            "role": "dps",
+            "spec_name": "武器",
+            "class_name": "战士",
+            "class_key": "warrior",
+            "spec_key": "arms"
+        },
+        "72": {
+            "rank": 15,
+            "spec_id": 72,
+            "class_id": 1,
+            "role": "dps",
+            "spec_name": "狂怒",
+            "class_name": "战士",
+            "class_key": "warrior",
+            "spec_key": "fury"
+        },
+        "73": {
+            "rank": 22,
+            "spec_id": 73,
+            "class_id": 1,
+            "role": "tank",
+            "spec_name": "防护",
+            "class_name": "战士",
+            "class_key": "warrior",
+            "spec_key": "protection"
+        },
+        "65": {
+            "rank": 16,
+            "spec_id": 65,
+            "class_id": 2,
+            "role": "healer",
+            "spec_name": "神圣",
+            "class_name": "圣骑士",
+            "class_key": "paladin",
+            "spec_key": "holy"
+        },
+        "66": {
+            "rank": 17,
+            "spec_id": 66,
+            "class_id": 2,
+            "role": "tank",
+            "spec_name": "防护",
+            "class_name": "圣骑士",
+            "class_key": "paladin",
+            "spec_key": "protection"
+        },
+        "70": {
+            "rank": 3,
+            "spec_id": 70,
+            "class_id": 2,
+            "role": "dps",
+            "spec_name": "惩戒",
+            "class_name": "圣骑士",
+            "class_key": "paladin",
+            "spec_key": "retribution"
+        },
+        "253": {
+            "rank": 9,
+            "spec_id": 253,
+            "class_id": 3,
+            "role": "dps",
+            "spec_name": "野兽控制",
+            "class_name": "猎人",
+            "class_key": "hunter",
+            "spec_key": "beast-mastery"
+        },
+        "254": {
+            "rank": 34,
+            "spec_id": 254,
+            "class_id": 3,
+            "role": "dps",
+            "spec_name": "射击",
+            "class_name": "猎人",
+            "class_key": "hunter",
+            "spec_key": "marksmanship"
+        },
+        "255": {
+            "rank": 19,
+            "spec_id": 255,
+            "class_id": 3,
+            "role": "dps",
+            "spec_name": "生存",
+            "class_name": "猎人",
+            "class_key": "hunter",
+            "spec_key": "survival"
+        },
+        "259": {
+            "rank": 33,
+            "spec_id": 259,
+            "class_id": 4,
+            "role": "dps",
+            "spec_name": "奇袭",
+            "class_name": "潜行者",
+            "class_key": "rogue",
+            "spec_key": "assassination"
+        },
+        "260": {
+            "rank": 31,
+            "spec_id": 260,
+            "class_id": 4,
+            "role": "dps",
+            "spec_name": "狂徒",
+            "class_name": "潜行者",
+            "class_key": "rogue",
+            "spec_key": "outlaw"
+        },
+        "261": {
+            "rank": 23,
+            "spec_id": 261,
+            "class_id": 4,
+            "role": "dps",
+            "spec_name": "敏锐",
+            "class_name": "潜行者",
+            "class_key": "rogue",
+            "spec_key": "subtlety"
+        },
+        "256": {
+            "rank": 12,
+            "spec_id": 256,
+            "class_id": 5,
+            "role": "healer",
+            "spec_name": "戒律",
+            "class_name": "牧师",
+            "class_key": "priest",
+            "spec_key": "discipline"
+        },
+        "257": {
+            "rank": 32,
+            "spec_id": 257,
+            "class_id": 5,
+            "role": "healer",
+            "spec_name": "神圣",
+            "class_name": "牧师",
+            "class_key": "priest",
+            "spec_key": "holy"
+        },
+        "258": {
+            "rank": 21,
+            "spec_id": 258,
+            "class_id": 5,
+            "role": "dps",
+            "spec_name": "暗影",
+            "class_name": "牧师",
+            "class_key": "priest",
+            "spec_key": "shadow"
+        },
+        "250": {
+            "rank": 20,
+            "spec_id": 250,
+            "class_id": 6,
+            "role": "tank",
+            "spec_name": "鲜血",
+            "class_name": "死亡骑士",
+            "class_key": "death-knight",
+            "spec_key": "blood"
+        },
+        "251": {
+            "rank": 36,
+            "spec_id": 251,
+            "class_id": 6,
+            "role": "dps",
+            "spec_name": "冰霜",
+            "class_name": "死亡骑士",
+            "class_key": "death-knight",
+            "spec_key": "frost"
+        },
+        "252": {
+            "rank": 1,
+            "spec_id": 252,
+            "class_id": 6,
+            "role": "dps",
+            "spec_name": "邪恶",
+            "class_name": "死亡骑士",
+            "class_key": "death-knight",
+            "spec_key": "unholy"
+        },
+        "262": {
+            "rank": 18,
+            "spec_id": 262,
+            "class_id": 7,
+            "role": "dps",
+            "spec_name": "元素",
+            "class_name": "萨满祭司",
+            "class_key": "shaman",
+            "spec_key": "elemental"
+        },
+        "263": {
+            "rank": 24,
+            "spec_id": 263,
+            "class_id": 7,
+            "role": "dps",
+            "spec_name": "增强",
+            "class_name": "萨满祭司",
+            "class_key": "shaman",
+            "spec_key": "enhancement"
+        },
+        "264": {
+            "rank": 4,
+            "spec_id": 264,
+            "class_id": 7,
+            "role": "healer",
+            "spec_name": "恢复",
+            "class_name": "萨满祭司",
+            "class_key": "shaman",
+            "spec_key": "restoration"
+        },
+        "62": {
+            "rank": 11,
+            "spec_id": 62,
+            "class_id": 8,
+            "role": "dps",
+            "spec_name": "冰霜",
+            "class_name": "法师",
+            "class_key": "mage",
+            "spec_key": "frost"
+        },
+        "63": {
+            "rank": 38,
+            "spec_id": 63,
+            "class_id": 8,
+            "role": "dps",
+            "spec_name": "火焰",
+            "class_name": "法师",
+            "class_key": "mage",
+            "spec_key": "fire"
+        },
+        "64": {
+            "rank": 37,
+            "spec_id": 64,
+            "class_id": 8,
+            "role": "dps",
+            "spec_name": "奥术",
+            "class_name": "法师",
+            "class_key": "mage",
+            "spec_key": "arcane"
+        },
+        "265": {
+            "rank": 27,
+            "spec_id": 265,
+            "class_id": 9,
+            "role": "dps",
+            "spec_name": "痛苦",
+            "class_name": "术士",
+            "class_key": "warlock",
+            "spec_key": "affliction"
+        },
+        "266": {
+            "rank": 5,
+            "spec_id": 266,
+            "class_id": 9,
+            "role": "dps",
+            "spec_name": "恶魔学识",
+            "class_name": "术士",
+            "class_key": "warlock",
+            "spec_key": "demonology"
+        },
+        "267": {
+            "rank": 39,
+            "spec_id": 267,
+            "class_id": 9,
+            "role": "dps",
+            "spec_name": "毁灭",
+            "class_name": "术士",
+            "class_key": "warlock",
+            "spec_key": "destruction"
+        },
+        "268": {
+            "rank": 6,
+            "spec_id": 268,
+            "class_id": 10,
+            "role": "tank",
+            "spec_name": "酒仙",
+            "class_name": "武僧",
+            "class_key": "monk",
+            "spec_key": "brewmaster"
+        },
+        "269": {
+            "rank": 30,
+            "spec_id": 269,
+            "class_id": 10,
+            "role": "dps",
+            "spec_name": "踏风",
+            "class_name": "武僧",
+            "class_key": "monk",
+            "spec_key": "windwalker"
+        },
+        "270": {
+            "rank": 8,
+            "spec_id": 270,
+            "class_id": 10,
+            "role": "healer",
+            "spec_name": "织雾",
+            "class_name": "武僧",
+            "class_key": "monk",
+            "spec_key": "mistweaver"
+        },
+        "102": {
+            "rank": 28,
+            "spec_id": 102,
+            "class_id": 11,
+            "role": "dps",
+            "spec_name": "平衡",
+            "class_name": "德鲁伊",
+            "class_key": "druid",
+            "spec_key": "balance"
+        },
+        "103": {
+            "rank": 29,
+            "spec_id": 103,
+            "class_id": 11,
+            "role": "dps",
+            "spec_name": "野性",
+            "class_name": "德鲁伊",
+            "class_key": "druid",
+            "spec_key": "feral"
+        },
+        "104": {
+            "rank": 2,
+            "spec_id": 104,
+            "class_id": 11,
+            "role": "tank",
+            "spec_name": "守护",
+            "class_name": "德鲁伊",
+            "class_key": "druid",
+            "spec_key": "guardian"
+        },
+        "105": {
+            "rank": 13,
+            "spec_id": 105,
+            "class_id": 11,
+            "role": "healer",
+            "spec_name": "恢复",
+            "class_name": "德鲁伊",
+            "class_key": "druid",
+            "spec_key": "restoration"
+        },
+        "577": {
+            "rank": 26,
+            "spec_id": 577,
+            "class_id": 12,
+            "role": "dps",
+            "spec_name": "浩劫",
+            "class_name": "恶魔猎手",
+            "class_key": "demon-hunter",
+            "spec_key": "havoc"
+        },
+        "581": {
+            "rank": 25,
+            "spec_id": 581,
+            "class_id": 12,
+            "role": "tank",
+            "spec_name": "复仇",
+            "class_name": "恶魔猎手",
+            "class_key": "demon-hunter",
+            "spec_key": "vengeance"
+        },
+        "1480": {
+            "rank": 7,
+            "spec_id": 1473,
+            "class_id": 12,
+            "role": "dps",
+            "spec_name": "噬灭",
+            "class_name": "恶魔猎手",
+            "class_key": "demon-hunter",
+            "spec_key": "devourer"
+        },
+        "1467": {
+            "rank": 40,
+            "spec_id": 1467,
+            "class_id": 13,
+            "role": "dps",
+            "spec_name": "湮灭",
+            "class_name": "唤魔师",
+            "class_key": "evoker",
+            "spec_key": "devastation"
+        },
+        "1468": {
+            "rank": 35,
+            "spec_id": 1468,
+            "class_id": 13,
+            "role": "healer",
+            "spec_name": "恩护",
+            "class_name": "唤魔师",
+            "class_key": "evoker",
+            "spec_key": "preservation"
+        },
+        "1473": {
+            "rank": 10,
+            "spec_id": 1480,
+            "class_id": 13,
+            "role": "dps",
+            "spec_name": "增辉",
+            "class_name": "唤魔师",
+            "class_key": "evoker",
+            "spec_key": "augmentation"
+        }
+    },
+    "classes": {
+        "1": {
+            "class_id": 1,
+            "class_name": "战士",
+            "class_name_en": "Warrior",
+            "class_key": "warrior",
+            "class_color": "#C69B3A"
+        },
+        "2": {
+            "class_id": 2,
+            "class_name": "圣骑士",
+            "class_name_en": "Paladin",
+            "class_key": "paladin",
+            "class_color": "#F48CBA"
+        },
+        "3": {
+            "class_id": 3,
+            "class_name": "猎人",
+            "class_name_en": "Hunter",
+            "class_key": "hunter",
+            "class_color": "#AAD372"
+        },
+        "4": {
+            "class_id": 4,
+            "class_name": "潜行者",
+            "class_name_en": "Rogue",
+            "class_key": "rogue",
+            "class_color": "#FFF468"
+        },
+        "5": {
+            "class_id": 5,
+            "class_name": "牧师",
+            "class_name_en": "Priest",
+            "class_key": "priest",
+            "class_color": "#FFFFFF"
+        },
+        "6": {
+            "class_id": 6,
+            "class_name": "死亡骑士",
+            "class_name_en": "Death Knight",
+            "class_key": "death-knight",
+            "class_color": "#C41E3A"
+        },
+        "7": {
+            "class_id": 7,
+            "class_name": "萨满祭司",
+            "class_name_en": "Shaman",
+            "class_key": "shaman",
+            "class_color": "#0070DD"
+        },
+        "8": {
+            "class_id": 8,
+            "class_name": "法师",
+            "class_name_en": "Mage",
+            "class_key": "mage",
+            "class_color": "#3FC7EB"
+        },
+        "9": {
+            "class_id": 9,
+            "class_name": "术士",
+            "class_name_en": "Warlock",
+            "class_key": "warlock",
+            "class_color": "#8788EE"
+        },
+        "10": {
+            "class_id": 10,
+            "class_name": "武僧",
+            "class_name_en": "Monk",
+            "class_key": "monk",
+            "class_color": "#00FF98"
+        },
+        "11": {
+            "class_id": 11,
+            "class_name": "德鲁伊",
+            "class_name_en": "Druid",
+            "class_key": "druid",
+            "class_color": "#FF7C0A"
+        },
+        "12": {
+            "class_id": 12,
+            "class_name": "恶魔猎手",
+            "class_name_en": "Demon Hunter",
+            "class_key": "demon-hunter",
+            "class_color": "#A330C9"
+        },
+        "13": {
+            "class_id": 13,
+            "class_name": "唤魔师",
+            "class_name_en": "Evoker",
+            "class_key": "evoker",
+            "class_color": "#33937F"
+        }
+    }
+}
