@@ -226,7 +226,7 @@
         <div class="status-time">{{ b.killer }}{% if b.first_time %} · {{ b.first_time }}{% endif %}</div>
         {% else %}
         <div class="status-fighting">首杀争夺中{% if b.best_percent > 0 %} · 血量 {{ "%.1f"|format(b.best_percent) }}%{% endif %}</div>
-        <div class="status-time">{% if b.pulls > 0 %}{{ b.pulls }}次灭团{% endif %}{% if b.attempt_count and b.attempt_count > 1 %} · {{ b.attempt_count }}家公会尝试{% endif %}</div>
+        {% if b.attempt_count and b.attempt_count > 1 %}<div class="status-time">{{ b.attempt_count }}家公会尝试</div>{% endif %}
         {% endif %}
       </div>
     </div>
