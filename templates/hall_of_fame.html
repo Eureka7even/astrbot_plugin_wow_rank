@@ -106,6 +106,10 @@
   .guild-meta{
     font-size:20px;color:#8892aa;margin-top:3px;
   }
+  .guild-progress{
+    font-size:21px;color:#f0c040;
+    margin-left:auto;text-align:right;flex-shrink:0;
+  }
   .faction-dot{
     display:inline-block;
     width:14px;height:14px;
@@ -197,6 +201,7 @@
           <div class="guild-name">{{ g.name }}</div>
           <div class="guild-meta"><span class="faction-dot faction-{{ g.faction }}"></span>{{ g.faction_cn }} · {{ g.realm }}{% if g.region %} · {{ g.region }}{% endif %}</div>
         </div>
+        <div class="guild-progress">{{ g.current_boss }}/{{ total_bosses }}{% if g.best_percent > 0 %} · {{ "%.1f"|format(g.best_percent) }}%{% endif %}</div>
       </div>
       {% endfor %}
     {% else %}
@@ -220,7 +225,8 @@
         <div class="status-killed">✓ 已击杀</div>
         <div class="status-time">{{ b.killer }}{% if b.first_time %} · {{ b.first_time }}{% endif %}</div>
         {% else %}
-        <div class="status-fighting">首杀争夺中{% if b.attempt_count %} · {{ b.attempt_count }} 家公会尝试{% endif %}</div>
+        <div class="status-fighting">首杀争夺中{% if b.best_percent > 0 %} · 血量 {{ "%.1f"|format(b.best_percent) }}%{% endif %}</div>
+        <div class="status-time">{% if b.pulls > 0 %}{{ b.pulls }}次灭团{% endif %}{% if b.attempt_count and b.attempt_count > 1 %} · {{ b.attempt_count }}家公会尝试{% endif %}</div>
         {% endif %}
       </div>
     </div>

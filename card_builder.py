@@ -464,13 +464,40 @@ def build_hall_of_fame_vars(data: dict) -> dict:
     raid_slug = raid.get("slug") or "the-venomous-abyss"
     difficulty = (raid.get("difficulty") or "mythic").lower()
 
+    # ── 预计算公会统计数据 ──
+    boss_kills_list = data.get("bossKills") or []
+    total_bosses = len(boss_kills_list)
+    guild_stats: dict[int, dict] = {}  # guild_id -> {killed_count, current_boss, best_percent}
+
+    for idx, bk in enumerate(boss_kills_list):
+        boss_num = idx + 1  # 1-based
+        for dg in (bk.get("defeatedBy") or {}).get("guilds") or []:
+            gid = (dg.get("guild") or {}).get("id")
+            if gid:
+                s = guild_stats.setdefault(gid, {"killed_count": 0, "current_boss": 0, "best_percent": 0.0})
+                s["killed_count"] += 1
+                if boss_num > s["current_boss"]:
+                    s["current_boss"] = boss_num
+        for att in (bk.get("attemptedBy") or {}).get("attempts") or []:
+            gid = (att.get("guild") or {}).get("id")
+            if gid:
+                pct = (att.get("attempt") or {}).get("overall_percent", 0) or 0
+                s = guild_stats.setdefault(gid, {"killed_count": 0, "current_boss": 0, "best_percent": 0.0})
+                if pct > s["best_percent"]:
+                    s["best_percent"] = pct
+                if boss_num > s["current_boss"]:
+                    s["current_boss"] = boss_num
+
     # ── 首杀榜单 ──
+    rank1_gid = None
     guilds = []
     for i, g in enumerate(data.get("winningGuilds") or []):
         guild = g.get("guild") or {}
+        gid = guild.get("id")
+        stats = guild_stats.get(gid, {})
+        faction = (guild.get("faction") or "").lower()
         guild_realm = guild.get("realm") or {}
         guild_region = guild.get("region") or {}
-        faction = (guild.get("faction") or "").lower()
         guilds.append({
             "rank": g.get("rank", i + 1),
             "name": guild.get("displayName") or guild.get("name") or "?",
@@ -480,7 +507,11 @@ def build_hall_of_fame_vars(data: dict) -> dict:
             "realm": guild_realm.get("altName") or guild_realm.get("name") or "",
             "region": guild_region.get("short_name") or "",
             "logo": guild.get("logo") or "",
+            "current_boss": stats.get("current_boss", 0),
+            "best_percent": stats.get("best_percent", 0.0),
         })
+        if g.get("rank") == 1:
+            rank1_gid = gid
 
     # ── Boss 进度 ──
     bosses = []
@@ -507,6 +538,17 @@ def build_hall_of_fame_vars(data: dict) -> dict:
             if kr:
                 killer += f"（{kr}）"
 
+        # ── 第一名公会的尝试血量 ──
+        best_percent = 0.0
+        best_pulls = 0
+        if rank1_gid:
+            for att in (attempted.get("attempts") or []):
+                if (att.get("guild") or {}).get("id") == rank1_gid:
+                    attempt_data = att.get("attempt") or {}
+                    best_percent = attempt_data.get("overall_percent", 0) or 0
+                    best_pulls = attempt_data.get("pulls", 0) or 0
+                    break
+
         icon = ""
         boss_slug = bk.get("boss") or ""
         if boss_slug:
@@ -524,6 +566,8 @@ def build_hall_of_fame_vars(data: dict) -> dict:
             "killed": bool(first_ts),
             "first_time": first_time,
             "killer": killer,
+            "best_percent": best_percent,
+            "pulls": best_pulls,
             "attempt_count": attempted.get("totalCount", 0),
         })
 
