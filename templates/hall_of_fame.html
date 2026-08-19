@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    text-rendering:optimizeLegibility;
+  }
+  html{
+    width:800px;
+    background:linear-gradient(160deg,#0d1117 0%,#161b2e 60%,#0d1117 100%);
+  }
+  body{
+    width:800px;
+    height:fit-content;
+    background:linear-gradient(160deg,#0d1117 0%,#161b2e 60%,#0d1117 100%);
+    color:#c8c8d8;
+    font-family:"Microsoft YaHei UI","Microsoft YaHei","PingFang SC","Hiragino Sans GB","WenQuanYi Micro Hei",sans-serif;
+    font-size:26px;
+  }
+
+  .header{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    padding:24px 28px 20px;
+    background:linear-gradient(90deg,rgba(10,10,25,0.95) 0%,rgba(22,27,46,0.85) 100%);
+    border-bottom:1px solid #2a304a;
+  }
+  .raid-icon{
+    width:72px;height:72px;
+    border-radius:12px;
+    border:2px solid #3a4160;
+    flex-shrink:0;
+  }
+  .title{
+    font-size:34px;font-weight:700;
+    color:#f0c040;
+    white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+  }
+  .subtitle{
+    margin-top:6px;font-size:22px;color:#8892aa;
+  }
+  .progress-tag{
+    margin-left:auto;
+    text-align:right;
+    flex-shrink:0;
+  }
+  .progress-num{
+    font-size:36px;font-weight:700;color:#f0c040;
+  }
+  .progress-txt{
+    font-size:20px;color:#8892aa;margin-top:2px;
+  }
+
+  .section{
+    padding:16px 20px;
+    border-bottom:1px solid #1c2238;
+  }
+  .section-title{
+    font-size:24px;font-weight:700;color:#e8e8f0;
+    margin-bottom:12px;
+    padding-left:12px;
+    border-left:5px solid #f0c040;
+    line-height:1.3;
+  }
+
+  /* ── 首杀榜单 ── */
+  .guild-row{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    padding:10px 12px;
+    border-radius:10px;
+    background:rgba(255,255,255,0.03);
+    margin-bottom:8px;
+  }
+  .rank-badge{
+    width:52px;height:52px;
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-size:26px;font-weight:700;
+    flex-shrink:0;
+    color:#1a1a2a;
+    background:#8a93a8;
+  }
+  .rank-1{background:linear-gradient(135deg,#ffd700,#ff9d00);box-shadow:0 0 12px rgba(255,180,0,0.45);}
+  .rank-2{background:linear-gradient(135deg,#e8e8f0,#a8b0c0);}
+  .rank-3{background:linear-gradient(135deg,#e0a050,#b07838);}
+  .guild-logo{
+    width:48px;height:48px;
+    border-radius:10px;
+    flex-shrink:0;
+    background:#22283d;
+  }
+  .guild-info{
+    flex:1;
+    min-width:0;
+  }
+  .guild-name{
+    font-size:27px;font-weight:700;color:#f0f0f8;
+    white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+  }
+  .guild-meta{
+    font-size:20px;color:#8892aa;margin-top:3px;
+  }
+  .faction-dot{
+    display:inline-block;
+    width:14px;height:14px;
+    border-radius:50%;
+    margin-right:8px;
+    vertical-align:1px;
+  }
+  .faction-horde{background:#FF4444;}
+  .faction-alliance{background:#4488FF;}
+
+  /* ── Boss 进度 ── */
+  .boss-row{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    padding:10px 12px;
+    border-radius:10px;
+    background:rgba(255,255,255,0.03);
+    margin-bottom:8px;
+  }
+  .boss-icon{
+    width:52px;height:52px;
+    border-radius:10px;
+    border:1px solid #3a4160;
+    flex-shrink:0;
+  }
+  .boss-info{
+    flex:1;
+    min-width:0;
+  }
+  .boss-name{
+    font-size:26px;font-weight:700;color:#f0f0f8;
+    white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+  }
+  .boss-sub{
+    font-size:19px;color:#8892aa;margin-top:3px;
+    white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+  }
+  .boss-status{
+    flex-shrink:0;
+    text-align:right;
+  }
+  .status-killed{
+    color:#4cd964;
+    font-size:24px;font-weight:700;
+  }
+  .status-fighting{
+    color:#9aa3b8;
+    font-size:22px;
+  }
+  .status-time{
+    font-size:19px;color:#8892aa;margin-top:2px;
+  }
+
+  .footer{
+    padding:14px 20px 18px;
+    font-size:19px;color:#5a6278;
+    text-align:center;
+  }
+</style>
+</head>
+<body>
+  <div class="header">
+    {% if raid_icon %}
+    <img class="raid-icon" src="{{ raid_icon }}" alt="">
+    {% endif %}
+    <div>
+      <div class="title">首杀进度 · {{ raid_name_cn }}</div>
+      <div class="subtitle">{{ difficulty_cn }}难度 · {{ region_cn }}首杀争夺</div>
+    </div>
+    <div class="progress-tag">
+      <div class="progress-num">{{ killed_count }}/{{ total_bosses }}</div>
+      <div class="progress-txt">BOSS 已击杀</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">首杀榜单</div>
+    {% if guilds %}
+      {% for g in guilds %}
+      <div class="guild-row">
+        <div class="rank-badge{% if g.rank == 1 %} rank-1{% elif g.rank == 2 %} rank-2{% elif g.rank == 3 %} rank-3{% endif %}">{{ g.rank }}</div>
+        {% if g.logo %}
+        <img class="guild-logo" src="{{ g.logo }}" alt="">
+        {% else %}
+        <div class="guild-logo"></div>
+        {% endif %}
+        <div class="guild-info">
+          <div class="guild-name">{{ g.name }}</div>
+          <div class="guild-meta"><span class="faction-dot faction-{{ g.faction }}"></span>{{ g.faction_cn }} · {{ g.realm }}{% if g.region %} · {{ g.region }}{% endif %}</div>
+        </div>
+      </div>
+      {% endfor %}
+    {% else %}
+      <div style="text-align:center;color:#9aa3b8;padding:18px 0;font-size:24px;">首杀争夺尚未产生正式榜单</div>
+    {% endif %}
+  </div>
+
+  <div class="section">
+    <div class="section-title">BOSS 击杀进度</div>
+    {% for b in bosses %}
+    <div class="boss-row">
+      {% if b.icon %}
+      <img class="boss-icon" src="{{ b.icon }}" alt="">
+      {% endif %}
+      <div class="boss-info">
+        <div class="boss-name">{{ b.name_cn }}</div>
+        <div class="boss-sub">{{ b.name_en }}</div>
+      </div>
+      <div class="boss-status">
+        {% if b.killed %}
+        <div class="status-killed">✓ 已击杀</div>
+        <div class="status-time">{{ b.killer }}{% if b.first_time %} · {{ b.first_time }}{% endif %}</div>
+        {% else %}
+        <div class="status-fighting">首杀争夺中{% if b.attempt_count %} · {{ b.attempt_count }} 家公会尝试{% endif %}</div>
+        {% endif %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+  <div class="footer">数据来源：Raider.io Hall of Fame</div>
+</body>
+</html>

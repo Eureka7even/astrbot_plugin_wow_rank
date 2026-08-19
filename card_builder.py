@@ -4,7 +4,12 @@ import datetime
 import json
 import os
 
-from .constants import CLASS_COLORS, RAID_TIER_NAMES, RAID_TOTAL_BOSSES_DEFAULT
+from .constants import (
+    CLASS_COLORS,
+    CURRENT_RAID_TIER,
+    RAID_TIER_NAMES,
+    RAID_TOTAL_BOSSES_DEFAULT,
+)
 from .utils import score_color, level_color
 
 # ── 职业/专精/种族中文映射（懒加载）──
@@ -180,33 +185,17 @@ def build_card_vars(data: dict, dungeon_cn_map: dict[str, str], progress_data: d
     dungeons = _runs_to_dungeons(best_runs)
 
     # ── 团本进度 ──
+    # 固定展示当前赛季团本（CURRENT_RAID_TIER），不再回退到旧团本
     raid_prog: dict = data.get("raid_progression") or {}
-    priority = [
-        "tier-mn-1", "manaforge-omega", "liberation-of-undermine",
-        "nerubar-palace", "amirdrassil-the-dreams-hope",
-        "aberrus-the-shadowed-crucible", "vault-of-the-incarnates",
-    ]
-    current_tier = None
-    for tier in priority:
-        if tier in raid_prog:
-            td = raid_prog[tier]
-            if (
-                td.get("heroic_bosses_killed", 0) > 0
-                or td.get("normal_bosses_killed", 0) > 0
-                or td.get("mythic_bosses_killed", 0) > 0
-            ):
-                current_tier = tier
-                break
-    if current_tier is None and raid_prog:
-        current_tier = next(iter(raid_prog))
+    current_tier = CURRENT_RAID_TIER
 
-    raid_name = RAID_TIER_NAMES.get(current_tier or "", current_tier or "")
+    raid_name = RAID_TIER_NAMES.get(current_tier, current_tier)
     normal_prog = heroic_prog = mythic_prog = 0
-    total_bosses = RAID_TOTAL_BOSSES_DEFAULT.get(current_tier or "", 9)
+    total_bosses = RAID_TOTAL_BOSSES_DEFAULT.get(current_tier, 9)
     has_aotc = has_cutting_edge = False
 
-    if current_tier and current_tier in raid_prog:
-        td = raid_prog[current_tier]
+    td = raid_prog.get(current_tier)
+    if td:
         total_bosses = td.get("total_bosses", total_bosses)
         normal_prog = td.get("normal_bosses_killed", 0)
         heroic_prog = td.get("heroic_bosses_killed", 0)
@@ -342,7 +331,7 @@ def build_cutoff_vars(cutoffs: dict) -> dict:
 
     return {
         "region": region_name,
-        "season": "season-mn-1",
+        "season": "season-mn-2",
         "updated": updated,
         "rows": rows,
         "chart_width": chart_width,
@@ -434,4 +423,127 @@ def build_spec_popularity_vars(
         "specs": specs,
         "css_url": css_url,
         "grid_lines": grid_lines,
+    }
+
+
+# ── 团本首杀进度 ──────────────────────────────
+
+HOF_DIFFICULTY_CN = {"mythic": "史诗", "heroic": "英雄", "normal": "普通", "lfr": "随机"}
+HOF_REGION_CN = {"world": "世界", "cn": "国服", "us": "美服", "eu": "欧服", "kr": "韩服", "tw": "台服"}
+
+_dungeon_full_cache: dict | None = None
+
+
+def _load_dungeon_full() -> dict:
+    """懒加载完整 dungeons.json（含团本 bosses 映射），缓存至全局变量。"""
+    global _dungeon_full_cache
+    if _dungeon_full_cache is None:
+        path = os.path.join(os.path.dirname(__file__), "dungeons.json")
+        if os.path.exists(path):
+            with open(path, encoding="utf-8") as f:
+                _dungeon_full_cache = json.load(f)
+        else:
+            _dungeon_full_cache = {}
+    return _dungeon_full_cache
+
+
+def _get_boss_cn(raid_slug: str, boss_slug: str) -> str:
+    """从 dungeons.json 获取 boss 中文名，找不到返回原文。"""
+    raid = _load_dungeon_full().get(raid_slug, {})
+    if isinstance(raid, dict):
+        boss = raid.get("bosses", {}).get(boss_slug, {})
+        if isinstance(boss, dict):
+            return boss.get("name") or boss_slug
+    return boss_slug
+
+
+def build_hall_of_fame_vars(data: dict) -> dict:
+    """将 Hall of Fame raceProgress 数据转换为模板变量。"""
+    raid = data.get("raid") or {}
+    region = data.get("region") or {}
+    raid_slug = raid.get("slug") or "the-venomous-abyss"
+    difficulty = (raid.get("difficulty") or "mythic").lower()
+
+    # ── 首杀榜单 ──
+    guilds = []
+    for i, g in enumerate(data.get("winningGuilds") or []):
+        guild = g.get("guild") or {}
+        guild_realm = guild.get("realm") or {}
+        guild_region = guild.get("region") or {}
+        faction = (guild.get("faction") or "").lower()
+        guilds.append({
+            "rank": g.get("rank", i + 1),
+            "name": guild.get("displayName") or guild.get("name") or "?",
+            "faction": faction,
+            "faction_cn": "部落" if faction == "horde" else "联盟",
+            "faction_color": "#FF4444" if faction == "horde" else "#4488FF",
+            "realm": guild_realm.get("altName") or guild_realm.get("name") or "",
+            "region": guild_region.get("short_name") or "",
+            "logo": guild.get("logo") or "",
+        })
+
+    # ── Boss 进度 ──
+    bosses = []
+    for bk in data.get("bossKills") or []:
+        summary = bk.get("bossSummary") or {}
+        defeated = bk.get("defeatedBy") or {}
+        attempted = bk.get("attemptedBy") or {}
+        kill_guilds = defeated.get("guilds") or []
+
+        first_ts = bk.get("firstDefeatedAt")
+        first_time = ""
+        if first_ts:
+            dt = datetime.datetime.fromtimestamp(
+                first_ts, tz=datetime.timezone(datetime.timedelta(hours=8))
+            )
+            first_time = dt.strftime("%m-%d %H:%M")
+
+        killer = ""
+        if kill_guilds:
+            kg = kill_guilds[0].get("guild") or {}
+            kg_realm = kg.get("realm") or {}
+            killer = kg.get("displayName") or kg.get("name") or "?"
+            kr = kg_realm.get("altName") or kg_realm.get("name") or ""
+            if kr:
+                killer += f"（{kr}）"
+
+        icon = ""
+        boss_slug = bk.get("boss") or ""
+        if boss_slug:
+            # BOSS 头像必须使用 CDN portrait 格式（raider.io 相对路径图标会 404）
+            icon = (
+                f"https://cdn.raiderio.net/cdn-cgi/image/quality=75,width=205"
+                f"/images/{raid_slug}/portraits/{boss_slug}.png"
+            )
+
+        bosses.append({
+            "slug": bk.get("boss") or "",
+            "name_cn": _get_boss_cn(raid_slug, bk.get("boss") or ""),
+            "name_en": summary.get("name") or "",
+            "icon": icon,
+            "killed": bool(first_ts),
+            "first_time": first_time,
+            "killer": killer,
+            "attempt_count": attempted.get("totalCount", 0),
+        })
+
+    # ── 头部信息 ──
+    raid_icon = raid.get("icon_url") or ""
+    if raid_icon.startswith("/"):
+        # 团本图标同样走 CDN（raider.io 域名下 404）
+        raid_icon = "https://cdn.raiderio.net" + raid_icon
+
+    return {
+        "raid_name_cn": RAID_TIER_NAMES.get(raid_slug) or raid.get("short_name") or raid.get("name") or raid_slug,
+        "raid_name_en": raid.get("name") or "",
+        "raid_short": raid.get("short_name") or "",
+        "raid_icon": raid_icon,
+        "difficulty": difficulty,
+        "difficulty_cn": HOF_DIFFICULTY_CN.get(difficulty, "史诗"),
+        "region": region.get("name") or "",
+        "region_cn": HOF_REGION_CN.get(region.get("slug") or "world", "世界"),
+        "guilds": guilds,
+        "bosses": bosses,
+        "total_bosses": len(bosses),
+        "killed_count": sum(1 for b in bosses if b["killed"]),
     }

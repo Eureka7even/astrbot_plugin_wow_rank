@@ -76,7 +76,7 @@ async def search_characters(name: str, limit: int = 10) -> list:
         return matches[:limit]
 
 
-async def fetch_cutoffs(region: str = "cn", season: str = "season-mn-1") -> dict:
+async def fetch_cutoffs(region: str = "cn", season: str = "season-mn-2") -> dict:
     """
     获取 M+ 赛季分数线（cutoffs）。
     返回包含 p999/p990/p900/p750/p600 各分段数据的字典。
@@ -138,7 +138,7 @@ async def fetch_character(region: str, realm: str, name: str) -> dict:
 
 
 async def fetch_spec_popularity(
-    season: str = "season-mn-1",
+    season: str = "season-mn-2",
     min_mythic_level: int = 2,
     week: int | None = None,
 ) -> dict:
@@ -234,7 +234,7 @@ def format_match_list(matches: list) -> str:
 
 # ── M+ 进度统计 ──────────────────────────────
 
-async def fetch_mplus_progress(region: str, realm: str, name: str, season: str = "season-mn-1") -> dict:
+async def fetch_mplus_progress(region: str, realm: str, name: str, season: str = "season-mn-2") -> dict:
     """
     获取角色 M+ 赛季进度数据（含限时通关次数统计）。
     返回 characterMythicPlusProgress 字典。
@@ -247,6 +247,34 @@ async def fetch_mplus_progress(region: str, realm: str, name: str, season: str =
             return {}
         data = await resp.json(content_type=None)
         return data.get("characterMythicPlusProgress", {})
+
+
+# ── 团本首杀进度 ──────────────────────────────
+
+async def fetch_hall_of_fame(
+    raid: str = "the-venomous-abyss",
+    difficulty: str = "mythic",
+    region: str = "world",
+    faction: str = "",
+) -> dict:
+    """
+    获取团本首杀进度（Hall of Fame）。
+    返回 raceProgress 字典（含 winningGuilds/bossKills 等）。
+    """
+    url = "https://raider.io/api/hall-of-fame"
+    params = {
+        "raid": raid,
+        "difficulty": difficulty,
+        "region": region,
+        "faction": faction,
+        "includeLogData": "true",
+    }
+    async with _get_session().get(url, params=params) as resp:
+        if resp.status != 200:
+            text = await resp.text()
+            raise Exception(f"Hall of Fame API 错误 HTTP {resp.status}: {text[:200]}")
+        data = await resp.json(content_type=None)
+        return data.get("raceProgress", {})
 
 
 # ── 角色数据刷新 ──────────────────────────────

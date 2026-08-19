@@ -16,6 +16,7 @@ from .api import (
     close_session,
     extract_char_ids,
     fetch_cutoffs,
+    fetch_hall_of_fame,
     fetch_mplus_progress,
     fetch_profile,
     fetch_spec_popularity,
@@ -24,7 +25,12 @@ from .api import (
     search_characters,
     search_realm,
 )
-from .card_builder import build_card_vars, build_cutoff_vars, build_spec_popularity_vars
+from .card_builder import (
+    build_card_vars,
+    build_cutoff_vars,
+    build_hall_of_fame_vars,
+    build_spec_popularity_vars,
+)
 from .template_manager import TemplateManager
 from .utils import get_current_season_week, load_dungeon_map
 
@@ -92,7 +98,7 @@ class WowRankPlugin(Star):
     async def query_cutoff(self, event: AstrMessageEvent):
         """查询当前国服 M+ 分数线。用法：/wow-cutoff"""
         try:
-            cutoffs = await fetch_cutoffs(region="cn", season="season-mn-1")
+            cutoffs = await fetch_cutoffs(region="cn", season="season-mn-2")
             if not cutoffs:
                 yield event.plain_result("未获取到分数线数据。")
                 return
@@ -141,7 +147,7 @@ class WowRankPlugin(Star):
             yield event.plain_result(f"正在获取 {scope_text} {min_level}层+ 专精热度数据...")
 
             data = await fetch_spec_popularity(
-                season="season-mn-1",
+                season="season-mn-2",
                 min_mythic_level=min_level,
                 week=week,
             )
@@ -157,6 +163,61 @@ class WowRankPlugin(Star):
         except Exception as e:
             logger.error(f"专精热度查询失败: {e}", exc_info=True)
             yield event.plain_result(f"专精热度查询失败：{e}")
+
+    # ── 团本首杀进度 ─────────────────────
+    @filter.command("wow首杀")
+    async def query_hall_of_fame(self, event: AstrMessageEvent):
+        """查询团本首杀进度。
+        用法：/wow首杀 [难度] [区域]
+        示例：/wow首杀
+              /wow首杀 英雄
+              /wow首杀 史诗 世界"""
+        try:
+            parts = event.message_str.strip().split(None, 1)
+            args = parts[1].strip().split() if len(parts) > 1 and parts[1].strip() else []
+
+            difficulty = "mythic"
+            region = "world"
+            for arg in args:
+                a = arg.lower()
+                if a in ("史诗", "mythic", "m"):
+                    difficulty = "mythic"
+                elif a in ("英雄", "heroic", "h"):
+                    difficulty = "heroic"
+                elif a in ("普通", "normal", "n"):
+                    difficulty = "normal"
+                elif a in ("随机", "lfr"):
+                    difficulty = "lfr"
+                elif a in ("世界", "world"):
+                    region = "world"
+                elif a in ("国服", "cn"):
+                    region = "cn"
+                elif a in ("美服", "us"):
+                    region = "us"
+                elif a in ("欧服", "eu"):
+                    region = "eu"
+                elif a in ("韩服", "kr"):
+                    region = "kr"
+                elif a in ("台服", "tw"):
+                    region = "tw"
+
+            difficulty_cn = {"mythic": "史诗", "heroic": "英雄", "normal": "普通", "lfr": "随机"}[difficulty]
+            region_cn = {"world": "世界", "cn": "国服", "us": "美服", "eu": "欧服", "kr": "韩服", "tw": "台服"}[region]
+            yield event.plain_result(f"正在获取「烈毒之渊」{difficulty_cn}难度 {region_cn}首杀进度...")
+
+            data = await fetch_hall_of_fame(difficulty=difficulty, region=region)
+            if not data:
+                yield event.plain_result("未获取到首杀进度数据。")
+                return
+
+            vars_ = build_hall_of_fame_vars(data)
+            img_url = await self.html_render(
+                self._tmpl.hall_of_fame, vars_, options=self._render_options()
+            )
+            yield event.image_result(img_url)
+        except Exception as e:
+            logger.error(f"首杀进度查询失败: {e}", exc_info=True)
+            yield event.plain_result(f"首杀进度查询失败：{e}")
 
     # ── 角色数据刷新 ─────────────────────
     @filter.command("wow刷新")
@@ -281,7 +342,7 @@ class WowRankPlugin(Star):
     async def llm_query_cutoff(self, event: AstrMessageEvent):
         '''查询魔兽世界国服（WOW）当前赛季大秘境（M+）各分段分数线（0.1%/1%/5%/10%/25% 分段），返回一张分数线图片。本工具无需任何参数。'''
         try:
-            cutoffs = await fetch_cutoffs(region="cn", season="season-mn-1")
+            cutoffs = await fetch_cutoffs(region="cn", season="season-mn-2")
             if not cutoffs:
                 yield "未获取到分数线数据。"
                 return
@@ -317,7 +378,7 @@ class WowRankPlugin(Star):
                 min_level_val = 2
 
             data = await fetch_spec_popularity(
-                season="season-mn-1",
+                season="season-mn-2",
                 min_mythic_level=min_level_val,
                 week=week_val,
             )

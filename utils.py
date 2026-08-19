@@ -9,11 +9,11 @@ from astrbot.api import logger
 from .constants import DUNGEON_MAP_FILE
 
 
-# season-mn-1 第1周开始日期（周四）
-SEASON_MN_1_START = datetime.date(2026, 3, 27)
+# season-mn-2 第1周开始日期（周四）
+SEASON_MN_2_START = datetime.date(2026, 8, 20)
 
 
-def get_current_season_week(season_start: datetime.date = SEASON_MN_1_START) -> int:
+def get_current_season_week(season_start: datetime.date = SEASON_MN_2_START) -> int:
     """计算当前是赛季第几周（从1开始），基于北京时间。"""
     tz = datetime.timezone(datetime.timedelta(hours=8))
     now = datetime.datetime.now(tz)

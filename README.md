@@ -11,6 +11,7 @@ WoW 角色战绩查询插件，通过 [Raider.io](https://raider.io) API 获取�
   - 列表中文展示：职业 / 专精名称自动映射为中文
 - **分数线查询**：查询当前国服 M+ 赛季分数线（Top 0.1% ~ Top 40%），含历史趋势图
 - **专精热度**：查询大秘境专精 popularity 排行，含职业图标与彩色条形图
+- **首杀进度**：查询团本首杀争夺进度（世界/国服等，史诗/英雄/普通难度），含首杀榜单与 BOSS 击杀进度
 - **刷新缓存**：手动刷新指定角色的战绩缓存
 - 多角色同名时展示列表，支持二次选择（指令模式可交互选序号，LLM 模式引导用户提供服务器名）
 - **LLM 自然语言调用**：Bot 可在对话中自动调用工具查询（见下方「LLM 工具」）
@@ -63,6 +64,18 @@ WoW 角色战绩查询插件，通过 [Raider.io](https://raider.io) API 获取�
 - **全体 / 本周**：`全体` 为默认全周期统计；`本周` 自动计算当前赛季周数（每周四更新 CD）
 - **层数**：可选起始层数，如 `15` 表示 15 层及以上
 
+### 首杀进度
+
+```
+/wow首杀              # 默认史诗难度、世界首杀
+/wow首杀 英雄          # 英雄难度
+/wow首杀 史诗 国服      # 史诗难度、国服
+```
+
+- **难度**：`史诗`/`英雄`/`普通`/`随机`（默认史诗）
+- **区域**：`世界`/`国服`/`美服`/`欧服`/`韩服`/`台服`（默认世界）
+- 展示首杀榜单（前 3 名金银铜高亮）与全部 BOSS 击杀进度（击杀者公会、击杀时间、尝试公会数）
+
 ### 刷新缓存
 
 ```
@@ -97,7 +110,7 @@ WoW 角色战绩查询插件，通过 [Raider.io](https://raider.io) API 获取�
 astrbot_plugin_wow_rank/
 ├── main.py                 # 插件入口，指令路由 + LLM 工具注册
 ├── api.py                  # Raider.io API 封装（aiohttp 会话复用）
-├── card_builder.py         # 模板变量构建（战绩卡 / 分数线 / 专精热度）
+├── card_builder.py         # 模板变量构建（战绩卡 / 分数线 / 专精热度 / 首杀进度）
 ├── template_manager.py     # HTML 模板缓存
 ├── constants.py            # 常量定义
 ├── utils.py                # 工具函数（含职业/专精中文映射）
@@ -109,7 +122,8 @@ astrbot_plugin_wow_rank/
 └── templates/
     ├── card.html           # 角色战绩卡片模板
     ├── cutoff.html         # 分数线模板（含 SVG 趋势图）
-    └── spec_popularity.html # 专精热度条形图模板
+    ├── spec_popularity.html # 专精热度条形图模板
+    └── hall_of_fame.html   # 首杀进度模板
 ```
 
 ## 数据来源
@@ -119,9 +133,10 @@ astrbot_plugin_wow_rank/
 - 角色数据：`/api/v1/characters/profile`
 - 分数线：`/api/v1/mythic-plus/season-cutoffs`
 - 专精热度：`/api/statistics/get-data`
+- 首杀进度：`/api/hall-of-fame`
 - 搜索：`/api/search`
 
-查询范围固定为 **CN 大区**。
+角色战绩查询范围固定为 **CN 大区**；首杀进度默认查询世界范围（可指定区域）。
 
 > 数据更新频率取决于 Raider.io 的同步周期，通常为几分钟到几小时不等。
 
