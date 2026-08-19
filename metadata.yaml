@@ -1,8 +1,8 @@
 name: astrbot_plugin_wow_rank
 desc: WoW 角色战绩查询插件，通过 Raider.io 获取 M+ 评分、8本最高层数、团本进度，并生成战绩卡片图片。支持指令与 LLM 自然语言调用（战绩卡片、M+ 分数线、专精热度）。
-author: unknown
+author: Eureka7even
 version: 0.2.0
-repo: ""
+repo: https://github.com/Eureka7even/astrbot_plugin_wow_rank
 astrbot_version: ">=4.9.2"
 short_desc: 查询 WoW 角色 M+ 战绩、分数线与专精热度并生成卡片
 display_name:
