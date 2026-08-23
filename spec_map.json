@@ -221,10 +221,10 @@
             "spec_id": 62,
             "class_id": 8,
             "role": "dps",
-            "spec_name": "冰霜",
+            "spec_name": "奥术",
             "class_name": "法师",
             "class_key": "mage",
-            "spec_key": "frost"
+            "spec_key": "arcane"
         },
         "63": {
             "rank": 38,
@@ -241,10 +241,10 @@
             "spec_id": 64,
             "class_id": 8,
             "role": "dps",
-            "spec_name": "奥术",
+            "spec_name": "冰霜",
             "class_name": "法师",
             "class_key": "mage",
-            "spec_key": "arcane"
+            "spec_key": "frost"
         },
         "265": {
             "rank": 27,

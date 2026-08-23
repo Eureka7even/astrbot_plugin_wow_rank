@@ -524,10 +524,17 @@ def build_hall_of_fame_vars(data: dict) -> dict:
         first_ts = bk.get("firstDefeatedAt")
         first_time = ""
         if first_ts:
-            dt = datetime.datetime.fromtimestamp(
-                first_ts, tz=datetime.timezone(datetime.timedelta(hours=8))
-            )
-            first_time = dt.strftime("%m-%d %H:%M")
+            tz_cn = datetime.timezone(datetime.timedelta(hours=8))
+            if isinstance(first_ts, str):
+                # 新接口：ISO 8601 字符串（如 "2026-08-21T03:40:38.000Z"）
+                try:
+                    dt = datetime.datetime.fromisoformat(first_ts.replace("Z", "+00:00"))
+                except ValueError:
+                    dt = None
+            else:
+                dt = datetime.datetime.fromtimestamp(first_ts, tz=tz_cn)
+            if dt:
+                first_time = dt.astimezone(tz_cn).strftime("%m-%d %H:%M")
 
         killer = ""
         if kill_guilds:
