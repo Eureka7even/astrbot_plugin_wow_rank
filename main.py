@@ -5,11 +5,19 @@ AstrBot WoW 战绩查询插件
 """
 
 import asyncio
+import os
 
 from astrbot.api.event import filter, AstrMessageEvent
 from astrbot.api.star import Context, Star
 from astrbot.api import logger
 from astrbot.core.utils.session_waiter import session_waiter, SessionController
+
+try:
+    from astrbot.core.utils.astrbot_path import get_astrbot_data_path
+except ImportError:
+    # 低版本兜底：数据目录退化到项目根 data/
+    def get_astrbot_data_path() -> str:
+        return os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), "data")
 
 from .api import (
     check_refresh_status,
@@ -28,9 +36,11 @@ from .api import (
 from .card_builder import (
     build_card_vars,
     build_cutoff_vars,
+    build_daily_report_vars,
     build_hall_of_fame_vars,
     build_spec_popularity_vars,
 )
+from .daily_report import DailyReportService
 from .template_manager import TemplateManager
 from .utils import get_current_season_week, load_dungeon_map
 
@@ -40,6 +50,13 @@ class WowRankPlugin(Star):
         super().__init__(context)
         self._tmpl = TemplateManager()
         self._dungeon_cn_map = load_dungeon_map()
+        # 大秘境日报：每日 0/6/12/18 点后台刷新缓存
+        self._daily = DailyReportService(
+            data_dir=os.path.join(
+                get_astrbot_data_path(), "plugin_data", "astrbot_plugin_wow_rank"
+            )
+        )
+        asyncio.get_event_loop().create_task(self._daily.start())
 
     # ── 主指令 ────────────────────────────────
     @filter.command("wow")
@@ -218,6 +235,29 @@ class WowRankPlugin(Star):
         except Exception as e:
             logger.error(f"首杀进度查询失败: {e}", exc_info=True)
             yield event.plain_result(f"首杀进度查询失败：{e}")
+
+    # ── 大秘境日报 ─────────────────────────────
+    @filter.command("wow日报", alias={"大秘境日报", "wow-daily"})
+    async def query_daily_report(self, event: AstrMessageEvent):
+        """查询大秘境日报：各专精世界前100平均分（去极值）+ 当前CD热门队伍配置Top5。
+        用法：/wow日报"""
+        try:
+            if not self._daily.has_cache():
+                yield event.plain_result("正在获取大秘境日报数据（首次获取约需 1 分钟），请稍候...")
+
+            report = await self._daily.get_report()
+            if not report:
+                yield event.plain_result("日报数据获取失败，请稍后重试。")
+                return
+
+            vars_ = build_daily_report_vars(report)
+            img_url = await self.html_render(
+                self._tmpl.daily_report, vars_, options=self._render_options()
+            )
+            yield event.image_result(img_url)
+        except Exception as e:
+            logger.error(f"大秘境日报查询失败: {e}", exc_info=True)
+            yield event.plain_result(f"大秘境日报查询失败：{e}")
 
     # ── 角色数据刷新 ─────────────────────
     @filter.command("wow刷新")
@@ -518,5 +558,6 @@ class WowRankPlugin(Star):
         return parts[1].strip()
 
     async def terminate(self):
+        await self._daily.stop()
         await close_session()
         logger.info("WoW 战绩查询插件已卸载")

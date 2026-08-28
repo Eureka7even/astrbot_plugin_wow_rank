@@ -6,7 +6,11 @@ TMPL_PATH = os.path.join(os.path.dirname(__file__), "templates", "card.html")
 CUTOFF_TMPL_PATH = os.path.join(os.path.dirname(__file__), "templates", "cutoff.html")
 SPEC_POP_TMPL_PATH = os.path.join(os.path.dirname(__file__), "templates", "spec_popularity.html")
 HALL_OF_FAME_TMPL_PATH = os.path.join(os.path.dirname(__file__), "templates", "hall_of_fame.html")
+DAILY_REPORT_TMPL_PATH = os.path.join(os.path.dirname(__file__), "templates", "daily_report.html")
 SPRITE_PATH = os.path.join(os.path.dirname(__file__), "specs_sprite.png")
+
+# 大秘境日报每日缓存刷新时刻（北京时间）
+DAILY_REFRESH_HOURS = (0, 6, 12, 18)
 
 # 副本名称映射文件（dungeons.json 与插件同目录）
 DUNGEON_MAP_FILE = os.path.join(os.path.dirname(__file__), "dungeons.json")

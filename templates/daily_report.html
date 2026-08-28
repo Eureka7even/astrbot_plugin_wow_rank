@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    text-rendering:optimizeLegibility;
+  }
+  html{
+    width:800px;
+    background:#0a0e1a;
+  }
+  body{
+    width:800px;
+    height:fit-content;
+    background:#0a0e1a;
+    color:#c8c8d8;
+    font-family:"Microsoft YaHei UI","Microsoft YaHei","PingFang SC","Hiragino Sans GB","WenQuanYi Micro Hei",sans-serif;
+    font-size:24px;
+  }
+
+  .header{
+    text-align:center;
+    padding:20px 0 6px;
+  }
+  .title{
+    font-size:32px;font-weight:700;
+    color:#f0c040;
+  }
+  .subtitle{
+    margin-top:6px;font-size:20px;color:#8892aa;
+  }
+
+  .section{
+    margin:14px 20px 0;
+  }
+  .section-title{
+    font-size:22px;font-weight:700;
+    color:#e8e8f0;
+    padding:6px 10px;
+    border-left:4px solid #f0c040;
+    background:rgba(255,255,255,0.03);
+    border-radius:4px;
+    margin-bottom:10px;
+  }
+
+  /* ── 专精平均分横向网格（按分数从高到低，行优先） ── */
+  .spec-grid{
+    display:grid;
+    grid-template-columns:repeat(5, 1fr);
+    gap:6px;
+  }
+  .spec-row{
+    display:flex;align-items:center;justify-content:center;gap:6px;
+    height:40px;
+    background:rgba(255,255,255,0.02);
+    border-radius:4px;
+    padding:0 4px;
+  }
+  .spec-rank{
+    min-width:22px;text-align:right;
+    font-size:13px;color:#4a5270;
+    flex-shrink:0;
+  }
+  .spec-icon{
+    flex-shrink:0;
+    border-radius:4px;
+  }
+  .spec-score{
+    font-size:16px;font-weight:600;
+    font-variant-numeric:tabular-nums;
+  }
+  .spec-nums{
+    display:flex;flex-direction:column;align-items:flex-start;
+    justify-content:center;
+    line-height:1.15;
+  }
+  .spec-top{
+    font-size:11px;color:#5a6280;
+    font-variant-numeric:tabular-nums;
+    white-space:nowrap;
+  }
+
+  /* ── 热门队伍配置（单行：排名 | 图标x5 | 进度条 | 占比(次数)） ── */
+  .comp-card{
+    display:flex;align-items:center;gap:12px;
+    background:rgba(255,255,255,0.03);
+    border-radius:6px;
+    padding:6px 12px;
+    margin-bottom:6px;
+  }
+  .comp-rank{
+    width:32px;height:32px;border-radius:6px;
+    flex-shrink:0;
+    background:linear-gradient(135deg,#f0c040,#c9922a);
+    color:#1a1408;font-weight:700;font-size:17px;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .comp-members{
+    display:flex;align-items:center;gap:6px;
+    flex-shrink:0;
+  }
+  .comp-member{
+    display:flex;align-items:center;justify-content:center;
+  }
+  .comp-bar-wrap{
+    flex:1;height:8px;
+    background:rgba(255,255,255,0.06);
+    border-radius:4px;overflow:hidden;
+  }
+  .comp-bar{
+    height:100%;
+    background:linear-gradient(90deg,#f0c040,#e8813a);
+    border-radius:4px;
+  }
+  .comp-meta{
+    font-size:16px;color:#e8e8f0;
+    white-space:nowrap;flex-shrink:0;
+    font-variant-numeric:tabular-nums;
+  }
+  .comp-meta span{
+    color:#8892aa;font-size:14px;
+  }
+
+  .footer{
+    padding:12px 20px 16px;
+    display:flex;justify-content:space-between;
+    font-size:16px;color:#3a4060;
+  }
+  .warn{
+    margin:10px 20px 0;
+    font-size:15px;color:#e8813a;
+  }
+</style>
+<style>
+{{ icons_css }}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="title">M+ 大秘境日报</div>
+  <div class="subtitle">{{ season }} &middot; 第 {{ week }} 周 CD &middot; 世界前100 &middot; 更新 {{ updated }}</div>
+</div>
+
+<div class="section">
+  <div class="section-title">专精前 100 平均分（去极值）</div>
+  <div class="spec-grid">
+    {% for r in rows %}
+    <div class="spec-row">
+      <div class="spec-rank">{{ r.rank }}</div>
+      <div class="spec-icon {{ r.icon_class }}"></div>
+      <div class="spec-nums">
+        <div class="spec-score" style="color:{{ r.color }}">{{ r.score }}</div>
+        <div class="spec-top">最高 {{ r.top }}</div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">当前 CD 热门队伍配置 TOP{{ comps|length }}</div>
+  {% for c in comps %}
+  <div class="comp-card">
+    <div class="comp-rank">{{ c.rank }}</div>
+    <div class="comp-members">
+      {% for m in c.members %}
+      <div class="comp-member">
+        <div class="spec-icon {{ m.icon_class }}"></div>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="comp-bar-wrap"><div class="comp-bar" style="width:{{ c.bar_width }}%"></div></div>
+    <div class="comp-meta">{{ c.pct }}%<span>（{{ c.quantity }}次）</span></div>
+  </div>
+  {% endfor %}
+</div>
+
+{% if warned %}
+<div class="warn">注：本次部分数据获取失败，显示 "--" 的专精将在下次刷新时重试。</div>
+{% endif %}
+
+<div class="footer">
+  <span>Data: Raider.io</span>
+  <span>每日 0/6/12/18 点更新</span>
+</div>
+
+</body>
+</html>

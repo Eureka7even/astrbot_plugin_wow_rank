@@ -359,6 +359,72 @@ def _load_spec_map() -> dict:
     return _spec_map_cache
 
 
+# ── 专精图标 CSS ──────────────────────────────
+_icons_css_cache: dict[int, str] = {}
+_ICON_GRID = 64  # 雪碧图格子尺寸（specs.scss 生成数据：每图标 64×64，共 7×6 格）
+
+# 队伍成员展示顺序：坦克 → 治疗 → 输出（角色取自 spec_map.json 的 role 字段）
+_ROLE_ORDER = {"tank": 0, "healer": 1, "dps": 2}
+
+
+def build_icons_css(size: int = 32) -> str:
+    """读取 spec_icons.css，将雪碧图替换为 base64 data URI 后返回（带缓存）。
+
+    size: 最终图标显示尺寸（px）。雪碧图每格为 64×64，窗口必须与格子一致，
+    否则只显示图标局部（32px 窗口截 64px 格子只剩左上 1/4），
+    故所有像素尺寸（width/height/size/position）按 size/64 统一换算。
+
+    AstrBot html_render 渲染环境无法加载外部 file:// 资源，
+    故将完整 CSS 内联进模板，雪碧图一并内嵌，保证图标绝对可显示。
+    """
+    global _icons_css_cache
+    if size in _icons_css_cache:
+        return _icons_css_cache[size]
+    import base64
+    import re
+
+    css_path = os.path.join(os.path.dirname(__file__), "spec_icons.css")
+    png_path = os.path.join(os.path.dirname(__file__), "specs_sprite.png")
+    try:
+        with open(css_path, encoding="utf-8") as f:
+            css = f.read()
+        if 'url("specs_sprite.png")' in css and os.path.exists(png_path):
+            with open(png_path, "rb") as f:
+                b64 = base64.b64encode(f.read()).decode("ascii")
+            # 雪碧图以 CSS 变量声明一次，所有图标类共享（避免 base64 重复 40 次膨胀体积）
+            css = css.replace('url("specs_sprite.png")', "var(--spec-sprite)")
+            css = f':root{{--spec-sprite:url("data:image/png;base64,{b64}")}}' + css
+        k = size / _ICON_GRID
+        if k != 1.0:
+            css = _scale_icon_css(css, k)
+        _icons_css_cache[size] = css
+    except OSError as e:
+        raise OSError(f"读取专精图标资源失败: {e}") from e
+    return css
+
+
+def _scale_icon_css(css: str, scale: float) -> str:
+    """按比例缩放图标 CSS 中的所有像素尺寸（含 background-position 偏移）。"""
+    import re  # noqa: PLC0415 与 build_icons_css 保持一致的局部导入风格
+
+    def _px(v: str) -> str:
+        return f"{float(v) * scale:g}px"
+
+    css = re.sub(r"width:\s*([0-9.]+)px", lambda m: f"width: {_px(m.group(1))}", css)
+    css = re.sub(r"height:\s*([0-9.]+)px", lambda m: f"height: {_px(m.group(1))}", css)
+    css = re.sub(
+        r"background-size:\s*([0-9.]+)px\s+([0-9.]+)px",
+        lambda m: f"background-size: {_px(m.group(1))} {_px(m.group(2))}",
+        css,
+    )
+    css = re.sub(
+        r"background-position:\s*(-?[0-9.]+)px\s+(-?[0-9.]+)px",
+        lambda m: f"background-position: {_px(m.group(1))} {_px(m.group(2))}",
+        css,
+    )
+    return css
+
+
 def build_spec_popularity_vars(
     data: dict,
     region: str = "cn",
@@ -377,11 +443,8 @@ def build_spec_popularity_vars(
     # 取最大值用于条形宽度归一化
     max_qty = max((item.get("quantity", 0) for item in raw_items), default=1)
 
-    # 读取 CSS sprite 定义
-    css_path = os.path.join(os.path.dirname(__file__), "spec_icons.css")
-    css_url = ""
-    if os.path.exists(css_path):
-        css_url = "file:///" + css_path.replace("\\", "/")
+    # 内联图标 CSS（雪碧图已转 data URI，可直接嵌入模板）
+    icons_css = build_icons_css()
 
     specs = []
     for rank, item in enumerate(raw_items, 1):
@@ -421,7 +484,7 @@ def build_spec_popularity_vars(
         "level_desc": level_desc,
         "updated": updated,
         "specs": specs,
-        "css_url": css_url,
+        "icons_css": icons_css,
         "grid_lines": grid_lines,
     }
 
@@ -597,4 +660,89 @@ def build_hall_of_fame_vars(data: dict) -> dict:
         "bosses": bosses,
         "total_bosses": len(bosses),
         "killed_count": sum(1 for b in bosses if b["killed"]),
+    }
+
+
+# ── 大秘境日报 ──────────────────────────────
+
+def build_daily_report_vars(cache: dict) -> dict:
+    """将大秘境日报缓存数据转换为 daily_report.html 模板变量。"""
+    spec_map = _load_spec_map()
+    specs_meta = spec_map.get("specs", {})
+    classes_meta = spec_map.get("classes", {})
+
+    # 排行数据以 (class_key, spec_key) 标识
+    by_key = {
+        (m.get("class_key", ""), m.get("spec_key", "")): m
+        for m in specs_meta.values()
+    }
+    # 队伍配置以 spec_id 标识
+    by_id = {str(m.get("spec_id", "")): m for m in specs_meta.values()}
+
+    def _meta_color(meta: dict) -> str:
+        return classes_meta.get(str(meta.get("class_id", "")), {}).get(
+            "class_color", "#AAAAAA"
+        )
+
+    # ── 专精前 100 平均分（按均分降序，失败项排最后）──
+    averages = list(cache.get("spec_averages", []))
+    averages.sort(key=lambda x: (x.get("avg") is None, -(x.get("avg") or 0)))
+    rows = []
+    for i, item in enumerate(averages, 1):
+        class_key = item.get("class_key", "")
+        spec_key = item.get("spec_key", "")
+        meta = by_key.get((class_key, spec_key), {})
+        avg = item.get("avg")
+        top = item.get("max")
+        rows.append({
+            "rank": i,
+            "icon_class": f"spec-{class_key}-{spec_key}",
+            "name": f"{meta.get('spec_name', spec_key)} {meta.get('class_name', class_key)}",
+            "color": _meta_color(meta) if meta else "#AAAAAA",
+            "score": f"{avg:.1f}" if avg is not None else "--",
+            "top": f"{top:.1f}" if top is not None else "--",
+            "failed": avg is None,
+        })
+
+    # ── 当前 CD 热门队伍配置 Top5 ──
+    comp_items = cache.get("group_comps", [])
+    max_qty = max((c.get("quantity", 0) for c in comp_items), default=0)
+    comps = []
+    for i, c in enumerate(comp_items, 1):
+        members = []
+        for m in c.get("group", []):
+            meta = by_id.get(str(m.get("spec_id", "")), {})
+            class_key = meta.get("class_key", "")
+            spec_key = meta.get("spec_key", "")
+            spec_name = meta.get("spec_name", "?")
+            class_name = meta.get("class_name", "")
+            members.append({
+                "icon_class": f"spec-{class_key}-{spec_key}",
+                "name": f"{spec_name} {class_name}".rstrip(),
+                "color": _meta_color(meta) if meta else "#AAAAAA",
+                "role": meta.get("role", "dps"),
+            })
+        # 按 坦克 → 治疗 → 输出 排列（未知名角色排最后）
+        members.sort(key=lambda m: _ROLE_ORDER.get(m["role"], 3))
+        qty = c.get("quantity", 0)
+        comps.append({
+            "rank": i,
+            "quantity": f"{qty:,}",
+            "pct": f"{c.get('pct', 0):.2f}",
+            "bar_width": (qty / max_qty * 100) if max_qty else 0,
+            "members": members,
+        })
+
+    fetched = cache.get("fetched_at", "")
+    updated = fetched[:16].replace("T", " ") if fetched else ""
+
+    return {
+        "season": cache.get("season", "season-mn-2"),
+        "week": cache.get("week", ""),
+        "updated": updated,
+        "rows": rows,
+        "comps": comps,
+        "icons_css": build_icons_css(24),  # 24px 图标（64px 格子按 3/8 换算，窗口对齐格子）
+        "warned": bool(cache.get("skipped")) or bool(cache.get("comps_error")),
+        "failed_count": sum(1 for r in rows if r["failed"]),
     }

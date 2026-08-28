@@ -337,3 +337,74 @@ async def check_refresh_status(batch_id: str) -> str:
             raise Exception(f"刷新状态查询失败 HTTP {resp.status}: {text[:200]}")
         data = await resp.json(content_type=None)
         return data.get("batchInfo", {}).get("status", "unknown")
+
+
+# ── 大秘境日报 ──────────────────────────────
+
+# 日报批量拉取时的请求间隔（秒），规避 Raider.io 免费 API 限速
+REQUEST_INTERVAL = 1.2
+
+
+async def fetch_spec_ranking_scores(
+    region: str, season: str, class_slug: str, spec_slug: str
+) -> list[float]:
+    """
+    获取某专精指定区域排行前 100 名的分数列表（仅保留 score）。
+
+    用于大秘境日报：各专精前 100 名去除极值的平均分。
+    """
+    url = "https://raider.io/api/mythic-plus/rankings/specs"
+    params = {
+        "region": region,
+        "season": season,
+        "class": class_slug,
+        "spec": spec_slug,
+        "page": 0,
+    }
+    async with _get_session().get(url, params=params) as resp:
+        if resp.status != 200:
+            text = await resp.text()
+            raise Exception(f"排行 API 错误 HTTP {resp.status}: {text[:200]}")
+        data = await resp.json(content_type=None)
+        chars = (data.get("rankings") or {}).get("rankedCharacters") or []
+        return [float(c.get("score", 0)) for c in chars]
+
+
+async def fetch_group_comps(season: str, week: int) -> dict:
+    """
+    获取当前 CD 热门队伍配置统计（mythic-plus-group-comps，仅限时）。
+    返回 {"items": [{quantity, successRate, group: [{class_id, spec_id}...]}...], "total_quantity": int}。
+    """
+    url = "https://raider.io/api/statistics/get-data"
+    params = {
+        "season": season,
+        "type": "mythic-plus-group-comps",
+        "minMythicLevel": 2,
+        "maxMythicLevel": 99,
+        "seasonWeekStart": week,
+        "seasonWeekEnd": week,
+        "version": 4,
+        "timedOnly": "true",
+    }
+    async with _get_session().get(url, params=params) as resp:
+        if resp.status != 200:
+            text = await resp.text()
+            raise Exception(f"Group Comps API 错误 HTTP {resp.status}: {text[:200]}")
+        data = await resp.json(content_type=None)
+        items = data.get("data") or []
+        return {
+            "items": [
+                {
+                    "quantity": item.get("quantity", 0),
+                    "successRate": item.get("successRate", 0),
+                    "group": [
+                        {"class_id": m.get("class_id"), "spec_id": m.get("spec_id")}
+                        for m in (item.get("group") or [])
+                    ],
+                }
+                for item in items
+            ],
+            "total_quantity": data.get("totalQuantity", 0) or sum(
+                (i.get("quantity", 0) for i in items),
+            ),
+        }

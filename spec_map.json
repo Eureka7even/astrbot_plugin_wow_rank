@@ -368,7 +368,7 @@
         },
         "1480": {
             "rank": 7,
-            "spec_id": 1473,
+            "spec_id": 1480,
             "class_id": 12,
             "role": "dps",
             "spec_name": "噬灭",
@@ -398,7 +398,7 @@
         },
         "1473": {
             "rank": 10,
-            "spec_id": 1480,
+            "spec_id": 1473,
             "class_id": 13,
             "role": "dps",
             "spec_name": "增辉",
