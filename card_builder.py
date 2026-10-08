@@ -665,6 +665,41 @@ def build_hall_of_fame_vars(data: dict) -> dict:
 
 # ── 大秘境日报 ──────────────────────────────
 
+def _build_daily_comps(
+    items: list, by_id: dict, classes_meta: dict
+) -> list:
+    """将某层数热门队伍配置原始数据转换为模板变量（按 坦克→治疗→输出 排序）。"""
+    max_qty = max((c.get("quantity", 0) for c in items), default=0)
+    comps = []
+    for i, c in enumerate(items, 1):
+        members = []
+        for m in c.get("group", []):
+            meta = by_id.get(str(m.get("spec_id", "")), {})
+            class_key = meta.get("class_key", "")
+            spec_key = meta.get("spec_key", "")
+            spec_name = meta.get("spec_name", "?")
+            class_name = meta.get("class_name", "")
+            members.append({
+                "icon_class": f"spec-{class_key}-{spec_key}",
+                "name": f"{spec_name} {class_name}".rstrip(),
+                "color": classes_meta.get(str(meta.get("class_id", "")), {}).get(
+                    "class_color", "#AAAAAA"
+                ) if meta else "#AAAAAA",
+                "role": meta.get("role", "dps"),
+            })
+        # 按 坦克 → 治疗 → 输出 排列（未知名角色排最后）
+        members.sort(key=lambda m: _ROLE_ORDER.get(m["role"], 3))
+        qty = c.get("quantity", 0)
+        comps.append({
+            "rank": i,
+            "quantity": f"{qty:,}",
+            "pct": f"{c.get('pct', 0):.2f}",
+            "bar_width": (qty / max_qty * 100) if max_qty else 0,
+            "members": members,
+        })
+    return comps
+
+
 def build_daily_report_vars(cache: dict) -> dict:
     """将大秘境日报缓存数据转换为 daily_report.html 模板变量。"""
     spec_map = _load_spec_map()
@@ -704,34 +739,10 @@ def build_daily_report_vars(cache: dict) -> dict:
             "failed": avg is None,
         })
 
-    # ── 当前 CD 热门队伍配置 Top5 ──
-    comp_items = cache.get("group_comps", [])
-    max_qty = max((c.get("quantity", 0) for c in comp_items), default=0)
-    comps = []
-    for i, c in enumerate(comp_items, 1):
-        members = []
-        for m in c.get("group", []):
-            meta = by_id.get(str(m.get("spec_id", "")), {})
-            class_key = meta.get("class_key", "")
-            spec_key = meta.get("spec_key", "")
-            spec_name = meta.get("spec_name", "?")
-            class_name = meta.get("class_name", "")
-            members.append({
-                "icon_class": f"spec-{class_key}-{spec_key}",
-                "name": f"{spec_name} {class_name}".rstrip(),
-                "color": _meta_color(meta) if meta else "#AAAAAA",
-                "role": meta.get("role", "dps"),
-            })
-        # 按 坦克 → 治疗 → 输出 排列（未知名角色排最后）
-        members.sort(key=lambda m: _ROLE_ORDER.get(m["role"], 3))
-        qty = c.get("quantity", 0)
-        comps.append({
-            "rank": i,
-            "quantity": f"{qty:,}",
-            "pct": f"{c.get('pct', 0):.2f}",
-            "bar_width": (qty / max_qty * 100) if max_qty else 0,
-            "members": members,
-        })
+    # ── 当前 CD 热门队伍配置 Top5（15+ / 20+ 各一套）──
+    comps_by_level = cache.get("group_comps", {}) or {}
+    comps_15 = _build_daily_comps(comps_by_level.get("15", []), by_id, classes_meta)
+    comps_20 = _build_daily_comps(comps_by_level.get("20", []), by_id, classes_meta)
 
     fetched = cache.get("fetched_at", "")
     updated = fetched[:16].replace("T", " ") if fetched else ""
@@ -741,7 +752,8 @@ def build_daily_report_vars(cache: dict) -> dict:
         "week": cache.get("week", ""),
         "updated": updated,
         "rows": rows,
-        "comps": comps,
+        "comps_15": comps_15,
+        "comps_20": comps_20,
         "icons_css": build_icons_css(24),  # 24px 图标（64px 格子按 3/8 换算，窗口对齐格子）
         "warned": bool(cache.get("skipped")) or bool(cache.get("comps_error")),
         "failed_count": sum(1 for r in rows if r["failed"]),

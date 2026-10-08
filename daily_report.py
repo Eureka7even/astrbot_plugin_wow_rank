@@ -1,6 +1,7 @@
 """大秘境日报：数据拉取、缓存与定时调度。
 
-每日北京时间 0/6/12/18 点刷新缓存（40 专精世界排行前 100 去除极值平均分 + 当前 CD 热门队伍配置 Top5），
+每日北京时间 0/6/12/18 点刷新缓存（40 专精世界排行前 100 去除极值平均分
++ 当前 CD 15+/20+ 热门队伍配置各 Top5），
 用户请求时返回缓存；无缓存则立即拉取一次后缓存。
 """
 
@@ -64,6 +65,10 @@ DAILY_SPECS = [
     ("evoker", "preservation"),
     ("evoker", "augmentation"),
 ]
+
+
+# 日报热门队伍配置的层数下限（如 15 = 15 层及以上），各层数单独拉取统计
+GROUP_COMP_LEVELS = (15, 20)
 
 
 def _next_refresh_seconds(now: datetime.datetime) -> float:
@@ -203,49 +208,55 @@ class DailyReportService:
             )
             await asyncio.sleep(REQUEST_INTERVAL)
 
-        # 当前 CD 热门队伍配置
-        comps = {"items": [], "total_quantity": 0}
+        # 各层数当前 CD 热门队伍配置（15+ / 20+）
+        comps_by_level: dict[int, list] = {}
         comps_error = False
-        for attempt in range(2):
-            try:
-                comps = await fetch_group_comps(self._season, week)
-                break
-            except Exception as e:
-                if attempt == 0:
-                    logger.warning(f"[WowDaily] 拉取队伍配置失败，重试: {e}")
-                    await asyncio.sleep(3)
-        else:
-            comps_error = True
-            logger.error(f"[WowDaily] 拉取队伍配置失败，已跳过")
+        for level in GROUP_COMP_LEVELS:
+            comps = {"items": [], "total_quantity": 0}
+            for attempt in range(2):
+                try:
+                    comps = await fetch_group_comps(
+                        self._season, week, min_mythic_level=level
+                    )
+                    break
+                except Exception as e:
+                    if attempt == 0:
+                        logger.warning(f"[WowDaily] 拉取 {level}+ 队伍配置失败，重试: {e}")
+                        await asyncio.sleep(3)
+            else:
+                comps_error = True
+                logger.error(f"[WowDaily] 拉取 {level}+ 队伍配置失败，已跳过")
 
-        total_qty = comps.get("total_quantity", 0) or 1
-        group_comps = [
-            {
-                "quantity": item.get("quantity", 0),
-                "successRate": item.get("successRate", 0),
-                "pct": round(item.get("quantity", 0) / total_qty * 100, 2),
-                "group": item.get("group", []),
-            }
-            for item in sorted(
-                comps.get("items", []), key=lambda x: x.get("quantity", 0), reverse=True
-            )[:5]
-        ]
+            total_qty = comps.get("total_quantity", 0) or 1
+            comps_by_level[level] = [
+                {
+                    "quantity": item.get("quantity", 0),
+                    "successRate": item.get("successRate", 0),
+                    "pct": round(item.get("quantity", 0) / total_qty * 100, 2),
+                    "group": item.get("group", []),
+                }
+                for item in sorted(
+                    comps.get("items", []), key=lambda x: x.get("quantity", 0), reverse=True
+                )[:5]
+            ]
 
         self._cache = {
             "fetched_at": datetime.datetime.now(TZ_CN).isoformat(timespec="seconds"),
             "season": self._season,
             "week": week,
             "spec_averages": spec_averages,
-            "group_comps": group_comps,
-            "total_quantity": total_qty,
+            "group_comps": {
+                str(level): comps_by_level.get(level, []) for level in GROUP_COMP_LEVELS
+            },
             "comps_error": comps_error,
             "skipped": skipped,
         }
         self._save_cache()
         ok_count = sum(1 for s in spec_averages if s["avg"] is not None)
+        comps_total = sum(len(comps_by_level.get(level, [])) for level in GROUP_COMP_LEVELS)
         logger.info(
             f"[WowDaily] 日报缓存已更新：{ok_count}/{len(spec_averages)} 专精"
-            f"，队伍配置 {len(group_comps)} 条"
+            f"，队伍配置 {comps_total} 条"
             + (f"，跳过: {', '.join(skipped)}" if skipped else "")
         )
 
@@ -260,6 +271,10 @@ class DailyReportService:
             if isinstance(data, dict) and data.get("fetched_at") and data.get("spec_averages"):
                 if not all("max" in s for s in data["spec_averages"]):
                     logger.info("[WowDaily] 本地缓存结构过旧，忽略并等待重新拉取")
+                    return
+                # 旧版 group_comps 为列表（全层数），新版为按层数下限分组的字典
+                if not isinstance(data.get("group_comps"), dict):
+                    logger.info("[WowDaily] 本地缓存队伍配置结构过旧，忽略并等待重新拉取")
                     return
                 self._cache = data
                 logger.info(f"[WowDaily] 已载入本地日报缓存（{data.get('fetched_at')}）")

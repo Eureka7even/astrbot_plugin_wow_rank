@@ -239,7 +239,7 @@ class WowRankPlugin(Star):
     # ── 大秘境日报 ─────────────────────────────
     @filter.command("wow日报", alias={"大秘境日报", "wow-daily"})
     async def query_daily_report(self, event: AstrMessageEvent):
-        """查询大秘境日报：各专精世界前100平均分（去极值）+ 当前CD热门队伍配置Top5。
+        """查询大秘境日报：各专精世界前100平均分（去极值）+ 当前CD 15+/20+ 热门队伍配置Top5。
         用法：/wow日报"""
         try:
             if not self._daily.has_cache():

@@ -83,7 +83,7 @@
     white-space:nowrap;
   }
 
-  /* ── 热门队伍配置（单行：排名 | 图标x5 | 进度条 | 占比(次数)） ── */
+  /* ── 热门队伍配置（单行：排名 | 图标x5 | 进度条 | 占比(次数)），15+/20+ 两个区块共用 ── */
   .comp-card{
     display:flex;align-items:center;gap:12px;
     background:rgba(255,255,255,0.03);
@@ -162,8 +162,26 @@
 </div>
 
 <div class="section">
-  <div class="section-title">当前 CD 热门队伍配置 TOP{{ comps|length }}</div>
-  {% for c in comps %}
+  <div class="section-title">15+ 热门队伍配置 TOP{{ comps_15|length }}</div>
+  {% for c in comps_15 %}
+  <div class="comp-card">
+    <div class="comp-rank">{{ c.rank }}</div>
+    <div class="comp-members">
+      {% for m in c.members %}
+      <div class="comp-member">
+        <div class="spec-icon {{ m.icon_class }}"></div>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="comp-bar-wrap"><div class="comp-bar" style="width:{{ c.bar_width }}%"></div></div>
+    <div class="comp-meta">{{ c.pct }}%<span>（{{ c.quantity }}次）</span></div>
+  </div>
+  {% endfor %}
+</div>
+
+<div class="section">
+  <div class="section-title">20+ 热门队伍配置 TOP{{ comps_20|length }}</div>
+  {% for c in comps_20 %}
   <div class="comp-card">
     <div class="comp-rank">{{ c.rank }}</div>
     <div class="comp-members">

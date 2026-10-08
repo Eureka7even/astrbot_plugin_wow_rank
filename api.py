@@ -370,17 +370,20 @@ async def fetch_spec_ranking_scores(
         return [float(c.get("score", 0)) for c in chars]
 
 
-async def fetch_group_comps(season: str, week: int) -> dict:
+async def fetch_group_comps(
+    season: str, week: int, min_mythic_level: int = 2, max_mythic_level: int = 99
+) -> dict:
     """
     获取当前 CD 热门队伍配置统计（mythic-plus-group-comps，仅限时）。
+    min_mythic_level/max_mythic_level 控制统计层数区间（如 15+ 传 min_mythic_level=15）。
     返回 {"items": [{quantity, successRate, group: [{class_id, spec_id}...]}...], "total_quantity": int}。
     """
     url = "https://raider.io/api/statistics/get-data"
     params = {
         "season": season,
         "type": "mythic-plus-group-comps",
-        "minMythicLevel": 2,
-        "maxMythicLevel": 99,
+        "minMythicLevel": min_mythic_level,
+        "maxMythicLevel": max_mythic_level,
         "seasonWeekStart": week,
         "seasonWeekEnd": week,
         "version": 4,
