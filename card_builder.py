@@ -254,10 +254,39 @@ def build_card_vars(data: dict, dungeon_cn_map: dict[str, str], progress_data: d
     }
 
 
-def build_cutoff_vars(cutoffs: dict) -> dict:
-    """将 cutoff API 数据转换为 cutoff.html 模板变量。"""
-    region_name = cutoffs.get("region", {}).get("name", "CN")
-    updated = cutoffs.get("updatedAt", "")[:16]
+# Raider.io 月份英文缩写 → 数字（updatedAt 解析用）
+_MONTH_NUMS = {
+    "Jan": 1, "Feb": 2, "Mar": 3, "Apr": 4, "May": 5, "Jun": 6,
+    "Jul": 7, "Aug": 8, "Sep": 9, "Oct": 10, "Nov": 11, "Dec": 12,
+}
+
+
+def _format_updated_at(s: str) -> str:
+    """将 Raider.io updatedAt（如 “Thu Oct 08 2026 00:04:33 GMT+0000 (Coordinated Universal Time)”）
+    转为北京时间 “MM-DD HH:MM”；解析失败则截取前 16 字符兜底。"""
+    parts = s.split()
+    if len(parts) >= 5 and parts[1] in _MONTH_NUMS:
+        try:
+            dt = datetime.datetime(
+                int(parts[3]), _MONTH_NUMS[parts[1]], int(parts[2]),
+                *map(int, parts[4].split(":")[:2]),
+                tzinfo=datetime.timezone.utc,
+            ) + datetime.timedelta(hours=8)
+            return dt.strftime("%m-%d %H:%M")
+        except ValueError:
+            pass
+    return s[:16]
+
+
+def build_cutoff_vars(regions: list[dict]) -> dict:
+    """将多区域 cutoff API 数据转换为 cutoff.html 模板变量。
+
+    regions: [{key, name, color, cutoffs}, ...]，列表顺序即表格列顺序（国服排最前）；
+    数据列取各区域全阵营（all）分数，趋势图取首个区域（国服）。
+    """
+    first = regions[0]
+    first_cutoffs = first.get("cutoffs", {}) or {}
+    updated = _format_updated_at(first_cutoffs.get("updatedAt", ""))
 
     tiers = [
         ("前 0.1%", "赛季称号", "p999", "#f26b5a"),
@@ -267,19 +296,24 @@ def build_cutoff_vars(cutoffs: dict) -> dict:
         ("前 40%", "", "p600", "#397ece"),
     ]
 
+    cols_meta = [
+        {"name": r.get("name", r.get("key", "")), "color": r.get("color", "#8892aa")}
+        for r in regions
+    ]
     rows = []
-    for label, sublabel, key, color in tiers:
-        tier = cutoffs.get(key, {})
+    for label, sublabel, key, _color in tiers:
+        cols = []
+        for r in regions:
+            tier = (r.get("cutoffs") or {}).get(key, {})
+            cols.append(f"{tier.get('all', {}).get('quantileMinValue', 0):,.1f}")
         rows.append({
             "label": label,
             "sublabel": sublabel,
-            "all": f"{tier.get('all', {}).get('quantileMinValue', 0):,.1f}",
-            "horde": f"{tier.get('horde', {}).get('quantileMinValue', 0):,.1f}",
-            "alliance": f"{tier.get('alliance', {}).get('quantileMinValue', 0):,.1f}",
+            "cols": cols,
         })
 
-    # ── 趋势图 SVG 数据 ──
-    graph_data = cutoffs.get("graphData", {})
+    # ── 趋势图 SVG 数据（取首个区域，即国服）──
+    graph_data = first_cutoffs.get("graphData", {})
     chart_width, chart_height = 720, 280
     pad_left, pad_right, pad_top, pad_bottom = 60, 20, 20, 40
     inner_w = chart_width - pad_left - pad_right
@@ -330,10 +364,11 @@ def build_cutoff_vars(cutoffs: dict) -> dict:
             })
 
     return {
-        "region": region_name,
         "season": "season-mn-2",
         "updated": updated,
         "rows": rows,
+        "cols_meta": cols_meta,
+        "trend_region": first.get("name", ""),
         "chart_width": chart_width,
         "chart_height": chart_height,
         "svg_series": svg_series,

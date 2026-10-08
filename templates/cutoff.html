@@ -45,6 +45,10 @@
     padding:16px 20px 8px;
     background:rgba(255,255,255,0.02);
   }
+  .chart-note{
+    font-size:20px;color:#8892aa;
+    margin-bottom:8px;
+  }
   .chart-wrap svg{
     display:block;
     height:220px;
@@ -81,6 +85,7 @@
     border-bottom:1px solid #181e30;
   }
   .ct-row:last-child{border-bottom:none;}
+  /* 各服数据列：首列为 tier 说明，其余为区域列 */
   .ct-col-tier{
     flex:1;display:flex;flex-direction:column;gap:2px;
     min-width:0;
@@ -91,13 +96,11 @@
   .tier-sublabel{
     font-size:18px;color:#606880;
   }
-  .ct-col-all,.ct-col-horde,.ct-col-alliance{
-    width:130px;text-align:center;
-    font-size:26px;font-weight:700;flex-shrink:0;
+  .ct-col-val{
+    width:108px;text-align:center;
+    font-size:22px;font-weight:700;flex-shrink:0;
+    color:#e0e0e8;
   }
-  .ct-col-all{color:#f0c040;}
-  .ct-col-horde{color:#eb6273;}
-  .ct-col-alliance{color:#4488ff;}
 
   .footer{
     padding:12px 20px;
@@ -109,12 +112,13 @@
 <body>
 
 <div class="header">
-  <div class="title">{{ region }} M+ 赛季分数线</div>
+  <div class="title">各服 M+ 赛季分数线</div>
   <div class="subtitle">赛季: {{ season }} &middot; 更新: {{ updated }}</div>
 </div>
 
-<!-- 趋势图 -->
+<!-- 趋势图（首个区域，即国服） -->
 <div class="chart-wrap">
+  <div class="chart-note">{{ trend_region }} M+ 各分段分数线趋势</div>
   <svg viewBox="0 0 {{ chart_width }} {{ chart_height }}" width="100%" preserveAspectRatio="none">
     <!-- 背景网格线 -->
     <line x1="60" y1="20" x2="60" y2="260" stroke="#252a40" stroke-width="1"/>
@@ -148,9 +152,9 @@
   <div class="cutoff-table">
     <div class="ct-header">
       <span class="ct-col-tier">大秘境分数百分位</span>
-      <span class="ct-col-all">所有阵营</span>
-      <span class="ct-col-horde">仅部落</span>
-      <span class="ct-col-alliance">仅联盟</span>
+      {% for col in cols_meta %}
+      <span class="ct-col-val" style="color:{{ col.color }}">{{ col.name }}</span>
+      {% endfor %}
     </div>
     {% for row in rows %}
     <div class="ct-row">
@@ -158,9 +162,9 @@
         <span class="tier-label">{{ row.label }}</span>
         {% if row.sublabel %}<span class="tier-sublabel">{{ row.sublabel }}</span>{% endif %}
       </span>
-      <span class="ct-col-all">{{ row.all }}</span>
-      <span class="ct-col-horde">{{ row.horde }}</span>
-      <span class="ct-col-alliance">{{ row.alliance }}</span>
+      {% for v in row.cols %}
+      <span class="ct-col-val">{{ v }}</span>
+      {% endfor %}
     </div>
     {% endfor %}
   </div>
@@ -168,7 +172,7 @@
 
 <div class="footer">
   <span>Data: Raider.io</span>
-  <span>国服 {{ region }}</span>
+  <span>跨区实时更新</span>
 </div>
 
 </body>

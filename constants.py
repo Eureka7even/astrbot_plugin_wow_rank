@@ -12,6 +12,15 @@ SPRITE_PATH = os.path.join(os.path.dirname(__file__), "specs_sprite.png")
 # 大秘境日报每日缓存刷新时刻（北京时间）
 DAILY_REFRESH_HOURS = (0, 6, 12, 18)
 
+# M+ 分数线查询区域（key、中文名、主题色），顺序即表格列顺序（国服排最前）
+CUTOFF_REGIONS = [
+    ("cn", "国服", "#f0c040"),
+    ("us", "美服", "#4488ff"),
+    ("eu", "欧服", "#b354e0"),
+    ("kr", "韩服", "#e3598b"),
+    ("tw", "台服", "#3fd0a8"),
+]
+
 # 副本名称映射文件（dungeons.json 与插件同目录）
 DUNGEON_MAP_FILE = os.path.join(os.path.dirname(__file__), "dungeons.json")
 

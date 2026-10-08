@@ -40,6 +40,7 @@ from .card_builder import (
     build_hall_of_fame_vars,
     build_spec_popularity_vars,
 )
+from .constants import CUTOFF_REGIONS
 from .daily_report import DailyReportService
 from .template_manager import TemplateManager
 from .utils import get_current_season_week, load_dungeon_map
@@ -111,16 +112,36 @@ class WowRankPlugin(Star):
             yield event.plain_result(f"查询失败：{e}")
 
     # ── 分数线查询 ───────────────────────────
+    async def _fetch_all_cutoffs(self) -> list[dict]:
+        """并发拉取各服 M+ 分数线（失败区域自动跳过），按 CUTOFF_REGIONS 顺序返回。"""
+        color_by_key = {r: c for r, _, c in CUTOFF_REGIONS}
+
+        async def _one(region: str, name: str) -> dict | None:
+            try:
+                cutoffs = await fetch_cutoffs(region=region, season="season-mn-2")
+                return {
+                    "key": region,
+                    "name": name,
+                    "color": color_by_key.get(region, "#8892aa"),
+                    "cutoffs": cutoffs,
+                } if cutoffs else None
+            except Exception as e:
+                logger.warning(f"[WowCutoff] 拉取 {name}({region}) 分数线失败: {e}")
+                return None
+
+        done = await asyncio.gather(*(_one(r, n) for r, n, _ in CUTOFF_REGIONS))
+        return [d for d in done if d is not None]
+
     @filter.command("wow-cutoff", alias={"wow分数线"})
     async def query_cutoff(self, event: AstrMessageEvent):
-        """查询当前国服 M+ 分数线。用法：/wow-cutoff"""
+        """查询各服（国服/美服/欧服/韩服/台服）M+ 分数线。用法：/wow-cutoff"""
         try:
-            cutoffs = await fetch_cutoffs(region="cn", season="season-mn-2")
-            if not cutoffs:
+            regions = await self._fetch_all_cutoffs()
+            if not regions:
                 yield event.plain_result("未获取到分数线数据。")
                 return
 
-            vars_ = build_cutoff_vars(cutoffs)
+            vars_ = build_cutoff_vars(regions)
             img_url = await self.html_render(
                 self._tmpl.cutoff, vars_, options=self._render_options()
             )
@@ -380,13 +401,13 @@ class WowRankPlugin(Star):
 
     @filter.llm_tool(name="wow_mplus_cutoff")
     async def llm_query_cutoff(self, event: AstrMessageEvent):
-        '''查询魔兽世界国服（WOW）当前赛季大秘境（M+）各分段分数线（0.1%/1%/5%/10%/25% 分段），返回一张分数线图片。本工具无需任何参数。'''
+        '''查询魔兽世界各服务器（国服/美服/欧服/韩服/台服）当前赛季大秘境（M+）各分段分数线（0.1%/1%/10%/25%/40% 分段），返回一张分数线图片。本工具无需任何参数。'''
         try:
-            cutoffs = await fetch_cutoffs(region="cn", season="season-mn-2")
-            if not cutoffs:
+            regions = await self._fetch_all_cutoffs()
+            if not regions:
                 yield "未获取到分数线数据。"
                 return
-            vars_ = build_cutoff_vars(cutoffs)
+            vars_ = build_cutoff_vars(regions)
             img_url = await self.html_render(
                 self._tmpl.cutoff, vars_, options=self._render_options()
             )
